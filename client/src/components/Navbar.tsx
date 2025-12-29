@@ -43,6 +43,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           <NavLink href="/">Home</NavLink>
           <NavLink href="/services">Services</NavLink>
+          <NavLink href="/creatives">LNL Creatives</NavLink>
           <NavLink href="/portfolio">Portfolio</NavLink>
           <NavLink href="/contact">Contact</NavLink>
           
@@ -85,6 +86,7 @@ export default function Navbar() {
               <div className="flex flex-col gap-6 mt-10">
                 <NavLink href="/">Home</NavLink>
                 <NavLink href="/services">Services</NavLink>
+                <NavLink href="/creatives">LNL Creatives</NavLink>
                 <NavLink href="/portfolio">Portfolio</NavLink>
                 <NavLink href="/contact">Contact</NavLink>
                 <Button className="w-full rounded-full mt-4">Get Started</Button>
