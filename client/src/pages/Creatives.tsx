@@ -1,10 +1,53 @@
-import { Check, MapPin, Camera, TrendingUp, Smartphone } from "lucide-react";
+import { Check, MapPin, Camera, TrendingUp, Smartphone, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import glenwoodImage from "@assets/generated_images/glenwood_south_raleigh_modern_nightlife_street_scene.png";
+import raleighRealtyImage from "@assets/generated_images/raleigh_glenwood_south_boutique_shops_and_outdoor_dining.png";
+import { useState } from "react";
+
+const portfolioItems = [
+  {
+    id: 1,
+    title: "Raleigh Realty",
+    category: "Full Management",
+    location: "Glenwood South",
+    image: raleighRealtyImage,
+    tags: ["Walkable Boutiques", "Vibrant Dining"]
+  },
+  {
+    id: 2,
+    title: "Durham Distillery",
+    category: "Content Only",
+    location: "Downtown Durham",
+    image: "https://images.unsplash.com/photo-1572025442646-866d16c84a54?auto=format&fit=crop&q=80&w=800",
+    tags: ["Cocktail Culture", "Local Ingredients"]
+  },
+  {
+    id: 3,
+    title: "Apex Coffee Co.",
+    category: "Full Management",
+    location: "Apex",
+    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800",
+    tags: ["Morning Brew", "Community Hub"]
+  },
+  {
+    id: 4,
+    title: "Cary Boutique",
+    category: "Content Only",
+    location: "Cary",
+    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
+    tags: ["Summer Collection", "Shop Local"]
+  }
+];
 
 export default function Creatives() {
+  const [filter, setFilter] = useState("All");
+
+  const filteredItems = filter === "All" 
+    ? portfolioItems 
+    : portfolioItems.filter(item => item.category === filter);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
@@ -27,8 +70,67 @@ export default function Creatives() {
           </div>
         </section>
 
+        {/* Local Authority Portfolio */}
+        <section className="py-24 bg-background">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+              <div>
+                <h2 className="text-3xl md:text-5xl font-bold mb-4">Local Authority Content</h2>
+                <p className="text-muted-foreground text-lg max-w-xl">
+                  Showcasing brands that own their local narrative.
+                </p>
+              </div>
+              
+              <div className="flex gap-2">
+                {["All", "Content Only", "Full Management"].map((f) => (
+                  <Button 
+                    key={f}
+                    variant={filter === f ? "default" : "outline"}
+                    onClick={() => setFilter(f)}
+                    className="rounded-full"
+                    size="sm"
+                  >
+                    {f}
+                  </Button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {filteredItems.map((item) => (
+                <div key={item.id} className="group cursor-pointer">
+                  <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-4 border border-border/50">
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold border border-white/10 flex items-center gap-1.5 shadow-lg">
+                      <MapPin className="w-3 h-3 text-primary" />
+                      {item.location}
+                    </div>
+                    <div className="absolute bottom-4 left-4 flex gap-2">
+                       {item.tags.map((tag, i) => (
+                         <span key={i} className="bg-black/60 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-medium border border-white/10">
+                           {tag}
+                         </span>
+                       ))}
+                    </div>
+                  </div>
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{item.title}</h3>
+                      <p className="text-sm text-muted-foreground">{item.category}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Pricing Table */}
-        <section className="py-24">
+        <section className="py-24 bg-secondary/10">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               
