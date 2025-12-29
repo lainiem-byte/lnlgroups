@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
   return (
@@ -28,29 +26,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <form className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">First Name</label>
-                  <Input placeholder="John" className="bg-background/50" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Last Name</label>
-                  <Input placeholder="Doe" className="bg-background/50" />
-                </div>
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Email</label>
-                <Input type="email" placeholder="john@company.com" className="bg-background/50" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Message</label>
-                <Textarea placeholder="Tell us about your project..." className="min-h-[120px] bg-background/50" />
-              </div>
-              <Button className="w-full bg-primary hover:bg-primary/90 text-white rounded-lg h-12">
-                Send Message
-              </Button>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </div>
