@@ -59,6 +59,10 @@ This document defines the brand voice, tone, and messaging guidelines for the LN
     *   **Theme:** "Community Pillar & Relational Growth"
     *   **Focus:** Relational Localization & Deep Engagement
     *   **Vibe:** Boutique, Intimate, Community-Centric.
+    *   **Neighborhoods:** Main Street (Downtown), The Palouse, University District.
+    *   **2025 Landmarks:** Hello Everything, Palouse Hills, White Avenue Corridor.
+    *   **Trending Hashtags:** #MoscowIdaho, #PalouseLife, #ShopLocalMoscow, #IdahoBusiness.
+    *   **Authority Copy:** "In Moscow, authority is built on relationships and the rolling hills of the Palouse. We focus on the 'Main Street' heart of Idaho, where local pillars like BookPeople of Moscow and the Moscow Food Co-op define the community. Our strategy leans into the vibrant Saturday morning culture of the Moscow Farmers Market and the architectural evolution of the 2025 Public Avenue safety projects. We make your brand the lifeblood of the town, ensuring you aren't just a business, but a neighbor."
 
 ### Key Messaging
 - "Hyper-local content strategies designed to dominate your market"
