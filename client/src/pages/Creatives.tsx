@@ -104,18 +104,18 @@ const locations = [
     copy: "In Moscow, authority is built on relationships. We lean into the Saturday morning culture of the Farmers Market and the beauty of the Palouse to make your brand a permanent pillar of the community.",
     landmarks: ["BookPeople of Moscow", "Moscow Food Co-op", "Palouse Hills"],
     hashtags: ["#MoscowIdaho", "#PalouseLife", "#ShopLocalMoscow"],
-    value_add_custom: "Relational Localization: 10 custom posts, Moscow Farmers Market trend research, and Palouse-specific geotagging.",
-    value_add_growth: "Deep Community Engagement: 20 posts, monthly Main St shoots, and 1 themed engagement with local staples like the Food Co-op.",
+    value_add_custom: "Relational Localization: 10 custom posts, Moscow Farmers Market trend research, and Palouse-specific geotagging strategy.",
+    value_add_growth: "Deep Community Engagement: 20 posts, monthly Main St shoots, 1 themed engagement with local businesses (Food Co-op, BookPeople), and geo-targeted ad setup for the University District.",
     pricing: {
       custom: "$700–$1,100",
       growth: "$1,400–$1,500+"
     },
     case_study: {
-      title: "Main Street Revival",
+      title: "Palouse & Main: A Seasonal Evolution",
       image: moscowImage,
       location: "Main Street, Moscow, ID",
-      challenge: "Revitalizing a heritage brand to appeal to the incoming university demographic while respecting local traditions.",
-      solution: "Focusing on 'Community Pillar' content that highlighted the brand's involvement in local markets and events, bridging the generational gap."
+      challenge: "Capturing the unique architectural evolution of Main Street against the dramatic backdrop of the seasonal Palouse hills.",
+      solution: "A visual campaign highlighting the symbiotic relationship between historic downtown storefronts and the surrounding natural landscape."
     },
     portfolio: [
        {
@@ -349,8 +349,8 @@ export default function Creatives() {
               
               <div key={currentLocation.id + "-txt"} className="w-full md:w-1/2 animate-in fade-in slide-in-from-right-8 duration-700">
                 <div className="inline-flex items-center gap-2 text-primary font-bold mb-4 uppercase tracking-wider text-sm">
-                  {currentLocation.id === 'columbus' ? <Store className="w-4 h-4" /> : <TrendingUp className="w-4 h-4" />}
-                  {currentLocation.id === 'columbus' ? 'Market Spotlight' : 'Case Study'}
+                  {currentLocation.id === 'columbus' ? <Store className="w-4 h-4" /> : currentLocation.id === 'moscow' ? <Camera className="w-4 h-4" /> : <TrendingUp className="w-4 h-4" />}
+                  {currentLocation.id === 'columbus' ? 'Market Spotlight' : currentLocation.id === 'moscow' ? 'Boutique Spotlight' : 'Case Study'}
                 </div>
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">{currentLocation.case_study.title}</h2>
                 <div className="space-y-4 mb-8">
