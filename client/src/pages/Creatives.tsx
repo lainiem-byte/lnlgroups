@@ -2,11 +2,6 @@ import { Check, MapPin, Camera, TrendingUp, Smartphone, Filter, ChevronDown, Sto
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
-import glenwoodImage from "@assets/generated_images/glenwood_south_raleigh_modern_nightlife_street_scene.png";
-import raleighRealtyImage from "@assets/generated_images/raleigh_glenwood_south_boutique_shops_and_outdoor_dining.png";
-import columbusImage from "@assets/generated_images/columbus_oh_short_north_arts_district_vibrant_street_scene.png";
-import germanVillageImage from "@assets/generated_images/german_village_columbus_ohio_historic_brick_lined_streets.png";
-import moscowImage from "@assets/generated_images/moscow_idaho_downtown_main_street_with_palouse_hills_background.png";
 import { useState } from "react";
 import { 
   DropdownMenu, 
@@ -14,139 +9,45 @@ import {
   DropdownMenuItem, 
   DropdownMenuTrigger 
 } from "@/components/ui/dropdown-menu";
+import locationsData from "@/data/locations.json";
 
-const locations = [
-  {
-    id: "raleigh",
-    city: "Raleigh / Durham, NC",
-    theme: "High-Growth Tech Meets Historic Charm",
-    neighborhoods: ["Glenwood South", "North Hills", "Downtown Durham"],
-    copy: "From the vibrant energy of Glenwood South to the historic streets of Oakwood, Raleigh isn't just growing—it’s evolving. Our strategy captures the modern skyline and the unique character of local staples to anchor your brand in the Triangle's high-end reality.",
-    landmarks: ["The Dillon", "Boylan Bridge", "American Tobacco Campus"],
-    hashtags: ["#RaleighRising", "#TriangleTech", "#GlenwoodSouthLife"],
-    value_add_custom: "Digital Localization: 10 custom posts, local market research, and trending Raleigh hashtag integration.",
-    value_add_growth: "Physical Presence: 20 posts, monthly in-person shoot days in Raleigh, and geo-targeted ad setup for the Triangle market.",
-    pricing: {
-      custom: "$700–$1,100",
-      growth: "$1,400–$1,500"
-    },
-    case_study: {
-      title: "Modern Condos & Vibrant Nightlife",
-      image: glenwoodImage,
-      location: "Glenwood South, Raleigh, NC",
-      challenge: "Translate the physical vibrancy of Glenwood South into a digital experience that drives condo pre-sales.",
-      solution: "Hyper-local targeting using \"Digital Localization\" and on-site lifestyle photography capturing the specific \"Live, Work, Play\" atmosphere."
-    },
-    portfolio: [
-       {
-        id: 1,
-        title: "Raleigh Realty",
-        category: "Full Management",
-        location: "Glenwood South",
-        image: raleighRealtyImage,
-        tags: ["Walkable Boutiques", "Vibrant Dining"]
-      },
-      {
-        id: 2,
-        title: "Durham Distillery",
-        category: "Content Only",
-        location: "Downtown Durham",
-        image: "https://images.unsplash.com/photo-1572025442646-866d16c84a54?auto=format&fit=crop&q=80&w=800",
-        tags: ["Cocktail Culture", "Local Ingredients"]
-      }
-    ]
-  },
-  {
-    id: "columbus",
-    city: "Columbus, OH",
-    theme: "Strategic Precision & Stealth Growth",
-    neighborhoods: ["Short North", "German Village", "The Peninsula"],
-    copy: "Columbus is the quiet giant of the Midwest. We focus on the brick-lined streets of German Village and the rapid tech surge in the Short North to position your business as a leader in a stable, powerful demographic.",
-    landmarks: ["The Peninsula", "Schiller Park", "Scioto Mile"],
-    hashtags: ["#CbusSmallBiz", "#ShortNorthArts", "#GermanVillageCharm"],
-    value_add_custom: "Strategic Localization: 10 custom posts, 200% surge tech-data research for Central Ohio, and Short North/German Village trending hashtag integration.",
-    value_add_growth: "Institutional Authority: 20 posts, monthly on-location shoot days at The Peninsula or Scioto Mile, geo-targeted ad setup focusing on Central Ohio investors, and full ad reporting.",
-    pricing: {
-      custom: "$700–$1,100",
-      growth: "$1,400–$1,500+"
-    },
-    case_study: {
-      title: "German Village & Commercial Growth",
-      image: germanVillageImage,
-      location: "German Village, Columbus, OH",
-      challenge: "Leveraging the prestige of historic German Village to build 'Brick-and-Mortar Authority' for a growing commercial brand.",
-      solution: "Visual storytelling that integrates the brand into the iconic brick-lined streets, signaling permanence and institutional trust."
-    },
-    portfolio: [
-       {
-        id: 3,
-        title: "High Street Hops",
-        category: "Full Management",
-        location: "Short North",
-        image: columbusImage,
-        tags: ["Craft Brews", "Art Walk"]
-      },
-      {
-        id: 4,
-        title: "Schiller Park Estates",
-        category: "Content Only",
-        location: "German Village",
-        image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=800",
-        tags: ["Brick & Mortar", "Historic Authority"]
-      }
-    ]
-  },
-  {
-    id: "moscow",
-    city: "Moscow, ID",
-    theme: "Community Pillar & Relational Growth",
-    neighborhoods: ["Main Street", "The Palouse", "University District"],
-    copy: "In Moscow, authority is built on relationships. We lean into the Saturday morning culture of the Farmers Market and the beauty of the Palouse to make your brand a permanent pillar of the community.",
-    landmarks: ["BookPeople of Moscow", "Moscow Food Co-op", "Palouse Hills"],
-    hashtags: ["#MoscowIdaho", "#PalouseLife", "#ShopLocalMoscow"],
-    value_add_custom: "Relational Localization: 10 custom posts, Moscow Farmers Market trend research, and Palouse-specific geotagging strategy.",
-    value_add_growth: "Deep Community Engagement: 20 posts, monthly Main St shoots, 1 themed engagement with local businesses (Food Co-op, BookPeople), and geo-targeted ad setup for the University District.",
-    pricing: {
-      custom: "$700–$1,100",
-      growth: "$1,400–$1,500+"
-    },
-    case_study: {
-      title: "Main Street & Artisanal Growth",
-      image: moscowImage,
-      location: "Main Street, Moscow, ID",
-      challenge: "Capturing the unique architectural evolution of Main Street while highlighting deep local business partnerships.",
-      solution: "A visual campaign showcasing the brand as a central hub for the community, bridging the gap between university energy and local tradition."
-    },
-    portfolio: [
-       {
-        id: 5,
-        title: "Palouse Provisions",
-        category: "Full Management",
-        location: "Main Street",
-        image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&q=80&w=800",
-        tags: ["Local Partnerships", "Community"]
-      },
-      {
-        id: 6,
-        title: "Vandal Coffee",
-        category: "Content Only",
-        location: "University District",
-        image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=800",
-        tags: ["Study Spot", "Morning Ritual"]
-      }
-    ]
-  }
-];
+// Import images
+import glenwoodImage from "@assets/generated_images/glenwood_south_raleigh_modern_nightlife_street_scene.png";
+import raleighRealtyImage from "@assets/generated_images/raleigh_glenwood_south_boutique_shops_and_outdoor_dining.png";
+import columbusImage from "@assets/generated_images/columbus_oh_short_north_arts_district_vibrant_street_scene.png";
+import germanVillageImage from "@assets/generated_images/german_village_columbus_ohio_historic_brick_lined_streets.png";
+import moscowImage from "@assets/generated_images/moscow_idaho_downtown_main_street_with_palouse_hills_background.png";
+
+const imageMap: Record<string, string> = {
+  glenwood: glenwoodImage,
+  raleighRealty: raleighRealtyImage,
+  columbus: columbusImage,
+  germanVillage: germanVillageImage,
+  moscow: moscowImage
+};
 
 export default function Creatives() {
   const [filter, setFilter] = useState("All");
   const [selectedLocationId, setSelectedLocationId] = useState("raleigh");
 
-  const currentLocation = locations.find(l => l.id === selectedLocationId) || locations[0];
+  const currentLocation = locationsData.locations.find(l => l.id === selectedLocationId) || locationsData.locations[0];
   
   const filteredItems = filter === "All" 
     ? currentLocation.portfolio 
     : currentLocation.portfolio.filter(item => item.category === filter);
+
+  // Helper to get image source (handles both key-mapped local imports and direct URLs)
+  const getImage = (item: any) => {
+    if (item.image_key && imageMap[item.image_key]) {
+      return imageMap[item.image_key];
+    }
+    return item.image_url || "";
+  };
+
+  const getCaseStudyImage = () => {
+    const key = currentLocation.case_study.image_key;
+    return key && imageMap[key] ? imageMap[key] : "";
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -168,7 +69,7 @@ export default function Creatives() {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-56 p-2 bg-background/95 backdrop-blur-xl">
-                  {locations.map((loc) => (
+                  {locationsData.locations.map((loc) => (
                     <DropdownMenuItem 
                       key={loc.id} 
                       onClick={() => setSelectedLocationId(loc.id)}
@@ -229,7 +130,7 @@ export default function Creatives() {
                 <div key={item.id} className="group cursor-pointer animate-in fade-in zoom-in-95 duration-500">
                   <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-4 border border-border/50">
                     <img 
-                      src={item.image} 
+                      src={getImage(item)} 
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
@@ -337,7 +238,7 @@ export default function Creatives() {
               <div key={currentLocation.id + "-img"} className="w-full md:w-1/2 relative group animate-in fade-in slide-in-from-left-8 duration-700">
                 <div className="absolute inset-0 bg-primary/20 rounded-2xl rotate-3 transition-transform group-hover:rotate-6"></div>
                 <img 
-                  src={currentLocation.case_study.image} 
+                  src={getCaseStudyImage()} 
                   alt={currentLocation.case_study.title} 
                   className="relative rounded-2xl shadow-2xl w-full h-auto object-cover aspect-[4/3] group-hover:scale-[1.01] transition-transform duration-500"
                 />
