@@ -50,6 +50,10 @@ This document defines the brand voice, tone, and messaging guidelines for the LN
     *   **Theme:** "Strategic Precision & Stealth Growth"
     *   **Focus:** Institutional Authority & Brick-and-Mortar Trust
     *   **Vibe:** Prestigious, Established, Powerful.
+    *   **Neighborhoods:** Short North Arts District, German Village, Clintonville.
+    *   **2025 Landmarks:** The Peninsula, Schiller Park, Scioto Mile.
+    *   **Trending Hashtags:** #CbusSmallBiz, #ShortNorthArts, #GermanVillageCharm, #Columbus2025.
+    *   **Authority Copy:** "Columbus is the quiet giant of the Midwest. In 2025, while others look at national trends, we’re looking at the brick-lined streets of German Village and the rapid commercial growth in the Short North. We position your business as a leader in a city that’s seeing a 200% surge in tech-driven startups. From the artisan spirit of North Market to the family-centric authority of Clintonville, we create content that speaks to the specific, stable, and powerful demographic of Central Ohio."
 
 3.  **Moscow, ID**
     *   **Theme:** "Community Pillar & Relational Growth"

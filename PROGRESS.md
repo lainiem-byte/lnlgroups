@@ -9,6 +9,7 @@
 - [x] Raleigh-Specific Pricing Table (Custom vs. Brand Growth)
 - [x] Case Study Gallery (Glenwood South/Raleigh Realty)
 - [x] Local Geotagging & Hashtag Logic Implementation
+- [x] Columbus & Moscow Market Expansion (Content & Galleries)
 
 ## Phase 3: Conversational & Automation Logic [ ]
 - [ ] Lead Intake Form (Name, Tech Stack, Business Type)

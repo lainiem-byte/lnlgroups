@@ -13,6 +13,13 @@ Raleigh / Durham serves as the flagship market for LNL Creatives, establishing t
 -   **Strategy:** Capturing the evolution of the Triangle by anchoring brands in both the modern skyline (The Dillon) and historic staples (Oakwood, American Tobacco Campus).
 -   **2025 Landmarks:** The Dillon, Boylan Bridge, State Capitol Holiday Inn, Carol Kare House.
 
+## Market Focus: Columbus, OH (The Investment Hub)
+Columbus represents the "Investment Hub" market, focusing on institutional authority and stability.
+-   **Theme:** The Midwest’s Stealth Powerhouse.
+-   **Primary Neighborhoods:** Short North Arts District, German Village, and Clintonville.
+-   **Strategy:** Positioning businesses as leaders in a quiet giant of a city. Focusing on the brick-lined streets of German Village (Institutional Trust) and the tech surge in Short North (Innovation).
+-   **2025 Landmarks:** The Peninsula (Downtown expansion), Schiller Park, and the Scioto Mile.
+
 ## Tech Stack
 -   **Frontend:** React (TypeScript), Vite
 -   **Styling:** Tailwind CSS, Shadcn/UI, Framer Motion
