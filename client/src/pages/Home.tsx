@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import LNLAutomations from "@/components/LNLAutomations";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
@@ -12,6 +13,7 @@ export default function Home() {
         <Navbar />
         <main>
           <Hero />
+          <LNLAutomations />
           <Services />
           <Portfolio />
           <Contact />
