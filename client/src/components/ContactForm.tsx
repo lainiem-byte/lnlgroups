@@ -54,6 +54,9 @@ const formSchema = z.object({
   primaryMarket: z.string({
     required_error: "Please select a primary market",
   }),
+  interest: z.string({
+    required_error: "Please select a service interest",
+  }),
   techStack: z.array(z.string()).min(1, "Select at least one tech stack item"),
 });
 
@@ -68,6 +71,7 @@ export default function ContactForm() {
       email: "",
       businessName: "",
       primaryMarket: "",
+      interest: "",
       techStack: [],
     },
   });
@@ -75,8 +79,18 @@ export default function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     
+    // Construct payload as requested
+    const payload = {
+      name: values.name,
+      market: values.primaryMarket.charAt(0).toUpperCase() + values.primaryMarket.slice(1), // Simple capitalization
+      interest: values.interest,
+      tech_stack: values.techStack,
+      timestamp: new Date().toISOString().split('T')[0]
+    };
+    
     // Simulate API call
-    console.log("Submitting to /api/leads:", values);
+    console.log("Submitting to /api/leads:", payload);
+    console.log("Simulating webhook payload:", JSON.stringify(payload, null, 2));
     
     // Mock delay
     await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -132,6 +146,29 @@ export default function ContactForm() {
               <FormControl>
                 <Input placeholder="Acme Inc." {...field} className="bg-background/50 border-primary/10 focus:border-primary/50 transition-colors" />
               </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={form.control}
+          name="interest"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Service Interest</FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger className="bg-background/50 border-primary/10 focus:border-primary/50 transition-colors">
+                    <SelectValue placeholder="Select a service package" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent>
+                  <SelectItem value="Custom Content Pack">Custom Content Pack</SelectItem>
+                  <SelectItem value="Brand Growth Tier">Brand Growth Tier</SelectItem>
+                  <SelectItem value="Other">Other</SelectItem>
+                </SelectContent>
+              </Select>
               <FormMessage />
             </FormItem>
           )}
