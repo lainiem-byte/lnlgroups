@@ -71,11 +71,11 @@ const locations = [
       growth: "$1,400–$1,500+"
     },
     case_study: {
-      title: "German Village Heritage",
+      title: "German Village & Commercial Growth",
       image: germanVillageImage,
       location: "German Village, Columbus, OH",
-      challenge: "Capturing the prestigious, historic atmosphere of German Village to build institutional authority for a high-end service brand.",
-      solution: "Visual storytelling that leverages the iconic brick-lined streets and architecture, positioning the brand as a timeless pillar of the community."
+      challenge: "Leveraging the prestige of historic German Village to build 'Brick-and-Mortar Authority' for a growing commercial brand.",
+      solution: "Visual storytelling that integrates the brand into the iconic brick-lined streets, signaling permanence and institutional trust."
     },
     portfolio: [
        {
@@ -92,7 +92,7 @@ const locations = [
         category: "Content Only",
         location: "German Village",
         image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=800",
-        tags: ["Historic Living", "Brick Charm"]
+        tags: ["Brick & Mortar", "Historic Authority"]
       }
     ]
   },
@@ -111,11 +111,11 @@ const locations = [
       growth: "$1,400–$1,500+"
     },
     case_study: {
-      title: "Palouse & Main: A Seasonal Evolution",
+      title: "Main Street & Artisanal Growth",
       image: moscowImage,
       location: "Main Street, Moscow, ID",
-      challenge: "Capturing the unique architectural evolution of Main Street against the dramatic backdrop of the seasonal Palouse hills.",
-      solution: "A visual campaign highlighting the symbiotic relationship between historic downtown storefronts and the surrounding natural landscape."
+      challenge: "Capturing the unique architectural evolution of Main Street while highlighting deep local business partnerships.",
+      solution: "A visual campaign showcasing the brand as a central hub for the community, bridging the gap between university energy and local tradition."
     },
     portfolio: [
        {
@@ -124,7 +124,7 @@ const locations = [
         category: "Full Management",
         location: "Main Street",
         image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&q=80&w=800",
-        tags: ["Farm to Table", "Community"]
+        tags: ["Local Partnerships", "Community"]
       },
       {
         id: 6,
