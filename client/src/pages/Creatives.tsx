@@ -1,10 +1,11 @@
-import { Check, MapPin, Camera, TrendingUp, Smartphone, Filter, ChevronDown } from "lucide-react";
+import { Check, MapPin, Camera, TrendingUp, Smartphone, Filter, ChevronDown, Store } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import glenwoodImage from "@assets/generated_images/glenwood_south_raleigh_modern_nightlife_street_scene.png";
 import raleighRealtyImage from "@assets/generated_images/raleigh_glenwood_south_boutique_shops_and_outdoor_dining.png";
 import columbusImage from "@assets/generated_images/columbus_oh_short_north_arts_district_vibrant_street_scene.png";
+import germanVillageImage from "@assets/generated_images/german_village_columbus_ohio_historic_brick_lined_streets.png";
 import moscowImage from "@assets/generated_images/moscow_idaho_downtown_main_street_with_palouse_hills_background.png";
 import { useState } from "react";
 import { 
@@ -63,18 +64,18 @@ const locations = [
     copy: "Columbus is the quiet giant of the Midwest. We focus on the brick-lined streets of German Village and the rapid tech surge in the Short North to position your business as a leader in a stable, powerful demographic.",
     landmarks: ["The Peninsula", "Schiller Park", "Scioto Mile"],
     hashtags: ["#CbusSmallBiz", "#ShortNorthArts", "#GermanVillageCharm"],
-    value_add_custom: "Strategic Localization: 10 custom posts, 200% surge tech-data research for Central Ohio, and institutional tagging.",
-    value_add_growth: "Institutional Authority: 20 posts, monthly on-location shoots at Scioto Mile, and investor-focused geo-targeting.",
+    value_add_custom: "Strategic Localization: 10 custom posts, 200% surge tech-data research for Central Ohio, and Short North/German Village trending hashtag integration.",
+    value_add_growth: "Institutional Authority: 20 posts, monthly on-location shoot days at The Peninsula or Scioto Mile, geo-targeted ad setup focusing on Central Ohio investors, and full ad reporting.",
     pricing: {
       custom: "$700–$1,100",
       growth: "$1,400–$1,500+"
     },
     case_study: {
-      title: "Tech Surge in Short North",
-      image: columbusImage,
-      location: "Short North, Columbus, OH",
-      challenge: "Positioning a new tech incubator within the historic arts district without alienating the local culture.",
-      solution: "Bridging the gap between heritage and innovation through visual storytelling that highlights the seamless integration of new tech hubs into historic brick facades."
+      title: "German Village Heritage",
+      image: germanVillageImage,
+      location: "German Village, Columbus, OH",
+      challenge: "Capturing the prestigious, historic atmosphere of German Village to build institutional authority for a high-end service brand.",
+      solution: "Visual storytelling that leverages the iconic brick-lined streets and architecture, positioning the brand as a timeless pillar of the community."
     },
     portfolio: [
        {
@@ -82,7 +83,7 @@ const locations = [
         title: "High Street Hops",
         category: "Full Management",
         location: "Short North",
-        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800",
+        image: columbusImage,
         tags: ["Craft Brews", "Art Walk"]
       },
       {
@@ -348,7 +349,8 @@ export default function Creatives() {
               
               <div key={currentLocation.id + "-txt"} className="w-full md:w-1/2 animate-in fade-in slide-in-from-right-8 duration-700">
                 <div className="inline-flex items-center gap-2 text-primary font-bold mb-4 uppercase tracking-wider text-sm">
-                  <TrendingUp className="w-4 h-4" /> Case Study
+                  {currentLocation.id === 'columbus' ? <Store className="w-4 h-4" /> : <TrendingUp className="w-4 h-4" />}
+                  {currentLocation.id === 'columbus' ? 'Market Spotlight' : 'Case Study'}
                 </div>
                 <h2 className="text-3xl md:text-5xl font-bold mb-6">{currentLocation.case_study.title}</h2>
                 <div className="space-y-4 mb-8">
