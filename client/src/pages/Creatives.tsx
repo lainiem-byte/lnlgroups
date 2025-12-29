@@ -1,52 +1,151 @@
-import { Check, MapPin, Camera, TrendingUp, Smartphone, Filter } from "lucide-react";
+import { Check, MapPin, Camera, TrendingUp, Smartphone, Filter, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import glenwoodImage from "@assets/generated_images/glenwood_south_raleigh_modern_nightlife_street_scene.png";
 import raleighRealtyImage from "@assets/generated_images/raleigh_glenwood_south_boutique_shops_and_outdoor_dining.png";
+import columbusImage from "@assets/generated_images/columbus_oh_short_north_arts_district_vibrant_street_scene.png";
+import moscowImage from "@assets/generated_images/moscow_idaho_downtown_main_street_with_palouse_hills_background.png";
 import { useState } from "react";
+import { 
+  DropdownMenu, 
+  DropdownMenuContent, 
+  DropdownMenuItem, 
+  DropdownMenuTrigger 
+} from "@/components/ui/dropdown-menu";
 
-const portfolioItems = [
+const locations = [
   {
-    id: 1,
-    title: "Raleigh Realty",
-    category: "Full Management",
-    location: "Glenwood South",
-    image: raleighRealtyImage,
-    tags: ["Walkable Boutiques", "Vibrant Dining"]
+    id: "raleigh",
+    city: "Raleigh / Durham, NC",
+    theme: "High-Growth Tech Meets Historic Charm",
+    neighborhoods: ["Glenwood South", "North Hills", "Downtown Durham"],
+    copy: "From the vibrant energy of Glenwood South to the historic streets of Oakwood, Raleigh isn't just growing—it’s evolving. Our strategy captures the modern skyline and the unique character of local staples to anchor your brand in the Triangle's high-end reality.",
+    landmarks: ["The Dillon", "Boylan Bridge", "American Tobacco Campus"],
+    hashtags: ["#RaleighRising", "#TriangleTech", "#GlenwoodSouthLife"],
+    value_add_custom: "Digital Localization: 10 custom posts, local market research, and trending Raleigh hashtag integration.",
+    value_add_growth: "Physical Presence: 20 posts, monthly in-person shoot days in Raleigh, and geo-targeted ad setup for the Triangle market.",
+    pricing: {
+      custom: "$700–$1,100",
+      growth: "$1,400–$1,500"
+    },
+    case_study: {
+      title: "Modern Condos & Vibrant Nightlife",
+      image: glenwoodImage,
+      location: "Glenwood South, Raleigh, NC",
+      challenge: "Translate the physical vibrancy of Glenwood South into a digital experience that drives condo pre-sales.",
+      solution: "Hyper-local targeting using \"Digital Localization\" and on-site lifestyle photography capturing the specific \"Live, Work, Play\" atmosphere."
+    },
+    portfolio: [
+       {
+        id: 1,
+        title: "Raleigh Realty",
+        category: "Full Management",
+        location: "Glenwood South",
+        image: raleighRealtyImage,
+        tags: ["Walkable Boutiques", "Vibrant Dining"]
+      },
+      {
+        id: 2,
+        title: "Durham Distillery",
+        category: "Content Only",
+        location: "Downtown Durham",
+        image: "https://images.unsplash.com/photo-1572025442646-866d16c84a54?auto=format&fit=crop&q=80&w=800",
+        tags: ["Cocktail Culture", "Local Ingredients"]
+      }
+    ]
   },
   {
-    id: 2,
-    title: "Durham Distillery",
-    category: "Content Only",
-    location: "Downtown Durham",
-    image: "https://images.unsplash.com/photo-1572025442646-866d16c84a54?auto=format&fit=crop&q=80&w=800",
-    tags: ["Cocktail Culture", "Local Ingredients"]
+    id: "columbus",
+    city: "Columbus, OH",
+    theme: "Strategic Precision & Stealth Growth",
+    neighborhoods: ["Short North", "German Village", "The Peninsula"],
+    copy: "Columbus is the quiet giant of the Midwest. We focus on the brick-lined streets of German Village and the rapid tech surge in the Short North to position your business as a leader in a stable, powerful demographic.",
+    landmarks: ["The Peninsula", "Schiller Park", "Scioto Mile"],
+    hashtags: ["#CbusSmallBiz", "#ShortNorthArts", "#GermanVillageCharm"],
+    value_add_custom: "Strategic Localization: 10 custom posts, 200% surge tech-data research for Central Ohio, and institutional tagging.",
+    value_add_growth: "Institutional Authority: 20 posts, monthly on-location shoots at Scioto Mile, and investor-focused geo-targeting.",
+    pricing: {
+      custom: "$700–$1,100",
+      growth: "$1,400–$1,500+"
+    },
+    case_study: {
+      title: "Tech Surge in Short North",
+      image: columbusImage,
+      location: "Short North, Columbus, OH",
+      challenge: "Positioning a new tech incubator within the historic arts district without alienating the local culture.",
+      solution: "Bridging the gap between heritage and innovation through visual storytelling that highlights the seamless integration of new tech hubs into historic brick facades."
+    },
+    portfolio: [
+       {
+        id: 3,
+        title: "High Street Hops",
+        category: "Full Management",
+        location: "Short North",
+        image: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800",
+        tags: ["Craft Brews", "Art Walk"]
+      },
+      {
+        id: 4,
+        title: "Schiller Park Estates",
+        category: "Content Only",
+        location: "German Village",
+        image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=800",
+        tags: ["Historic Living", "Brick Charm"]
+      }
+    ]
   },
   {
-    id: 3,
-    title: "Apex Coffee Co.",
-    category: "Full Management",
-    location: "Apex",
-    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800",
-    tags: ["Morning Brew", "Community Hub"]
-  },
-  {
-    id: 4,
-    title: "Cary Boutique",
-    category: "Content Only",
-    location: "Cary",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
-    tags: ["Summer Collection", "Shop Local"]
+    id: "moscow",
+    city: "Moscow, ID",
+    theme: "Community Pillar & Relational Growth",
+    neighborhoods: ["Main Street", "The Palouse", "University District"],
+    copy: "In Moscow, authority is built on relationships. We lean into the Saturday morning culture of the Farmers Market and the beauty of the Palouse to make your brand a permanent pillar of the community.",
+    landmarks: ["BookPeople of Moscow", "Moscow Food Co-op", "Palouse Hills"],
+    hashtags: ["#MoscowIdaho", "#PalouseLife", "#ShopLocalMoscow"],
+    value_add_custom: "Relational Localization: 10 custom posts, Moscow Farmers Market trend research, and Palouse-specific geotagging.",
+    value_add_growth: "Deep Community Engagement: 20 posts, monthly Main St shoots, and 1 themed engagement with local staples like the Food Co-op.",
+    pricing: {
+      custom: "$700–$1,100",
+      growth: "$1,400–$1,500+"
+    },
+    case_study: {
+      title: "Main Street Revival",
+      image: moscowImage,
+      location: "Main Street, Moscow, ID",
+      challenge: "Revitalizing a heritage brand to appeal to the incoming university demographic while respecting local traditions.",
+      solution: "Focusing on 'Community Pillar' content that highlighted the brand's involvement in local markets and events, bridging the generational gap."
+    },
+    portfolio: [
+       {
+        id: 5,
+        title: "Palouse Provisions",
+        category: "Full Management",
+        location: "Main Street",
+        image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&q=80&w=800",
+        tags: ["Farm to Table", "Community"]
+      },
+      {
+        id: 6,
+        title: "Vandal Coffee",
+        category: "Content Only",
+        location: "University District",
+        image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?auto=format&fit=crop&q=80&w=800",
+        tags: ["Study Spot", "Morning Ritual"]
+      }
+    ]
   }
 ];
 
 export default function Creatives() {
   const [filter, setFilter] = useState("All");
+  const [selectedLocationId, setSelectedLocationId] = useState("raleigh");
 
+  const currentLocation = locations.find(l => l.id === selectedLocationId) || locations[0];
+  
   const filteredItems = filter === "All" 
-    ? portfolioItems 
-    : portfolioItems.filter(item => item.category === filter);
+    ? currentLocation.portfolio 
+    : currentLocation.portfolio.filter(item => item.category === filter);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -54,19 +153,47 @@ export default function Creatives() {
       
       <main className="pt-20">
         {/* Header */}
-        <section className="py-20 bg-secondary/20 border-b border-border">
+        <section className="py-20 bg-secondary/20 border-b border-border transition-colors duration-500">
           <div className="container mx-auto px-6 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 border border-primary/20">
-              <MapPin className="w-4 h-4" />
-              RALEIGH / DURHAM
+            
+            {/* Location Selector */}
+            <div className="flex justify-center mb-8">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline" className="rounded-full pl-4 pr-6 py-6 border-primary/20 bg-background hover:bg-secondary/50 transition-all text-lg group">
+                    <MapPin className="w-5 h-5 mr-2 text-primary group-hover:scale-110 transition-transform" />
+                    <span className="font-bold">{currentLocation.city}</span>
+                    <ChevronDown className="w-4 h-4 ml-2 opacity-50" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56 p-2 bg-background/95 backdrop-blur-xl">
+                  {locations.map((loc) => (
+                    <DropdownMenuItem 
+                      key={loc.id} 
+                      onClick={() => setSelectedLocationId(loc.id)}
+                      className={`cursor-pointer rounded-lg py-3 px-4 mb-1 last:mb-0 ${selectedLocationId === loc.id ? 'bg-primary/10 text-primary font-bold' : ''}`}
+                    >
+                      {loc.city}
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-              LNL <span className="tech-gradient-text">Creatives</span>
+
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight animate-in fade-in slide-in-from-bottom-4 duration-700">
+               <span className="tech-gradient-text">{currentLocation.theme}</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Hyper-local content strategies designed to dominate the Triangle market. 
-              From digital localization to physical brand presence.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-5 duration-700 delay-100">
+              {currentLocation.copy}
             </p>
+            
+            <div className="flex flex-wrap justify-center gap-3 mt-8 animate-in fade-in slide-in-from-bottom-6 duration-700 delay-200">
+              {currentLocation.hashtags.map((tag, i) => (
+                <span key={i} className="text-sm font-mono text-primary bg-primary/5 px-3 py-1 rounded-md border border-primary/10">
+                  {tag}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -77,7 +204,7 @@ export default function Creatives() {
               <div>
                 <h2 className="text-3xl md:text-5xl font-bold mb-4">Local Authority Content</h2>
                 <p className="text-muted-foreground text-lg max-w-xl">
-                  Showcasing brands that own their local narrative.
+                  Showcasing brands that own their local narrative in {currentLocation.city}.
                 </p>
               </div>
               
@@ -98,7 +225,7 @@ export default function Creatives() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {filteredItems.map((item) => (
-                <div key={item.id} className="group cursor-pointer">
+                <div key={item.id} className="group cursor-pointer animate-in fade-in zoom-in-95 duration-500">
                   <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-4 border border-border/50">
                     <img 
                       src={item.image} 
@@ -139,7 +266,7 @@ export default function Creatives() {
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
                 
                 <h3 className="text-2xl font-bold mb-2">Custom Content Pack</h3>
-                <div className="text-4xl font-bold mb-4">$700 - $1,100<span className="text-lg text-muted-foreground font-medium">/mo</span></div>
+                <div className="text-4xl font-bold mb-4">{currentLocation.pricing.custom}<span className="text-lg text-muted-foreground font-medium">/mo</span></div>
                 <p className="text-muted-foreground mb-8">Perfect for establishing a strong digital footprint with hyper-local relevance.</p>
                 
                 <div className="space-y-4 mb-8">
@@ -149,19 +276,15 @@ export default function Creatives() {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3 text-sm">
                       <Check className="w-5 h-5 text-green-500 shrink-0" />
-                      <span><strong>10 Custom Posts</strong> designed for engagement</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-green-500 shrink-0" />
-                      <span><strong>Local Market Research</strong> to identify trends</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-green-500 shrink-0" />
-                      <span><strong>Trending Raleigh Hashtag</strong> integration</span>
+                      <span>{currentLocation.value_add_custom}</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <Check className="w-5 h-5 text-green-500 shrink-0" />
                       <span>Content Calendar & Scheduling</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-sm">
+                      <Check className="w-5 h-5 text-green-500 shrink-0" />
+                      <span>Monthly Analytics Report</span>
                     </li>
                   </ul>
                 </div>
@@ -176,7 +299,7 @@ export default function Creatives() {
                 </div>
                 
                 <h3 className="text-2xl font-bold mb-2">Brand Growth Tier</h3>
-                <div className="text-4xl font-bold mb-4">$1,400 - $1,500<span className="text-lg text-muted-foreground font-medium">/mo</span></div>
+                <div className="text-4xl font-bold mb-4">{currentLocation.pricing.growth}<span className="text-lg text-muted-foreground font-medium">/mo</span></div>
                 <p className="text-muted-foreground mb-8">Complete market domination with physical presence and targeted advertising.</p>
                 
                 <div className="space-y-4 mb-8">
@@ -186,11 +309,7 @@ export default function Creatives() {
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3 text-sm">
                       <Check className="w-5 h-5 text-primary shrink-0" />
-                      <span><strong>20 High-Fidelity Posts</strong> per month</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
-                      <span><strong>Monthly In-Person Shoot Days</strong> in Raleigh</span>
+                      <span>{currentLocation.value_add_growth}</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <Check className="w-5 h-5 text-primary shrink-0" />
@@ -214,35 +333,32 @@ export default function Creatives() {
         <section className="py-24 bg-background border-t border-border">
           <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row gap-12 items-center">
-              <div className="w-full md:w-1/2 relative group">
+              <div key={currentLocation.id + "-img"} className="w-full md:w-1/2 relative group animate-in fade-in slide-in-from-left-8 duration-700">
                 <div className="absolute inset-0 bg-primary/20 rounded-2xl rotate-3 transition-transform group-hover:rotate-6"></div>
                 <img 
-                  src={glenwoodImage} 
-                  alt="Glenwood South Raleigh Nightlife" 
+                  src={currentLocation.case_study.image} 
+                  alt={currentLocation.case_study.title} 
                   className="relative rounded-2xl shadow-2xl w-full h-auto object-cover aspect-[4/3] group-hover:scale-[1.01] transition-transform duration-500"
                 />
                 <div className="absolute bottom-6 left-6 right-6 bg-black/70 backdrop-blur-md p-4 rounded-xl border border-white/10">
-                  <div className="text-white font-bold text-lg">Glenwood South</div>
-                  <div className="text-white/80 text-sm">Raleigh, NC</div>
+                  <div className="text-white font-bold text-lg">{currentLocation.case_study.location}</div>
+                  <div className="text-white/80 text-sm">{currentLocation.city}</div>
                 </div>
               </div>
               
-              <div className="w-full md:w-1/2">
+              <div key={currentLocation.id + "-txt"} className="w-full md:w-1/2 animate-in fade-in slide-in-from-right-8 duration-700">
                 <div className="inline-flex items-center gap-2 text-primary font-bold mb-4 uppercase tracking-wider text-sm">
                   <TrendingUp className="w-4 h-4" /> Case Study
                 </div>
-                <h2 className="text-3xl md:text-5xl font-bold mb-6">Modern Condos & Vibrant Nightlife</h2>
-                <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                  We partnered with a luxury developer in the Glenwood South district to capture the energy of Raleigh's premier nightlife destination.
-                </p>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6">{currentLocation.case_study.title}</h2>
                 <div className="space-y-4 mb-8">
                   <div className="p-4 bg-secondary/30 rounded-lg border border-border/50">
                     <h4 className="font-bold mb-1">The Challenge</h4>
-                    <p className="text-sm text-muted-foreground">Translate the physical vibrancy of Glenwood South into a digital experience that drives condo pre-sales.</p>
+                    <p className="text-sm text-muted-foreground">{currentLocation.case_study.challenge}</p>
                   </div>
                   <div className="p-4 bg-secondary/30 rounded-lg border border-border/50">
                     <h4 className="font-bold mb-1">Our Solution</h4>
-                    <p className="text-sm text-muted-foreground">Hyper-local targeting using "Digital Localization" and on-site lifestyle photography capturing the specific "Live, Work, Play" atmosphere.</p>
+                    <p className="text-sm text-muted-foreground">{currentLocation.case_study.solution}</p>
                   </div>
                 </div>
                 <div className="flex gap-8 border-t border-border pt-8">
