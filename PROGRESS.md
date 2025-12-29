@@ -5,11 +5,13 @@
 - [x] LNL Automations Hub (Tech Stack Grid)
 - [x] Responsive Navigation & Dark Mode Toggle
 
-## Phase 2: Localized Services (LNL Creatives) [x]
+## Phase 2: Localized Services (LNL Creatives) [-]
 - [x] Raleigh-Specific Pricing Table (Custom vs. Brand Growth)
 - [x] Case Study Gallery (Glenwood South/Raleigh Realty)
 - [x] Local Geotagging & Hashtag Logic Implementation
 - [x] Columbus & Moscow Market Expansion (Content & Galleries)
+- [-] Local Authority Content
+  - [ ] Dynamic JSON Location Integration
 
 ## Phase 3: Conversational & Automation Logic [ ]
 - [ ] Lead Intake Form (Name, Tech Stack, Business Type)
@@ -23,4 +25,4 @@
 - [ ] Final UI/UX Audit & Deployment
 
 ---
-**Current Focus:** Phase 3 - Conversational & Automation Logic
+**Current Focus:** Phase 2 - Local Authority Content & Dynamic JSON Integration

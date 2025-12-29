@@ -96,6 +96,30 @@ export default function Creatives() {
                 </span>
               ))}
             </div>
+
+            {/* Local Authority Details */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 max-w-4xl mx-auto text-left animate-in fade-in slide-in-from-bottom-6 duration-700 delay-300">
+              <div className="bg-background/40 backdrop-blur-sm p-5 rounded-xl border border-border/50 hover:border-primary/30 transition-colors">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3 flex items-center gap-2">
+                  <MapPin className="w-3 h-3" /> Key Neighborhoods
+                </h4>
+                <div className="flex flex-wrap gap-x-2 gap-y-1">
+                  {currentLocation.neighborhoods.map((n, i) => (
+                    <span key={i} className="text-sm font-medium">{n}{i < currentLocation.neighborhoods.length - 1 ? <span className="text-muted-foreground/40">/</span> : ''}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-background/40 backdrop-blur-sm p-5 rounded-xl border border-border/50 hover:border-primary/30 transition-colors">
+                <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3 flex items-center gap-2">
+                  <Store className="w-3 h-3" /> Iconic Landmarks
+                </h4>
+                <div className="flex flex-wrap gap-x-2 gap-y-1">
+                  {currentLocation.landmarks.map((l, i) => (
+                    <span key={i} className="text-sm font-medium">{l}{i < currentLocation.landmarks.length - 1 ? <span className="text-muted-foreground/40">/</span> : ''}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
