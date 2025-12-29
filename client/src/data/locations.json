@@ -5,7 +5,7 @@
       "city": "Raleigh / Durham, NC",
       "theme": "High-Growth Tech Meets Historic Charm",
       "neighborhoods": ["Glenwood South", "North Hills", "Downtown Durham"],
-      "copy": "From the vibrant energy of Glenwood South to the historic streets of Oakwood, Raleigh isn't just growing—it’s evolving. Our strategy captures the modern skyline and the unique character of local staples to anchor your brand in the Triangle's high-end reality.",
+      "copy": "From the vibrant energy of Glenwood South to the historic streets of Oakwood, Raleigh isn't just growing—it’s evolving. Our strategy is built on the ground, capturing the modern skyline of North Hills and historic 2025 landmarks like the Morley and Carol Kare House.",
       "landmarks": ["The Dillon", "Boylan Bridge", "American Tobacco Campus"],
       "hashtags": ["#RaleighRising", "#TriangleTech", "#GlenwoodSouthLife"],
       "value_add_custom": "Digital Localization: 10 custom posts, local market research, and trending Raleigh hashtag integration.",
@@ -43,13 +43,13 @@
     {
       "id": "columbus",
       "city": "Columbus, OH",
-      "theme": "Strategic Precision & Stealth Growth",
-      "neighborhoods": ["Short North", "German Village", "The Peninsula"],
-      "copy": "Columbus is the quiet giant of the Midwest. In 2025, while others look at national trends, we’re looking at the brick-lined streets of German Village and the rapid commercial growth in the Short North. We position your business as a leader in a city that’s seeing a 200% surge in tech-driven startups. From the artisan spirit of North Market to the family-centric authority of Clintonville, we create content that speaks to the specific, stable, and powerful demographic of Central Ohio.",
+      "theme": "The Midwest’s Stealth Powerhouse",
+      "neighborhoods": ["Short North", "German Village", "Clintonville"],
+      "copy": "Columbus is the quiet giant of the Midwest. We focus on the brick-lined streets of German Village and the rapid 200% tech surge in the Short North. We position your business as a leader in a stable, powerful demographic.",
       "landmarks": ["The Peninsula", "Schiller Park", "Scioto Mile"],
       "hashtags": ["#CbusSmallBiz", "#ShortNorthArts", "#GermanVillageCharm"],
-      "value_add_custom": "Strategic Localization: 10 custom posts, 200% surge tech-data research for Central Ohio, and Short North/German Village trending hashtag integration.",
-      "value_add_growth": "Institutional Authority: 20 posts, monthly on-location shoot days at The Peninsula or Scioto Mile, geo-targeted ad setup focusing on Central Ohio investors, and full ad reporting.",
+      "value_add_custom": "Strategic Localization: 10 custom posts, 200% surge tech-data research for Central Ohio, and institutional tagging.",
+      "value_add_growth": "Institutional Authority: 20 posts, monthly on-location shoots at Scioto Mile, and investor-focused geo-targeting.",
       "pricing": {
         "custom": "$700–$1,100",
         "growth": "$1,400–$1,500+"
@@ -83,13 +83,13 @@
     {
       "id": "moscow",
       "city": "Moscow, ID",
-      "theme": "Community Pillar & Relational Growth",
+      "theme": "Curated, Intentional, and Locally Bound",
       "neighborhoods": ["Main Street", "The Palouse", "University District"],
-      "copy": "In Moscow, authority is built on relationships and the rolling hills of the Palouse. We focus on the 'Main Street' heart of Idaho, where local pillars like BookPeople of Moscow and the Moscow Food Co-op define the community. Our strategy leans into the vibrant Saturday morning culture of the Moscow Farmers Market and the architectural evolution of the 2025 Public Avenue safety projects. We make your brand the lifeblood of the town, ensuring you aren't just a business, but a neighbor.",
+      "copy": "In Moscow, authority is built on relationships. We lean into the Saturday morning culture of the Farmers Market and the architectural evolution of the 2025 Public Avenue projects to make your brand a local pillar.",
       "landmarks": ["BookPeople of Moscow", "Moscow Food Co-op", "Palouse Hills"],
       "hashtags": ["#MoscowIdaho", "#PalouseLife", "#ShopLocalMoscow"],
-      "value_add_custom": "Relational Localization: 10 custom posts, Moscow Farmers Market trend research, and Palouse-specific geotagging strategy.",
-      "value_add_growth": "Deep Community Engagement: 20 posts, monthly Main St shoots, 1 themed engagement with local businesses (Food Co-op, BookPeople), and geo-targeted ad setup for the University District.",
+      "value_add_custom": "Relational Localization: 10 custom posts, Moscow Farmers Market trend research, and Palouse-specific geotagging.",
+      "value_add_growth": "Deep Community Engagement: 20 posts, monthly Main St shoots, and 1 themed engagement with local staples like the Food Co-op.",
       "pricing": {
         "custom": "$700–$1,100",
         "growth": "$1,400–$1,500+"
