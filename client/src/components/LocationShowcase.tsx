@@ -87,7 +87,7 @@ export default function LocationShowcase() {
               className="bg-card p-6 rounded-2xl border border-border/50 shadow-sm hover:shadow-md transition-shadow"
             >
               <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-primary" /> Key Neighborhoods
+                <MapPin className="w-4 h-4 text-primary" /> Priority Neighborhoods
               </h4>
               <div className="flex flex-wrap gap-2">
                 {currentLocation.neighborhoods.map((n, i) => (
@@ -105,7 +105,7 @@ export default function LocationShowcase() {
               className="bg-card p-6 rounded-2xl border border-border/50 shadow-sm hover:shadow-md transition-shadow"
             >
               <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-4 flex items-center gap-2">
-                <Store className="w-4 h-4 text-primary" /> Iconic Landmarks
+                <Store className="w-4 h-4 text-primary" /> 2025 Landmarks & Geotags
               </h4>
               <div className="flex flex-wrap gap-2">
                 {currentLocation.landmarks.map((l, i) => (
@@ -114,6 +114,21 @@ export default function LocationShowcase() {
                   </span>
                 ))}
               </div>
+            </motion.div>
+
+            {/* Local Authority Strategy Card (New from provided snippet) */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="md:col-span-2 bg-gradient-to-r from-blue-50/50 to-indigo-50/50 dark:from-blue-950/20 dark:to-indigo-950/20 p-6 rounded-2xl border border-blue-100 dark:border-blue-900/50"
+            >
+               <h4 className="text-lg font-bold mb-4">Local Authority Strategy</h4>
+               <div className="p-4 bg-background/50 border-l-4 border-primary rounded-r-lg">
+                 <p className="text-sm text-muted-foreground italic">
+                   "Our {selectedLocationId === 'raleigh' ? 'Brand Growth Tier' : 'Custom Content Pack'} includes specific targeting for this region's 2025 demographics."
+                 </p>
+               </div>
             </motion.div>
           </div>
 
