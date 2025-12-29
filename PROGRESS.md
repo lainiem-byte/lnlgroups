@@ -1,14 +1,14 @@
 # Build Progress Tracker
 
-## Phase 1: Core Infrastructure [ ]
-- [ ] Initial Build & Routing (LNL Group Landing)
-- [ ] LNL Automations Hub (Tech Stack Grid)
-- [ ] Responsive Navigation & Dark Mode Toggle
+## Phase 1: Core Infrastructure [x]
+- [x] Initial Build & Routing (LNL Group Landing)
+- [x] LNL Automations Hub (Tech Stack Grid)
+- [x] Responsive Navigation & Dark Mode Toggle
 
-## Phase 2: Localized Services (LNL Creatives) [ ]
-- [ ] Raleigh-Specific Pricing Table (Custom vs. Brand Growth)
-- [ ] Case Study Gallery (Glenwood South/Raleigh Realty)
-- [ ] Local Geotagging & Hashtag Logic Implementation
+## Phase 2: Localized Services (LNL Creatives) [x]
+- [x] Raleigh-Specific Pricing Table (Custom vs. Brand Growth)
+- [x] Case Study Gallery (Glenwood South/Raleigh Realty)
+- [x] Local Geotagging & Hashtag Logic Implementation
 
 ## Phase 3: Conversational & Automation Logic [ ]
 - [ ] Lead Intake Form (Name, Tech Stack, Business Type)
@@ -22,4 +22,4 @@
 - [ ] Final UI/UX Audit & Deployment
 
 ---
-**Current Focus:** Phase 1 - Initial Build
+**Current Focus:** Phase 3 - Conversational & Automation Logic

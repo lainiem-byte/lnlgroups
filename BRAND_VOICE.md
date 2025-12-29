@@ -41,6 +41,10 @@ This document defines the brand voice, tone, and messaging guidelines for the LN
     *   **Theme:** "High-Growth Tech Meets Historic Charm"
     *   **Focus:** Digital Localization & Physical Presence
     *   **Vibe:** Modern, Fast-paced, but rooted.
+    *   **Neighborhoods:** Glenwood South, North Hills, Downtown Durham.
+    *   **2025 Landmarks:** The Dillon, Boylan Bridge, State Capitol Holiday Inn, Carol Kare House.
+    *   **Trending Hashtags:** #RaleighRising, #TriangleTech, #GlenwoodSouthLife, #DurhamBuilt.
+    *   **Authority Copy:** "From the vibrant energy of Glenwood South to the historic streets of Oakwood, Raleigh isn't just growing—it’s evolving. Our Brand Growth strategy is built on the ground, literally. We don't just post; we’re capturing the modern skyline of the North Hills expansion and the unique character of local staples."
 
 2.  **Columbus, OH**
     *   **Theme:** "Strategic Precision & Stealth Growth"
@@ -96,5 +100,5 @@ This document defines the brand voice, tone, and messaging guidelines for the LN
 
 ---
 
-*Document Version: 1.1*  
+*Document Version: 1.2*  
 *Last Updated: Dec 2025*
