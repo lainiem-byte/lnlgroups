@@ -97,8 +97,8 @@ export default function ContactForm() {
     
     setIsSubmitting(false);
     toast({
-      title: "Request Received",
-      description: "We've received your inquiry and will be in touch shortly.",
+      title: "Strategic inquiry received",
+      description: "Lainie will review and add to Google Tasks.",
     });
     
     form.reset();
