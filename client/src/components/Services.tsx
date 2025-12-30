@@ -36,11 +36,11 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 bg-secondary/50 relative overflow-hidden">
+    <section className="py-24 bg-secondary/30 relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Our Expertise</h2>
-          <p className="text-muted-foreground text-lg">Comprehensive solutions tailored for modern business challenges.</p>
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <h2 className="text-3xl md:text-5xl font-display font-medium mb-6 tracking-tight">Our Expertise</h2>
+          <p className="text-muted-foreground text-lg leading-relaxed">Comprehensive solutions tailored for modern business challenges.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

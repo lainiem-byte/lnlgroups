@@ -19,10 +19,10 @@ export default function Home() {
           <Contact />
         </main>
         
-        <footer className="py-12 border-t border-border bg-background">
+        <footer className="py-16 border-t border-border/50 bg-background">
           <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-            <p>© 2024 LNL Group. All rights reserved.</p>
-            <div className="flex gap-6 mt-4 md:mt-0">
+            <p>© 2025 LNL Group. All rights reserved.</p>
+            <div className="flex gap-8 mt-4 md:mt-0">
               <a href="#" className="hover:text-primary transition-colors">Privacy</a>
               <a href="#" className="hover:text-primary transition-colors">Terms</a>
               <a href="#" className="hover:text-primary transition-colors">Twitter</a>

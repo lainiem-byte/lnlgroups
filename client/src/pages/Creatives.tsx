@@ -101,8 +101,8 @@ export default function Creatives() {
       <Navbar />
       
       <main className="pt-20">
-        {/* Replaced Header with LocationShowcase */}
-        <section className="py-20 bg-secondary/20 border-b border-border transition-colors duration-500">
+        {/* Location Showcase Hero */}
+        <section className="py-24 bg-secondary/10 border-b border-border/50 transition-colors duration-500">
           <div className="container mx-auto px-6">
              <LocationShowcase />
           </div>
