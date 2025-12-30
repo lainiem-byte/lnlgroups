@@ -255,8 +255,100 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
           </div>
         </section>
 
+        {/* Testimonials - Strategic Feedback */}
+        <section className="py-24" style={{ backgroundColor: '#1A1A1B' }}>
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-white">Strategic Feedback</h2>
+              <p className="text-gray-400">What our partners say about the LNL Creative approach.</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <div className="relative p-8 rounded-2xl bg-white/5 border border-white/10" data-testid="testimonial-1">
+                <span className="absolute -top-4 left-8 text-7xl font-serif text-[#008080]" style={{ lineHeight: 1 }}>"</span>
+                <p className="text-lg text-gray-300 leading-relaxed mt-6 mb-6 font-display italic">
+                  LNL doesn't just create posts; they study the architecture of a brand.
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#008080]/20 flex items-center justify-center">
+                    <span className="text-[#008080] font-bold text-sm">JM</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white text-sm">Jennifer Martinez</p>
+                    <p className="text-xs text-gray-500">Luxury Real Estate, Columbus</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="relative p-8 rounded-2xl bg-white/5 border border-white/10" data-testid="testimonial-2">
+                <span className="absolute -top-4 left-8 text-7xl font-serif text-[#008080]" style={{ lineHeight: 1 }}>"</span>
+                <p className="text-lg text-gray-300 leading-relaxed mt-6 mb-6 font-display italic">
+                  In the luxury market, image is everything. LNL Creative understands that.
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#008080]/20 flex items-center justify-center">
+                    <span className="text-[#008080] font-bold text-sm">RW</span>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-white text-sm">Robert Whitfield</p>
+                    <p className="text-xs text-gray-500">Boutique Hotel Group, Raleigh</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Brand-Mining Timeline */}
+        <section className="py-24 bg-background border-t border-border/50">
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">The Brand-Mining Process</h2>
+              <p className="text-muted-foreground max-w-xl mx-auto">How we uncover your visual identity and deploy it with precision.</p>
+            </div>
+            
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#008080] via-[#008080]/50 to-transparent" />
+                
+                <div className="space-y-12">
+                  <div className="relative flex gap-8" data-testid="timeline-extraction">
+                    <div className="w-16 h-16 rounded-full bg-[#008080] flex items-center justify-center shrink-0 z-10 border-4 border-background" style={{ boxShadow: '0 0 30px rgba(0, 128, 128, 0.3)' }}>
+                      <span className="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <div className="pt-2">
+                      <h3 className="text-2xl font-display font-bold mb-2">Extraction</h3>
+                      <p className="text-muted-foreground leading-relaxed">We mine the core of your brand—values, voice, visual DNA—through deep discovery sessions and competitive analysis.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="relative flex gap-8" data-testid="timeline-reveal">
+                    <div className="w-16 h-16 rounded-full bg-[#008080]/70 flex items-center justify-center shrink-0 z-10 border-4 border-background">
+                      <span className="text-2xl font-bold text-white">2</span>
+                    </div>
+                    <div className="pt-2">
+                      <h3 className="text-2xl font-display font-bold mb-2">First Reveal</h3>
+                      <p className="text-muted-foreground leading-relaxed">Your refined visual identity comes to life. We present mood boards, typography systems, and hero assets for collaborative refinement.</p>
+                    </div>
+                  </div>
+                  
+                  <div className="relative flex gap-8" data-testid="timeline-deployment">
+                    <div className="w-16 h-16 rounded-full bg-[#008080]/40 flex items-center justify-center shrink-0 z-10 border-4 border-background">
+                      <span className="text-2xl font-bold text-white">3</span>
+                    </div>
+                    <div className="pt-2">
+                      <h3 className="text-2xl font-display font-bold mb-2">Deployment</h3>
+                      <p className="text-muted-foreground leading-relaxed">Full rollout across all channels. Social templates, print collateral, and digital assets—coordinated for maximum impact.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Portfolio Grid - Reintroducing it simply */}
-        <section className="py-24 bg-background">
+        <section className="py-24 bg-secondary/10">
           <div className="container mx-auto px-6">
              <div className="text-center mb-12">
                <h2 className="text-3xl font-bold mb-4">Featured Work</h2>
