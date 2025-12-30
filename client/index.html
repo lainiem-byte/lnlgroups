@@ -22,5 +22,27 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Voiceflow LNL Client Concierge Chat Widget -->
+    <script type="text/javascript">
+      (function(d, t) {
+        var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+        v.onload = function() {
+          window.voiceflow.chat.load({
+            verify: { projectID: 'YOUR_VOICEFLOW_PROJECT_ID' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production',
+            assistant: {
+              title: 'LNL Client Concierge',
+              description: 'Your AI-powered guide to LNL Group services',
+              color: '#1E3A8A',
+              stylesheet: 'data:text/css,.vfrc-launcher{background:linear-gradient(135deg,#1E3A8A 0%,#3B82F6 100%)!important;box-shadow:0 4px 20px rgba(30,58,138,0.4)!important}.vfrc-chat--header{background:linear-gradient(135deg,#1E3A8A 0%,#3B82F6 100%)!important}.vfrc-button--primary{background:#1E3A8A!important;border-color:#C0C0C0!important}.vfrc-button--primary:hover{background:#3B82F6!important}'
+            }
+          });
+        };
+        v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript";
+        s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
   </body>
 </html>

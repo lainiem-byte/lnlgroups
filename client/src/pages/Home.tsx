@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import LNLAutomations from "@/components/LNLAutomations";
+import EcosystemAnimation from "@/components/EcosystemAnimation";
 import Services from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Contact from "@/components/Contact";
@@ -14,6 +15,7 @@ export default function Home() {
         <main>
           <Hero />
           <LNLAutomations />
+          <EcosystemAnimation />
           <Services />
           <Portfolio />
           <Contact />
