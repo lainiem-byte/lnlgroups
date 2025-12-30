@@ -79,29 +79,37 @@ export default function ContactForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     
-    // Construct payload as requested
-    const payload = {
-      name: values.name,
-      market: values.primaryMarket.charAt(0).toUpperCase() + values.primaryMarket.slice(1), // Simple capitalization
-      interest: values.interest,
-      tech_stack: values.techStack,
-      timestamp: new Date().toISOString().split('T')[0]
-    };
-    
-    // Simulate API call
-    console.log("Submitting to /api/leads:", payload);
-    console.log("Simulating webhook payload:", JSON.stringify(payload, null, 2));
-    
-    // Mock delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    toast({
-      title: "Strategic inquiry received",
-      description: "Lainie will review and add to Google Tasks.",
-    });
-    
-    form.reset();
+    try {
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit lead");
+      }
+
+      const lead = await response.json();
+      console.log("Lead created:", lead);
+
+      toast({
+        title: "Strategic inquiry received",
+        description: "Lainie will review and add to Google Tasks.",
+      });
+
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Submission failed",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (

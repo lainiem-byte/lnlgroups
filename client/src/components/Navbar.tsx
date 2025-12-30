@@ -42,6 +42,7 @@ export default function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           <NavLink href="/">Home</NavLink>
+          <NavLink href="/about">About</NavLink>
           <NavLink href="/services">Services</NavLink>
           <NavLink href="/creatives">LNL Creatives</NavLink>
           <NavLink href="/portfolio">Portfolio</NavLink>
@@ -85,6 +86,7 @@ export default function Navbar() {
             <SheetContent>
               <div className="flex flex-col gap-6 mt-10">
                 <NavLink href="/">Home</NavLink>
+                <NavLink href="/about">About</NavLink>
                 <NavLink href="/services">Services</NavLink>
                 <NavLink href="/creatives">LNL Creatives</NavLink>
                 <NavLink href="/portfolio">Portfolio</NavLink>
