@@ -76,10 +76,40 @@ return { url: output[0], metadata: { ... } };`
   }
 ];
 
-export default function BlueprintDemo() {
+type TargetMarket = {
+  city: string;
+  neighborhoods: string[];
+  hashtags: string[];
+};
+
+const defaultMarkets: Record<string, TargetMarket> = {
+  raleigh: {
+    city: "Raleigh, NC",
+    neighborhoods: ["Glenwood South", "North Hills", "Downtown Durham"],
+    hashtags: ["#RaleighRising", "#TriangleTech", "#GlenwoodSouthLife"]
+  },
+  columbus: {
+    city: "Columbus, OH",
+    neighborhoods: ["Short North", "German Village", "Clintonville"],
+    hashtags: ["#CbusSmallBiz", "#ShortNorthArts", "#GermanVillageCharm"]
+  },
+  moscow: {
+    city: "Moscow, ID",
+    neighborhoods: ["Main Street", "The Palouse", "University District"],
+    hashtags: ["#MoscowIdaho", "#PalouseLife", "#ShopLocalMoscow"]
+  }
+};
+
+interface BlueprintDemoProps {
+  targetMarketId?: string;
+}
+
+export default function BlueprintDemo({ targetMarketId = "raleigh" }: BlueprintDemoProps) {
   const [activeStep, setActiveStep] = useState<number | null>(null);
   const [isSimulating, setIsSimulating] = useState(false);
   const [completed, setCompleted] = useState(false);
+  
+  const targetMarket = defaultMarkets[targetMarketId] || defaultMarkets.raleigh;
   
   // Reset demo
   const resetDemo = () => {
@@ -121,6 +151,16 @@ export default function BlueprintDemo() {
       <div className="text-center mb-10">
         <h3 className="text-2xl font-bold mb-2 font-display">Technical Blueprint: Automated Asset Pipeline</h3>
         <p className="text-muted-foreground text-sm">Architecture: n8n Orchestration → Vector Retrieval → Replicate (Flux.1)</p>
+        <div className="flex flex-wrap justify-center gap-2 mt-4">
+          <span className="text-xs font-mono bg-lnl-cyan/10 text-lnl-cyan px-3 py-1 rounded-full border border-lnl-cyan/20">
+            Target Market: {targetMarket.city}
+          </span>
+          {targetMarket.hashtags.slice(0, 2).map((tag, i) => (
+            <span key={i} className="text-xs font-mono bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
 
       <div className="bg-[#0A0A0B] border border-lnl-cyan/20 rounded-2xl overflow-hidden shadow-2xl relative">
@@ -260,7 +300,7 @@ export default function BlueprintDemo() {
              {/* Terminal Footer */}
              <div className="mt-6 pt-4 border-t border-white/5 text-xs text-muted-foreground flex justify-between">
                <span>Flux.1 [Schnell] Model</span>
-               <span>Latency: 1.2s</span>
+               <span>{targetMarket.neighborhoods[0]} | Latency: 1.2s</span>
              </div>
           </div>
         </div>
