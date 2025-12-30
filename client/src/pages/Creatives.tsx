@@ -143,7 +143,7 @@ export default function Creatives() {
                 
                 <h3 className="text-2xl font-bold mb-2">Custom Content Pack</h3>
                 <div className="text-4xl font-bold mb-4">{currentLocation.pricing.custom}<span className="text-lg text-muted-foreground font-medium">/mo</span></div>
-                <p className="text-muted-foreground mb-8">Perfect for establishing a strong digital footprint with hyper-local relevance.</p>
+                <p className="text-muted-foreground mb-8">Establish your Digital Footprint with Authentic visual Storytelling tailored to your Neighborhood.</p>
                 
                 <div className="space-y-4 mb-8">
                   <div className="font-semibold text-primary flex items-center gap-2">

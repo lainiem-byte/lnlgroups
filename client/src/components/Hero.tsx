@@ -23,15 +23,15 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Architecting Digital Ecosystems
+            Legacy & Innovation
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tight">
-            Strategic Infrastructure for <span className="tech-gradient-text">Local Authority</span>
+            Strategic Infrastructure for <span className="tech-gradient-text">Visionary Growth</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            LNL Group builds the systems that scale your influence. We combine technical architecture with deep local relevance to create resilient digital footprints.
+            LNL Group builds the Premiere Ecosystems that scale your influence. We combine technical architecture with a Curated approach to create resilient, Future-Proof digital footprints.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">

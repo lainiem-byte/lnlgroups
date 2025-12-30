@@ -66,11 +66,11 @@ export default function LNLAutomations() {
             LNL AUTOMATIONS
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            Powering Business with <span className="tech-gradient-text">Next-Gen AI</span>
+            Engineered Efficiency through <span className="tech-gradient-text">Autonomous Logic</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            We architect the back-end so you can lead the front-end. 
-            Leveraging the world's most advanced platforms to automate the impossible.
+            We architect the Blueprint so you can trust the Protocol. 
+            Leveraging the full Stack to build Pipelines that automate the impossible.
           </p>
         </div>
 
