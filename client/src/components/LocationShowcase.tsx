@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Store, Camera, TrendingUp, ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import locationsData from "@/data/locations.json";
+import { useActiveLocation } from "@/context/LocationContext";
 
 // Import images
 import glenwoodImage from "@assets/generated_images/glenwood_south_raleigh_modern_nightlife_street_scene.png";
@@ -103,20 +104,18 @@ function useDynamicSEO(locationId: string, locationData: typeof locationsData.lo
 
 interface LocationShowcaseProps {
   initialLocationId?: string;
-  onLocationChange?: (locationId: string) => void;
 }
 
-export default function LocationShowcase({ initialLocationId = "raleigh", onLocationChange }: LocationShowcaseProps) {
-  const [selectedLocationId, setSelectedLocationId] = useState(initialLocationId);
+export default function LocationShowcase({ initialLocationId = "raleigh" }: LocationShowcaseProps) {
+  const { activeLocation, setActiveLocation } = useActiveLocation();
   
-  const handleLocationChange = (locationId: string) => {
-    setSelectedLocationId(locationId);
-    onLocationChange?.(locationId);
+  const handleLocationChange = (locationId: "raleigh" | "columbus" | "moscow") => {
+    setActiveLocation(locationId);
   };
 
-  const currentLocation = locationsData.locations.find(l => l.id === selectedLocationId) || locationsData.locations[0];
+  const currentLocation = locationsData.locations.find(l => l.id === activeLocation) || locationsData.locations[0];
 
-  useDynamicSEO(selectedLocationId, currentLocation);
+  useDynamicSEO(activeLocation, currentLocation);
 
   const getCaseStudyImage = () => {
     const key = currentLocation.case_study.image_key;
@@ -130,14 +129,14 @@ export default function LocationShowcase({ initialLocationId = "raleigh", onLoca
         {locationsData.locations.map((loc) => (
           <button
             key={loc.id}
-            onClick={() => handleLocationChange(loc.id)}
+            onClick={() => handleLocationChange(loc.id as "raleigh" | "columbus" | "moscow")}
             className={`relative group px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 overflow-hidden ${
-              selectedLocationId === loc.id 
+              activeLocation === loc.id 
                 ? "text-white" 
                 : "text-muted-foreground hover:text-foreground bg-secondary/30 hover:bg-secondary/50 border border-white/5"
             }`}
           >
-            {selectedLocationId === loc.id && (
+            {activeLocation === loc.id && (
               <motion.div
                 layoutId="activeTab"
                 className="absolute inset-0 bg-lnl-violet"
@@ -151,7 +150,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh", onLoca
 
       <AnimatePresence mode="wait">
         <motion.div
-          key={selectedLocationId}
+          key={activeLocation}
           initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           exit={{ opacity: 0, y: -20, filter: "blur(10px)" }}
@@ -280,9 +279,9 @@ export default function LocationShowcase({ initialLocationId = "raleigh", onLoca
                 <div className="absolute bottom-8 left-8 right-8 text-white z-10">
                   <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider mb-3 text-white bg-lnl-violet/90 backdrop-blur-md w-fit px-4 py-1.5 rounded-full border border-lnl-violet/50 shadow-lg">
                     <MapPin className="w-3 h-3" />
-                    {selectedLocationId === 'raleigh' && 'Glenwood South Geotag'}
-                    {selectedLocationId === 'columbus' && 'German Village Geotag'}
-                    {selectedLocationId === 'moscow' && 'Main Street Geotag'}
+                    {activeLocation === 'raleigh' && 'Glenwood South Geotag'}
+                    {activeLocation === 'columbus' && 'German Village Geotag'}
+                    {activeLocation === 'moscow' && 'Main Street Geotag'}
                   </div>
                   <div className="text-3xl font-display mb-2">{currentLocation.case_study.location}</div>
                   <p className="text-white/80 text-sm line-clamp-2">{currentLocation.case_study.challenge}</p>
@@ -304,7 +303,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh", onLoca
                   </div>
                 </div>
 
-                {selectedLocationId === 'raleigh' && (
+                {activeLocation === 'raleigh' && (
                   <motion.div 
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}

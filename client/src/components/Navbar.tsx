@@ -10,17 +10,19 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useActiveLocation } from "@/context/LocationContext";
 
 const localHubs = [
-  { id: "raleigh", name: "Raleigh-Durham", tagline: "Innovation Hub" },
-  { id: "columbus", name: "Columbus", tagline: "Midwest Powerhouse" },
-  { id: "moscow", name: "Moscow", tagline: "Palouse Community" },
+  { id: "raleigh" as const, name: "Raleigh-Durham", tagline: "Innovation Hub" },
+  { id: "columbus" as const, name: "Columbus", tagline: "Midwest Powerhouse" },
+  { id: "moscow" as const, name: "Moscow", tagline: "Palouse Community" },
 ];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [location, setLocation] = useLocation();
   const { theme, setTheme } = useTheme();
+  const { activeLocation, setActiveLocation } = useActiveLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,16 +32,14 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const getCurrentHub = () => {
-    const path = location.replace("/", "");
-    return localHubs.find(h => h.id === path);
-  };
+  const currentHub = localHubs.find(h => h.id === activeLocation);
+  const isOnHubPage = ["/raleigh", "/columbus", "/moscow", "/creatives"].includes(location);
 
-  const currentHub = getCurrentHub();
-  const isHubActive = currentHub !== undefined || location === "/creatives";
-
-  const handleHubSelect = (hubId: string) => {
-    setLocation(`/${hubId}`);
+  const handleHubSelect = (hubId: "raleigh" | "columbus" | "moscow") => {
+    setActiveLocation(hubId);
+    if (!isOnHubPage) {
+      setLocation(`/${hubId}`);
+    }
   };
 
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
@@ -70,16 +70,16 @@ export default function Navbar() {
           <NavLink href="/">Home</NavLink>
           <NavLink href="/about">About</NavLink>
           
-          {/* Local Hub Dropdown */}
+          {/* Our Hubs Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button className={`flex items-center gap-2 text-sm font-medium transition-all px-4 py-2 rounded-full border ${
-                isHubActive 
+                isOnHubPage 
                   ? 'text-lnl-gold border-lnl-gold/50 bg-lnl-gold/10' 
                   : 'text-foreground/80 border-transparent hover:text-lnl-gold hover:border-lnl-gold/30'
               }`}>
                 <MapPin className="w-4 h-4" />
-                <span>{currentHub?.name || "Local Hub"}</span>
+                <span>{isOnHubPage ? currentHub?.name : "Our Hubs"}</span>
                 <ChevronDown className="w-3 h-3 opacity-60" />
               </button>
             </DropdownMenuTrigger>
@@ -92,13 +92,13 @@ export default function Navbar() {
                   key={hub.id}
                   onClick={() => handleHubSelect(hub.id)}
                   className={`flex flex-col items-start gap-0.5 px-4 py-3 rounded-lg cursor-pointer transition-all ${
-                    currentHub?.id === hub.id 
+                    activeLocation === hub.id 
                       ? 'bg-lnl-gold/15 text-white' 
                       : 'hover:bg-lnl-gold/10 text-foreground/80 hover:text-white'
                   }`}
                 >
                   <span className="font-semibold">{hub.name}</span>
-                  <span className={`text-xs ${currentHub?.id === hub.id ? 'text-lnl-gold' : 'text-muted-foreground'}`}>
+                  <span className={`text-xs ${activeLocation === hub.id ? 'text-lnl-gold' : 'text-muted-foreground'}`}>
                     {hub.tagline}
                   </span>
                 </DropdownMenuItem>
@@ -153,11 +153,11 @@ export default function Navbar() {
                   About
                 </Link>
                 
-                {/* Mobile Local Hub Section */}
+                {/* Mobile Our Hubs Section */}
                 <div className="border-t border-lnl-gold/20 pt-6">
                   <div className="flex items-center gap-2 text-lnl-gold mb-4">
                     <MapPin className="w-5 h-5" />
-                    <span className="text-sm font-bold uppercase tracking-wide">Local Hub</span>
+                    <span className="text-sm font-bold uppercase tracking-wide">Our Hubs</span>
                   </div>
                   <div className="flex flex-col gap-2">
                     {localHubs.map((hub) => (
@@ -165,13 +165,13 @@ export default function Navbar() {
                         key={hub.id}
                         onClick={() => handleHubSelect(hub.id)}
                         className={`text-left px-4 py-3 rounded-xl transition-all ${
-                          currentHub?.id === hub.id
+                          activeLocation === hub.id
                             ? 'bg-lnl-gold/15 border border-lnl-gold/30'
                             : 'hover:bg-lnl-gold/10'
                         }`}
                       >
                         <div className="font-semibold text-white">{hub.name}</div>
-                        <div className={`text-xs ${currentHub?.id === hub.id ? 'text-lnl-gold' : 'text-muted-foreground'}`}>
+                        <div className={`text-xs ${activeLocation === hub.id ? 'text-lnl-gold' : 'text-muted-foreground'}`}>
                           {hub.tagline}
                         </div>
                       </button>

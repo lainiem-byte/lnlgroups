@@ -2,7 +2,7 @@ import { Check, MapPin, Camera, TrendingUp, Smartphone, Filter, ChevronDown, Sto
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   DropdownMenu, 
   DropdownMenuContent, 
@@ -14,6 +14,7 @@ import LocationShowcase from "@/components/LocationShowcase";
 import MoscowToolbox from "@/components/MoscowToolbox";
 import ColumbusToolbox from "@/components/ColumbusToolbox";
 import RaleighToolbox from "@/components/RaleighToolbox";
+import { useActiveLocation } from "@/context/LocationContext";
 
 // Import images
 import glenwoodImage from "@assets/generated_images/glenwood_south_raleigh_modern_nightlife_street_scene.png";
@@ -36,7 +37,13 @@ interface CreativesProps {
 
 export default function Creatives({ initialLocation = "raleigh" }: CreativesProps) {
   const [filter, setFilter] = useState("All");
-  const [activeLocation, setActiveLocation] = useState(initialLocation);
+  const { activeLocation, setActiveLocation } = useActiveLocation();
+  
+  useEffect(() => {
+    if (initialLocation && ["raleigh", "columbus", "moscow"].includes(initialLocation)) {
+      setActiveLocation(initialLocation as "raleigh" | "columbus" | "moscow");
+    }
+  }, [initialLocation, setActiveLocation]);
   // Location state is now handled inside LocationShowcase, but we still need a default location for portfolio items
   // Ideally, we'd lift state up if we want the portfolio below to change with the showcase.
   // For now, let's keep the portfolio static or default to Raleigh, OR we can make the portfolio section separate.
@@ -112,7 +119,7 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
         {/* Location Showcase Hero */}
         <section className="py-24 bg-secondary/10 border-b border-border/50 transition-colors duration-500">
           <div className="container mx-auto px-6">
-             <LocationShowcase initialLocationId={initialLocation} onLocationChange={setActiveLocation} />
+             <LocationShowcase initialLocationId={initialLocation} />
           </div>
         </section>
 

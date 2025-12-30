@@ -7,6 +7,7 @@ import About from "@/pages/About";
 import Creatives from "@/pages/Creatives";
 import NotFound from "@/pages/not-found";
 import { ThemeProvider } from "next-themes";
+import { LocationProvider } from "@/context/LocationContext";
 
 function Router() {
   return (
@@ -29,8 +30,10 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <Toaster />
-        <Router />
+        <LocationProvider>
+          <Toaster />
+          <Router />
+        </LocationProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );
