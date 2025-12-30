@@ -97,7 +97,7 @@ export default function ContactForm() {
 
       toast({
         title: "Strategic inquiry received",
-        description: "Lainie will review and add to Google Tasks.",
+        description: "Your lead is being routed to Lainie's Google Tasks. We'll be in touch soon!",
       });
 
       form.reset();
