@@ -249,8 +249,11 @@ export default function LocationShowcase() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-black/20 lg:to-black/80"></div>
                 
                 <div className="absolute bottom-8 left-8 right-8 text-white z-10">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider mb-3 text-lnl-violet bg-black/50 backdrop-blur-md w-fit px-3 py-1 rounded-full border border-white/10">
-                    {selectedLocationId === 'raleigh' ? 'Featured Growth Market' : 'Case Study'}
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider mb-3 text-white bg-lnl-violet/90 backdrop-blur-md w-fit px-4 py-1.5 rounded-full border border-lnl-violet/50 shadow-lg">
+                    <MapPin className="w-3 h-3" />
+                    {selectedLocationId === 'raleigh' && 'Glenwood South Geotag'}
+                    {selectedLocationId === 'columbus' && 'German Village Geotag'}
+                    {selectedLocationId === 'moscow' && 'Main Street Geotag'}
                   </div>
                   <div className="text-3xl font-display mb-2">{currentLocation.case_study.location}</div>
                   <p className="text-white/80 text-sm line-clamp-2">{currentLocation.case_study.challenge}</p>
