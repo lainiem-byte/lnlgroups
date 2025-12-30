@@ -9,18 +9,18 @@ export default function Contact() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's talk business.</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Let's architect your growth.</h2>
               <p className="text-muted-foreground mb-8">
-                Ready to transform your digital presence? Schedule a consultation with our strategy team.
+                Ready to build a resilient digital ecosystem? Initiate a strategic consultation with our team.
               </p>
               
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold mb-1">Email Us</h4>
+                  <h4 className="font-semibold mb-1">Direct Line</h4>
                   <p className="text-muted-foreground">hello@lnlgroup.com</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-1">Visit Us</h4>
+                  <h4 className="font-semibold mb-1">Headquarters</h4>
                   <p className="text-muted-foreground">101 Tech Boulevard<br/>San Francisco, CA 94107</p>
                 </div>
               </div>

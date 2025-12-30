@@ -23,23 +23,23 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Defining the Future of Business
+            Architecting Digital Ecosystems
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tight">
-            Strategic Innovation for <span className="tech-gradient-text">Digital Growth</span>
+            Strategic Infrastructure for <span className="tech-gradient-text">Local Authority</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            LNL Group delivers high-end professional services designed to elevate your enterprise. We combine strategy, technology, and design to build resilient systems.
+            LNL Group builds the systems that scale your influence. We combine technical architecture with deep local relevance to create resilient digital footprints.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="rounded-full px-8 h-12 text-base shadow-lg shadow-primary/25 bg-primary hover:bg-primary/90">
-              Start Your Project <ArrowRight className="ml-2 h-4 w-4" />
+              Initiate Strategy <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button size="lg" variant="outline" className="rounded-full px-8 h-12 text-base bg-background/50 backdrop-blur-sm hover:bg-background/80">
-              View Case Studies
+              Explore Architecture
             </Button>
           </div>
 

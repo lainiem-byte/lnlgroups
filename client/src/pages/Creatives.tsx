@@ -171,12 +171,12 @@ export default function Creatives() {
               {/* Brand Growth Tier */}
               <div className="rounded-3xl border-2 border-primary bg-card p-8 shadow-2xl relative overflow-hidden transform md:-translate-y-4">
                 <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
-                  MOST POPULAR
+                  RECOMMENDED ARCHITECTURE
                 </div>
                 
                 <h3 className="text-2xl font-bold mb-2">Brand Growth Tier</h3>
                 <div className="text-4xl font-bold mb-4">{currentLocation.pricing.growth}<span className="text-lg text-muted-foreground font-medium">/mo</span></div>
-                <p className="text-muted-foreground mb-8">Complete market domination with physical presence and targeted advertising.</p>
+                <p className="text-muted-foreground mb-8">Complete market authority with physical presence and targeted infrastructure.</p>
                 
                 <div className="space-y-4 mb-8">
                   <div className="font-semibold text-primary flex items-center gap-2">
@@ -189,16 +189,16 @@ export default function Creatives() {
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <Check className="w-5 h-5 text-primary shrink-0" />
-                      <span><strong>Geo-Targeted Ad Setup</strong> (Meta/Google)</span>
+                      <span><strong>Geo-Targeted Ad Infrastructure</strong> (Meta/Google)</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
                       <Check className="w-5 h-5 text-primary shrink-0" />
-                      <span>Comprehensive Ad Reporting & Analytics</span>
+                      <span>Comprehensive Performance Analytics</span>
                     </li>
                   </ul>
                 </div>
                 
-                <Button className="w-full rounded-full bg-primary hover:bg-primary/90">Scale Your Brand</Button>
+                <Button className="w-full rounded-full bg-primary hover:bg-primary/90">Expand Your Footprint</Button>
               </div>
 
             </div>
