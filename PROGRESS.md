@@ -17,11 +17,16 @@
   - [x] Dynamic JSON Location Integration
 - [x] Interactive Location Switcher with Animations
 - [x] LNL Violet Accent Styling (Creatives Vibe)
-- [x] Moscow Local Engagement Scripts (Live)
-  - [x] Community Outreach Toolbox Component
-  - [x] Copy-to-Clipboard Dashboard
-  - [x] Lainie's Tips for Relational Outreach
-  - [x] Editable JSON Scripts (data/moscow_outreach.json)
+- [x] Local Engagement Scripts (Live - All Markets)
+  - [x] Moscow Community Outreach Toolbox
+  - [x] Columbus Community Outreach Toolbox
+  - [x] Raleigh-Durham Innovation Hub Toolbox
+  - [x] Copy-to-Clipboard Dashboard (All Markets)
+  - [x] Lainie's Tips for Relational Outreach (All Markets)
+  - [x] Editable JSON Scripts:
+    - `data/moscow_outreach.json` - Palouse Hills / Main Street
+    - `data/columbus_outreach.json` - Short North / German Village / Peninsula
+    - `data/raleigh_outreach.json` - Glenwood South / North Hills / Durham
 
 ## Phase 3: Conversational & Automation Logic [100%]
 - [x] Lead Intake Form (Name, Tech Stack, Business Type)
@@ -43,4 +48,11 @@
 ---
 **Status:** All Phases Complete - Production Ready
 
-**Note:** Moscow outreach scripts are stored in `client/src/data/moscow_outreach.json` and can be easily edited to add new businesses or update messaging as Main Street evolves.
+**Outreach Script Files (easily editable):**
+| Market | File | Target Districts |
+|--------|------|------------------|
+| Moscow | `client/src/data/moscow_outreach.json` | Main Street, Farmers Market, University District |
+| Columbus | `client/src/data/columbus_outreach.json` | Short North, German Village, The Peninsula |
+| Raleigh-Durham | `client/src/data/raleigh_outreach.json` | Glenwood South, North Hills, American Tobacco Campus |
+
+To add new scripts: Edit the JSON array in the appropriate file with `target`, `type`, and `script` fields.
