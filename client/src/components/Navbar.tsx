@@ -45,10 +45,8 @@ export default function Navbar() {
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => {
     const isActive = location === href;
     return (
-      <Link href={href}>
-        <a className={`text-sm font-medium transition-colors hover:text-lnl-gold ${isActive ? 'text-lnl-gold' : 'text-foreground/80'}`}>
-          {children}
-        </a>
+      <Link href={href} className={`text-sm font-medium transition-colors hover:text-lnl-gold ${isActive ? 'text-lnl-gold' : 'text-foreground/80'}`}>
+        {children}
       </Link>
     );
   };
@@ -60,13 +58,11 @@ export default function Navbar() {
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/">
-          <a className="text-2xl font-bold font-display tracking-tight flex items-center gap-3 group">
-            <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-lnl-gold to-amber-600 flex items-center justify-center text-black font-bold shadow-lg shadow-lnl-gold/20 group-hover:shadow-lnl-gold/40 transition-shadow">
-              L
-            </span>
-            <span className="text-white">LNL <span className="text-lnl-gold">GROUP</span></span>
-          </a>
+        <Link href="/" className="text-2xl font-bold font-display tracking-tight flex items-center gap-3 group">
+          <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-lnl-gold to-amber-600 flex items-center justify-center text-black font-bold shadow-lg shadow-lnl-gold/20 group-hover:shadow-lnl-gold/40 transition-shadow">
+            L
+          </span>
+          <span className="text-white">LNL <span className="text-lnl-gold">GROUP</span></span>
         </Link>
         
         {/* Desktop Nav */}
@@ -150,11 +146,11 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent className="bg-[#0a0a0a] border-lnl-gold/20">
               <div className="flex flex-col gap-6 mt-10">
-                <Link href="/">
-                  <a className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors">Home</a>
+                <Link href="/" className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors">
+                  Home
                 </Link>
-                <Link href="/about">
-                  <a className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors">About</a>
+                <Link href="/about" className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors">
+                  About
                 </Link>
                 
                 {/* Mobile Local Hub Section */}
@@ -184,11 +180,11 @@ export default function Navbar() {
                 </div>
 
                 <div className="border-t border-lnl-gold/20 pt-6">
-                  <Link href="/portfolio">
-                    <a className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors block mb-6">Portfolio</a>
+                  <Link href="/portfolio" className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors block mb-6">
+                    Portfolio
                   </Link>
-                  <Link href="/contact">
-                    <a className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors block">Contact</a>
+                  <Link href="/contact" className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors block">
+                    Contact
                   </Link>
                 </div>
 
