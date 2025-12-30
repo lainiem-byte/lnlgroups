@@ -69,7 +69,7 @@ export default function LNLAutomations() {
             Powering Business with <span className="tech-gradient-text">Next-Gen AI</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            We don't just integrate tools; we build intelligent ecosystems. 
+            We architect the back-end so you can lead the front-end. 
             Leveraging the world's most advanced platforms to automate the impossible.
           </p>
         </div>

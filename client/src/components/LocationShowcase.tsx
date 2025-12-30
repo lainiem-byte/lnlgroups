@@ -126,7 +126,7 @@ export default function LocationShowcase() {
                <h4 className="text-lg font-bold mb-4">Local Authority Strategy</h4>
                <div className="p-4 bg-background/50 border-l-4 border-primary rounded-r-lg">
                  <p className="text-sm text-muted-foreground italic">
-                   "Our {selectedLocationId === 'raleigh' ? 'Brand Growth Tier' : 'Custom Content Pack'} includes specific targeting for this region's 2025 demographics."
+                   "Custom is the Map; Brand Growth is the Guide. Our {selectedLocationId === 'raleigh' ? 'Brand Growth Tier' : 'Custom Content Pack'} includes specific targeting for this region's 2025 demographics."
                  </p>
                </div>
             </motion.div>

@@ -131,7 +131,7 @@ export default function Creatives() {
              {/* ... Pricing content ... */}
              <div className="text-center mb-10">
                 <h2 className="text-3xl font-bold">Pricing Packages</h2>
-                <p className="text-muted-foreground">Tailored for {currentLocation.city}</p>
+                <p className="text-muted-foreground">Don't just be a business in town; be a pillar of the community.</p>
              </div>
              
              {/* ... existing pricing cards ... */}
