@@ -103,10 +103,16 @@ function useDynamicSEO(locationId: string, locationData: typeof locationsData.lo
 
 interface LocationShowcaseProps {
   initialLocationId?: string;
+  onLocationChange?: (locationId: string) => void;
 }
 
-export default function LocationShowcase({ initialLocationId = "raleigh" }: LocationShowcaseProps) {
+export default function LocationShowcase({ initialLocationId = "raleigh", onLocationChange }: LocationShowcaseProps) {
   const [selectedLocationId, setSelectedLocationId] = useState(initialLocationId);
+  
+  const handleLocationChange = (locationId: string) => {
+    setSelectedLocationId(locationId);
+    onLocationChange?.(locationId);
+  };
 
   const currentLocation = locationsData.locations.find(l => l.id === selectedLocationId) || locationsData.locations[0];
 
@@ -124,7 +130,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
         {locationsData.locations.map((loc) => (
           <button
             key={loc.id}
-            onClick={() => setSelectedLocationId(loc.id)}
+            onClick={() => handleLocationChange(loc.id)}
             className={`relative group px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 overflow-hidden ${
               selectedLocationId === loc.id 
                 ? "text-white" 

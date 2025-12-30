@@ -34,6 +34,7 @@ interface CreativesProps {
 
 export default function Creatives({ initialLocation = "raleigh" }: CreativesProps) {
   const [filter, setFilter] = useState("All");
+  const [activeLocation, setActiveLocation] = useState(initialLocation);
   // Location state is now handled inside LocationShowcase, but we still need a default location for portfolio items
   // Ideally, we'd lift state up if we want the portfolio below to change with the showcase.
   // For now, let's keep the portfolio static or default to Raleigh, OR we can make the portfolio section separate.
@@ -109,12 +110,12 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
         {/* Location Showcase Hero */}
         <section className="py-24 bg-secondary/10 border-b border-border/50 transition-colors duration-500">
           <div className="container mx-auto px-6">
-             <LocationShowcase initialLocationId={initialLocation} />
+             <LocationShowcase initialLocationId={initialLocation} onLocationChange={setActiveLocation} />
           </div>
         </section>
 
-        {/* Moscow Community Outreach Toolbox - Only shown on Moscow page */}
-        {initialLocation === "moscow" && (
+        {/* Moscow Community Outreach Toolbox - Only shown when Moscow is active */}
+        {activeLocation === "moscow" && (
           <section className="py-24 bg-background border-b border-border/50">
             <div className="container mx-auto px-6">
               <MoscowToolbox />
