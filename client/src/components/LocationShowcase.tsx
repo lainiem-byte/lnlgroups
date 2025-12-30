@@ -223,18 +223,37 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
             >
               <div className="absolute inset-0 bg-gradient-to-r from-lnl-violet/20 to-transparent opacity-50 blur-xl" />
               <div className="relative bg-card/80 backdrop-blur-md p-8 rounded-[22px] border border-white/5 h-full">
-                <div className="flex flex-col md:flex-row gap-6 items-start md:items-center justify-between">
+                <div className="flex flex-col gap-6">
                    <div>
-                     <h4 className="text-lg font-display text-white mb-2 flex items-center gap-2">
+                     <h4 className="text-lg font-display text-white mb-3 flex items-center gap-2">
                        <TrendingUp className="w-5 h-5 text-lnl-violet" />
                        Local Authority Strategy
                      </h4>
-                     <p className="text-muted-foreground max-w-2xl">
-                       "Custom is the Map; Brand Growth is the Guide. Our {selectedLocationId === 'raleigh' ? 'Brand Growth Tier' : 'Custom Content Pack'} includes specific targeting for this region's 2025 demographics."
+                     <p className="text-muted-foreground mb-6">
+                       "Custom is the Map; Brand Growth is the Guide." Our packages include specific targeting for {currentLocation.city}'s 2025 demographics.
                      </p>
                    </div>
-                   <Button variant="outline" className="border-lnl-violet/30 hover:bg-lnl-violet/10 text-lnl-violet shrink-0">
-                     View Strategy Details <ArrowRight className="w-4 h-4 ml-2" />
+                   
+                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                     <div className="bg-secondary/30 p-5 rounded-xl border border-white/5">
+                       <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2 flex items-center gap-2">
+                         <MapPin className="w-3 h-3 text-lnl-violet" /> Custom Content Pack (The Map)
+                       </div>
+                       <p className="text-sm text-foreground leading-relaxed">{currentLocation.value_add_custom}</p>
+                       <div className="mt-3 text-xs font-semibold text-lnl-violet">{currentLocation.pricing.custom}</div>
+                     </div>
+                     
+                     <div className="bg-lnl-violet/10 p-5 rounded-xl border border-lnl-violet/20">
+                       <div className="text-xs font-bold uppercase tracking-widest text-lnl-violet mb-2 flex items-center gap-2">
+                         <TrendingUp className="w-3 h-3" /> Brand Growth Tier (The Guide)
+                       </div>
+                       <p className="text-sm text-foreground leading-relaxed">{currentLocation.value_add_growth}</p>
+                       <div className="mt-3 text-xs font-semibold text-lnl-violet">{currentLocation.pricing.growth}</div>
+                     </div>
+                   </div>
+                   
+                   <Button variant="outline" className="border-lnl-violet/30 hover:bg-lnl-violet/10 text-lnl-violet w-fit">
+                     View Full Strategy Details <ArrowRight className="w-4 h-4 ml-2" />
                    </Button>
                 </div>
               </div>
