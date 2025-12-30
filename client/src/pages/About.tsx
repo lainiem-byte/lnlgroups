@@ -45,7 +45,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-lnl-violet/20 to-lnl-cyan/20 rounded-3xl blur-2xl" />
               <img
                 src={portraitImage}
-                alt="Lainie - Creative Director & AI Architect"
+                alt="Lainie Mayfield - LNL Automations Custom AI Architecture Raleigh and LNL Creative Luxury Brand Identity Design Columbus"
                 className="relative rounded-3xl shadow-2xl w-full"
               />
             </motion.div>

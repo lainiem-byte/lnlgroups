@@ -271,7 +271,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
               <div className="relative h-80 lg:h-auto min-h-[400px] overflow-hidden group">
                 <img 
                   src={getCaseStudyImage()} 
-                  alt={currentLocation.case_study.title}
+                  alt={`LNL Creative Local Authority Marketing ${currentLocation.city} - ${currentLocation.case_study.title} Case Study`}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-black/20 lg:to-black/80"></div>

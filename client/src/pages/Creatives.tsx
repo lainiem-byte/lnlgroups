@@ -257,7 +257,7 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                   <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-4 border border-border/50">
                     <img 
                       src={getImage(item)} 
-                      alt={item.title}
+                      alt={`LNL Creative ${item.category} - ${item.title} ${item.location} Local Authority Content Marketing`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold border border-white/10 flex items-center gap-1.5 shadow-lg">
