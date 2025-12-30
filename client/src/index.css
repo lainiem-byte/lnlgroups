@@ -1,59 +1,47 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@100..900&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-sans: 'Geist Sans', 'Inter', sans-serif;
+  --font-display: 'Instrument Serif', serif;
 
-  --color-background: hsl(210 40% 98%);
-  --color-foreground: hsl(222 47% 11%);
+  /* LNL Brand Tokens */
+  --color-lnl-dark: #0A0A0B;
+  --color-lnl-gold: #D4AF37;
+  --color-lnl-violet: #8B5CF6;
+  --color-lnl-cyan: #06B6D4;
+  --color-lnl-pearl: #FAFAF9;
 
-  --color-primary: hsl(221 83% 53%); /* Tech Indigo */
-  --color-primary-foreground: hsl(210 40% 98%);
+  /* Semantic Colors - Default to LNL Dark Theme */
+  --color-background: var(--color-lnl-dark);
+  --color-foreground: var(--color-lnl-pearl);
 
-  --color-secondary: hsl(210 40% 96%);
-  --color-secondary-foreground: hsl(222 47% 11%);
+  --color-primary: var(--color-lnl-gold);
+  --color-primary-foreground: var(--color-lnl-dark);
 
-  --color-muted: hsl(215 16% 94%);
-  --color-muted-foreground: hsl(215 16% 47%);
+  --color-secondary: #1E1E22;
+  --color-secondary-foreground: var(--color-lnl-pearl);
 
-  --color-accent: hsl(210 40% 96.1%);
-  --color-accent-foreground: hsl(222.2 47.4% 11.2%);
+  --color-muted: #27272a;
+  --color-muted-foreground: #a1a1aa;
 
-  --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(222 47% 11%);
+  --color-accent: var(--color-lnl-violet);
+  --color-accent-foreground: #ffffff;
 
-  --color-border: hsl(214 32% 91%);
-  --color-input: hsl(214 32% 91%);
+  --color-card: #121214;
+  --color-card-foreground: var(--color-lnl-pearl);
+
+  --color-border: #27272a;
+  --color-input: #27272a;
   
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
-}
-
-.dark {
-  --color-background: hsl(222 47% 11%);
-  --color-foreground: hsl(210 40% 98%);
-
-  --color-primary: hsl(217 91% 60%);
-  --color-primary-foreground: hsl(222 47% 11%);
-
-  --color-secondary: hsl(217 33% 17%);
-  --color-secondary-foreground: hsl(210 40% 98%);
-
-  --color-muted: hsl(217 33% 17%);
-  --color-muted-foreground: hsl(215 20% 65%);
-
-  --color-accent: hsl(217 33% 17%);
-  --color-accent-foreground: hsl(210 40% 98%);
-
-  --color-card: hsl(222 47% 11%);
-  --color-card-foreground: hsl(210 40% 98%);
-
-  --color-border: hsl(217 33% 17%);
-  --color-input: hsl(217 33% 17%);
 }
 
 @layer base {
@@ -61,7 +49,7 @@
     @apply border-border;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground transition-colors duration-300;
+    @apply font-sans antialiased bg-lnl-dark text-lnl-pearl transition-colors duration-300;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
@@ -70,9 +58,9 @@
 
 @layer utilities {
   .glass-panel {
-    @apply bg-white/70 dark:bg-black/40 backdrop-blur-md border border-white/20 dark:border-white/10 shadow-lg;
+    @apply bg-lnl-dark/70 backdrop-blur-md border border-white/10 shadow-lg;
   }
   .tech-gradient-text {
-    @apply bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-lnl-gold to-lnl-violet bg-clip-text text-transparent;
   }
 }
