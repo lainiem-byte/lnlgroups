@@ -20,6 +20,7 @@ import {
   Code2, 
   Sparkles 
 } from "lucide-react";
+import BlueprintDemo from "@/components/BlueprintDemo";
 
 const techStack = [
   { name: "n8n", description: "Workflow Automation" },
@@ -92,6 +93,9 @@ export default function LNLAutomations() {
             ))}
           </div>
         </div>
+
+        {/* Blueprint Demo Section */}
+        <BlueprintDemo />
 
         {/* Service Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
