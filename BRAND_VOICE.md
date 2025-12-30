@@ -10,18 +10,18 @@ We are not "salesy" or "hype-driven." We speak with the quiet confidence of some
 
 ## Tone Shifts by Business Pillar
 
-### 1. LNL Group (Authoritative)
+### 1. LNL Group (Authoritative / Luxury)
 *   **Voice:** Strategic, visionary, stable, high-level.
 *   **Focus:** "Infrastructure," "Ecosystems," "Resilience," "Future-Proofing."
 *   **Goal:** Establish trust and demonstrate overarching expertise.
 
-### 2. LNL Creatives (Vibrant)
+### 2. LNL Creatives (Vibrant / Relational)
 *   **Voice:** Curated, architectural, grounded, expressive.
 *   **Focus:** "Local Authority," "Visual Narrative," "Community Pillars," "Digital Footprint."
 *   **Goal:** Inspire confidence in local market dominance and aesthetic quality.
 
-### 3. LNL Automations (Precise)
-*   **Voice:** Technical, engineered, efficient, logical.
+### 3. LNL Automations (Technical / Precise)
+*   **Voice:** Engineered, efficient, logical, scalable.
 *   **Focus:** "Orchestration," "Systems," "Logic," "Scalability," "Agents."
 *   **Goal:** Demonstrate competence in complex technical implementations without overwhelming jargon.
 
