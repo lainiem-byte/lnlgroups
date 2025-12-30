@@ -5,7 +5,7 @@
       "city": "Raleigh / Durham, NC",
       "theme": "High-Growth Tech Meets Historic Charm",
       "neighborhoods": ["Glenwood South", "North Hills", "Downtown Durham"],
-      "copy": "From the vibrant energy of Glenwood South to the historic streets of Oakwood, Raleigh isn't just growing—it’s evolving. Our strategy is built on the ground, capturing the modern skyline of North Hills and historic 2025 landmarks like the Morley and Carol Kare House.",
+      "copy": "From the vibrant energy of Glenwood South to the historic streets of Oakwood, Raleigh isn't just growing—it's evolving. Our strategy is built on the ground, capturing the modern skyline of North Hills and historic 2025 landmarks like the Morley and Carol Kare House.",
       "landmarks": ["The Dillon", "Boylan Bridge", "American Tobacco Campus"],
       "hashtags": ["#RaleighRising", "#TriangleTech", "#GlenwoodSouthLife"],
       "value_add_custom": "Digital Localization: 10 custom posts, local market research, and trending Raleigh hashtag integration.",
@@ -43,13 +43,13 @@
     {
       "id": "columbus",
       "city": "Columbus, OH",
-      "theme": "The Midwest’s Stealth Powerhouse",
-      "neighborhoods": ["Short North", "German Village", "Clintonville"],
+      "theme": "Strategic Precision",
+      "neighborhoods": ["Short North", "German Village", "The Peninsula"],
       "copy": "Columbus is the quiet giant of the Midwest. We focus on the brick-lined streets of German Village and the rapid 200% tech surge in the Short North. We position your business as a leader in a stable, powerful demographic.",
       "landmarks": ["The Peninsula", "Schiller Park", "Scioto Mile"],
-      "hashtags": ["#CbusSmallBiz", "#ShortNorthArts", "#GermanVillageCharm"],
-      "value_add_custom": "Strategic Localization: 10 custom posts, 200% surge tech-data research for Central Ohio, and institutional tagging.",
-      "value_add_growth": "Institutional Authority: 20 posts, monthly on-location shoots at Scioto Mile, and investor-focused geo-targeting.",
+      "hashtags": ["#CbusSmallBiz", "#ShortNorthArts", "#Columbus2025"],
+      "value_add_custom": "Tech Surge Research & Institutional Tagging",
+      "value_add_growth": "Shoots at Scioto Mile & Investor Geo-Targeting",
       "pricing": {
         "custom": "$700–$1,100",
         "growth": "$1,400–$1,500+"
@@ -83,13 +83,13 @@
     {
       "id": "moscow",
       "city": "Moscow, ID",
-      "theme": "Curated, Intentional, and Locally Bound",
+      "theme": "Community Pillar",
       "neighborhoods": ["Main Street", "The Palouse", "University District"],
       "copy": "In Moscow, authority is built on relationships. We lean into the Saturday morning culture of the Farmers Market and the architectural evolution of the 2025 Public Avenue projects to make your brand a local pillar.",
       "landmarks": ["BookPeople of Moscow", "Moscow Food Co-op", "Palouse Hills"],
       "hashtags": ["#MoscowIdaho", "#PalouseLife", "#ShopLocalMoscow"],
-      "value_add_custom": "Relational Localization: 10 custom posts, Moscow Farmers Market trend research, and Palouse-specific geotagging.",
-      "value_add_growth": "Deep Community Engagement: 20 posts, monthly Main St shoots, and 1 themed engagement with local staples like the Food Co-op.",
+      "value_add_custom": "Farmers Market Trends & Relational Tagging",
+      "value_add_growth": "Local Business Engagement & Main St Shoots",
       "pricing": {
         "custom": "$700–$1,100",
         "growth": "$1,400–$1,500+"
