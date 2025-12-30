@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MapPin, Store, Camera, TrendingUp, ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,10 +19,94 @@ const imageMap: Record<string, string> = {
   moscow: moscowImage
 };
 
+const seoData: Record<string, { title: string; description: string; keywords: string; schemaAddress: string }> = {
+  raleigh: {
+    title: "AI Automation Architect | Local Authority Content Raleigh | LNL Group",
+    description: "LNL Group delivers AI-powered content automation and local authority marketing for Raleigh-Durham businesses. Glenwood South, North Hills, and Downtown Durham specialists.",
+    keywords: "AI Automation Architect, Local Authority Content Raleigh, Raleigh Marketing, Glenwood South Content, Durham Social Media, Triangle Tech Marketing",
+    schemaAddress: "Raleigh, NC 27601, USA"
+  },
+  columbus: {
+    title: "AI Automation Architect | Local Authority Content Columbus | LNL Group",
+    description: "LNL Group provides AI-driven content automation and institutional authority marketing for Columbus businesses. Short North, German Village, and Clintonville experts.",
+    keywords: "AI Automation Architect, Local Authority Content Columbus, Columbus Marketing, German Village Content, Short North Social Media, Ohio Marketing Agency",
+    schemaAddress: "Columbus, OH 43215, USA"
+  },
+  moscow: {
+    title: "AI Automation Architect | Local Authority Content Moscow ID | LNL Group",
+    description: "LNL Group offers AI content automation and community-focused marketing for Moscow, Idaho businesses. Main Street, Palouse, and University District specialists.",
+    keywords: "AI Automation Architect, Local Authority Content Moscow Idaho, Moscow ID Marketing, Palouse Content, University of Idaho Marketing",
+    schemaAddress: "Moscow, ID 83843, USA"
+  }
+};
+
+function useDynamicSEO(locationId: string, locationData: typeof locationsData.locations[0]) {
+  useEffect(() => {
+    const seo = seoData[locationId] || seoData.raleigh;
+    
+    document.title = seo.title;
+    
+    const updateMeta = (name: string, content: string, isProperty = false) => {
+      const attr = isProperty ? 'property' : 'name';
+      let meta = document.querySelector(`meta[${attr}="${name}"]`) as HTMLMetaElement;
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.setAttribute(attr, name);
+        document.head.appendChild(meta);
+      }
+      meta.content = content;
+    };
+
+    updateMeta('description', seo.description);
+    updateMeta('keywords', seo.keywords);
+    updateMeta('og:title', seo.title, true);
+    updateMeta('og:description', seo.description, true);
+    updateMeta('og:type', 'website', true);
+    updateMeta('twitter:title', seo.title);
+    updateMeta('twitter:description', seo.description);
+
+    const existingSchema = document.querySelector('script[data-location-schema]');
+    if (existingSchema) existingSchema.remove();
+
+    const localBusinessSchema = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "LNL Group - " + locationData.city,
+      "description": seo.description,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": locationData.city.split(',')[0].trim(),
+        "addressRegion": locationData.city.includes('NC') ? 'NC' : locationData.city.includes('OH') ? 'OH' : 'ID',
+        "addressCountry": "US"
+      },
+      "areaServed": locationData.neighborhoods.map(n => ({
+        "@type": "Place",
+        "name": n
+      })),
+      "serviceType": ["AI Automation", "Content Marketing", "Social Media Management", "Local Authority Marketing"],
+      "priceRange": locationData.pricing.custom + " - " + locationData.pricing.growth,
+      "knowsAbout": ["AI Automation Architecture", "n8n Workflows", "Flux.1 Image Generation", "Local SEO", "Content Strategy"]
+    };
+
+    const schemaScript = document.createElement('script');
+    schemaScript.type = 'application/ld+json';
+    schemaScript.setAttribute('data-location-schema', 'true');
+    schemaScript.textContent = JSON.stringify(localBusinessSchema);
+    document.head.appendChild(schemaScript);
+
+    return () => {
+      const schema = document.querySelector('script[data-location-schema]');
+      if (schema) schema.remove();
+    };
+  }, [locationId, locationData]);
+}
+
 export default function LocationShowcase() {
   const [selectedLocationId, setSelectedLocationId] = useState("raleigh");
 
   const currentLocation = locationsData.locations.find(l => l.id === selectedLocationId) || locationsData.locations[0];
+
+  useDynamicSEO(selectedLocationId, currentLocation);
 
   const getCaseStudyImage = () => {
     const key = currentLocation.case_study.image_key;
