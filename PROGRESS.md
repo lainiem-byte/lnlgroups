@@ -1,6 +1,6 @@
 # Build Progress Tracker
 
-## Phase 1: Core Infrastructure [x]
+## Phase 1: Core Infrastructure [-]
 - [x] Initial Build & Routing (LNL Group Landing)
 - [x] LNL Automations Hub (Tech Stack Grid)
 - [x] Responsive Navigation & Dark Mode Toggle
@@ -10,11 +10,11 @@
 - [x] Case Study Gallery (Glenwood South/Raleigh Realty)
 - [x] Local Geotagging & Hashtag Logic Implementation
 - [x] Columbus & Moscow Market Expansion (Content & Galleries)
-- [-] Local Authority Content
-  - [ ] Dynamic JSON Location Integration
+- [x] Local Authority Content
+  - [x] Dynamic JSON Location Integration
 
-## Phase 3: Conversational & Automation Logic [ ]
-- [ ] Lead Intake Form (Name, Tech Stack, Business Type)
+## Phase 3: Conversational & Automation Logic [-]
+- [x] Lead Intake Form (Name, Tech Stack, Business Type)
 - [ ] Webhook Integration (n8n/Make Connectivity)
 - [ ] Google Tasks API Setup
 - [ ] 'AI Thought Partner' Chat Widget
@@ -25,4 +25,4 @@
 - [ ] Final UI/UX Audit & Deployment
 
 ---
-**Current Focus:** Phase 2 - Local Authority Content & Dynamic JSON Integration
+**Current Focus:** Phase 3 - Automation Logic & Integrations
