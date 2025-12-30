@@ -27,19 +27,16 @@ export default function Hero() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tight">
-            Strategic Infrastructure for <span className="tech-gradient-text">Visionary Growth</span>
+            Identity & Intelligence for the <span className="tech-gradient-text">Modern Enterprise</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg leading-relaxed">
-            LNL Group builds the Premiere Ecosystems that scale your influence. We combine technical architecture with a Curated approach to create resilient, Future-Proof digital footprints.
+            Bridging the gap between how your business looks and how it actually runs. Founded by Lainie Mayfield, The LNL Group provides the visual authority and automated logic required to scale without burnout.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="rounded-full px-8 h-12 text-base shadow-lg shadow-primary/25 bg-primary hover:bg-primary/90">
-              Initiate Strategy <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-8 h-12 text-base bg-background/50 backdrop-blur-sm hover:bg-background/80">
-              Explore Architecture
+              Book Your 15-Minute Workflow Audit <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </div>
 

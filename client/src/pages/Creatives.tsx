@@ -116,10 +116,22 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
       <Navbar />
       
       <main className="pt-20">
-        {/* Location Showcase Hero */}
+        {/* LNL Creative Hero */}
         <section className="py-24 bg-secondary/10 border-b border-border/50 transition-colors duration-500">
           <div className="container mx-auto px-6">
-             <LocationShowcase initialLocationId={initialLocation} />
+            <div className="text-center mb-16 max-w-4xl mx-auto">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 border border-primary/20">
+                <Camera className="w-4 h-4" />
+                LNL CREATIVE
+              </div>
+              <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight">
+                Visual Authority for the <span className="tech-gradient-text">Category-of-One</span>
+              </h1>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                If your brand doesn't look like the price you want to charge, you are leaving money on the table.
+              </p>
+            </div>
+            <LocationShowcase initialLocationId={initialLocation} />
           </div>
         </section>
 

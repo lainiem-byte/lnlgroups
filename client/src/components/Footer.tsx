@@ -39,9 +39,15 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-mono opacity-60">
-          <p>© 2024 NEO-B AGENCY. ALL RIGHTS RESERVED.</p>
-          <p>DESIGNED IN THE VOID.</p>
+        <div className="border-t border-gray-800 pt-8 text-sm font-mono opacity-60">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+            <p className="font-medium">Serving: Raleigh, NC | Columbus, OH | Moscow, ID</p>
+            <div className="flex gap-6 mt-2 md:mt-0">
+              <a href="#" className="hover:text-primary transition-colors">Privacy</a>
+              <a href="#" className="hover:text-primary transition-colors">Terms</a>
+            </div>
+          </div>
+          <p className="text-center text-xs opacity-80">© 2026 The LNL Group. All AI solutions built by LNL Group adhere to strict Data Sovereignty protocols.</p>
         </div>
       </div>
     </footer>

@@ -67,12 +67,16 @@ export default function LNLAutomations() {
             LNL AUTOMATIONS
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            Engineered Efficiency through <span className="tech-gradient-text">Autonomous Logic</span>
+            Buy Back Your Time with <span className="tech-gradient-text">Custom AI Architecture</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed">
-            We architect the Blueprint so you can trust the Protocol. 
-            Leveraging the full Stack to build Pipelines that automate the impossible.
+            In high-stakes industries like Law and Home Services, 'slow' is the most expensive word in your vocabulary. We replace manual bottlenecks with 24/7 intelligent systems.
           </p>
+          <div className="mt-8 flex justify-center gap-8 text-sm font-bold text-muted-foreground">
+            <span className="flex items-center gap-2"><span className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center">1</span> Extraction</span>
+            <span className="flex items-center gap-2"><span className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center">2</span> Architecture</span>
+            <span className="flex items-center gap-2"><span className="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center">3</span> Deployment</span>
+          </div>
         </div>
 
         {/* Tech Stack Marquee/Grid */}
