@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import locationsData from "@/data/locations.json";
 import LocationShowcase from "@/components/LocationShowcase";
+import MoscowToolbox from "@/components/MoscowToolbox";
 
 // Import images
 import glenwoodImage from "@assets/generated_images/glenwood_south_raleigh_modern_nightlife_street_scene.png";
@@ -111,6 +112,15 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
              <LocationShowcase initialLocationId={initialLocation} />
           </div>
         </section>
+
+        {/* Moscow Community Outreach Toolbox - Only shown on Moscow page */}
+        {initialLocation === "moscow" && (
+          <section className="py-24 bg-background border-b border-border/50">
+            <div className="container mx-auto px-6">
+              <MoscowToolbox />
+            </div>
+          </section>
+        )}
 
         {/* Local Authority Portfolio - Keeping this separate for now, but maybe it should be integrated later. 
             The user didn't ask to change the portfolio section. 
