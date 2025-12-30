@@ -27,7 +27,11 @@ const imageMap: Record<string, string> = {
   moscow: moscowImage
 };
 
-export default function Creatives() {
+interface CreativesProps {
+  initialLocation?: string;
+}
+
+export default function Creatives({ initialLocation = "raleigh" }: CreativesProps) {
   const [filter, setFilter] = useState("All");
   // Location state is now handled inside LocationShowcase, but we still need a default location for portfolio items
   // Ideally, we'd lift state up if we want the portfolio below to change with the showcase.
@@ -104,7 +108,7 @@ export default function Creatives() {
         {/* Location Showcase Hero */}
         <section className="py-24 bg-secondary/10 border-b border-border/50 transition-colors duration-500">
           <div className="container mx-auto px-6">
-             <LocationShowcase />
+             <LocationShowcase initialLocationId={initialLocation} />
           </div>
         </section>
 

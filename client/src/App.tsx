@@ -16,7 +16,10 @@ function Router() {
       <Route path="/services" component={Home} />
       <Route path="/portfolio" component={Home} />
       <Route path="/contact" component={Home} />
-      <Route path="/creatives" component={Creatives} />
+      <Route path="/creatives">{() => <Creatives />}</Route>
+      <Route path="/raleigh">{() => <Creatives initialLocation="raleigh" />}</Route>
+      <Route path="/columbus">{() => <Creatives initialLocation="columbus" />}</Route>
+      <Route path="/moscow">{() => <Creatives initialLocation="moscow" />}</Route>
       <Route component={NotFound} />
     </Switch>
   );

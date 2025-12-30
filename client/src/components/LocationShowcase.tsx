@@ -21,19 +21,19 @@ const imageMap: Record<string, string> = {
 
 const seoData: Record<string, { title: string; description: string; keywords: string; schemaAddress: string }> = {
   raleigh: {
-    title: "AI Automation Architect | Local Authority Content Raleigh | LNL Group",
+    title: "LNL Group | Raleigh NC AI Automations & Content",
     description: "LNL Group delivers AI-powered content automation and local authority marketing for Raleigh-Durham businesses. Glenwood South, North Hills, and Downtown Durham specialists.",
     keywords: "AI Automation Architect, Local Authority Content Raleigh, Raleigh Marketing, Glenwood South Content, Durham Social Media, Triangle Tech Marketing",
     schemaAddress: "Raleigh, NC 27601, USA"
   },
   columbus: {
-    title: "AI Automation Architect | Local Authority Content Columbus | LNL Group",
-    description: "LNL Group provides AI-driven content automation and institutional authority marketing for Columbus businesses. Short North, German Village, and Clintonville experts.",
+    title: "LNL Group | Columbus OH AI Automations & Content",
+    description: "LNL Group provides AI-driven content automation and institutional authority marketing for Columbus businesses. Short North, German Village, and The Peninsula experts.",
     keywords: "AI Automation Architect, Local Authority Content Columbus, Columbus Marketing, German Village Content, Short North Social Media, Ohio Marketing Agency",
     schemaAddress: "Columbus, OH 43215, USA"
   },
   moscow: {
-    title: "AI Automation Architect | Local Authority Content Moscow ID | LNL Group",
+    title: "LNL Group | Moscow ID AI Automations & Content",
     description: "LNL Group offers AI content automation and community-focused marketing for Moscow, Idaho businesses. Main Street, Palouse, and University District specialists.",
     keywords: "AI Automation Architect, Local Authority Content Moscow Idaho, Moscow ID Marketing, Palouse Content, University of Idaho Marketing",
     schemaAddress: "Moscow, ID 83843, USA"
@@ -101,8 +101,12 @@ function useDynamicSEO(locationId: string, locationData: typeof locationsData.lo
   }, [locationId, locationData]);
 }
 
-export default function LocationShowcase() {
-  const [selectedLocationId, setSelectedLocationId] = useState("raleigh");
+interface LocationShowcaseProps {
+  initialLocationId?: string;
+}
+
+export default function LocationShowcase({ initialLocationId = "raleigh" }: LocationShowcaseProps) {
+  const [selectedLocationId, setSelectedLocationId] = useState(initialLocationId);
 
   const currentLocation = locationsData.locations.find(l => l.id === selectedLocationId) || locationsData.locations[0];
 
