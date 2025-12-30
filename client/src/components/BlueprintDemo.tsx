@@ -10,7 +10,8 @@ import {
   Cpu,
   ArrowRight,
   Code2,
-  Terminal
+  Terminal,
+  Map
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -118,20 +119,20 @@ export default function BlueprintDemo() {
   return (
     <div className="w-full max-w-5xl mx-auto my-12">
       <div className="text-center mb-10">
-        <h3 className="text-2xl font-bold mb-2">Technical Blueprint: Automated Asset Pipeline</h3>
+        <h3 className="text-2xl font-bold mb-2 font-display">Technical Blueprint: Automated Asset Pipeline</h3>
         <p className="text-muted-foreground text-sm">Architecture: n8n Orchestration → Vector Retrieval → Replicate (Flux.1)</p>
       </div>
 
-      <div className="bg-[#0A0A0B] border border-[#06B6D4]/20 rounded-2xl overflow-hidden shadow-2xl relative">
+      <div className="bg-[#0A0A0B] border border-lnl-cyan/20 rounded-2xl overflow-hidden shadow-2xl relative">
         {/* Glow effect */}
-        <div className="absolute -top-20 -right-20 w-64 h-64 bg-[#06B6D4]/10 rounded-full blur-[80px]"></div>
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-lnl-cyan/10 rounded-full blur-[80px]"></div>
         <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary/10 rounded-full blur-[80px]"></div>
         
         {/* Header Bar */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#06B6D4]/20 bg-[#06B6D4]/5">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-lnl-cyan/20 bg-lnl-cyan/5">
           <div className="flex items-center gap-2">
-            <Terminal className="w-5 h-5 text-[#06B6D4]" />
-            <span className="font-mono text-sm font-bold text-[#06B6D4]">lnl_pipeline_v2.0.js</span>
+            <Terminal className="w-5 h-5 text-lnl-cyan" />
+            <span className="font-mono text-sm font-bold text-lnl-cyan">lnl_pipeline_v2.0.js</span>
           </div>
           <div className="flex items-center gap-2">
             <div className={`h-2 w-2 rounded-full ${isSimulating ? 'bg-green-500 animate-pulse' : 'bg-muted-foreground'}`}></div>
@@ -143,7 +144,7 @@ export default function BlueprintDemo() {
 
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Visual Flow Visualization */}
-          <div className="p-8 border-r border-[#06B6D4]/10 relative min-h-[400px]">
+          <div className="p-8 border-r border-lnl-cyan/10 relative min-h-[400px]">
              <div className="absolute top-0 left-0 w-full h-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
              
              <div className="space-y-6 relative z-10">
@@ -157,15 +158,15 @@ export default function BlueprintDemo() {
                      {index !== steps.length - 1 && (
                        <div className={cn(
                          "absolute left-[19px] top-8 w-0.5 h-12 transition-colors duration-500",
-                         isDone ? "bg-[#06B6D4]" : "bg-muted"
+                         isDone ? "bg-lnl-cyan" : "bg-muted"
                        )}></div>
                      )}
                      
                      {/* Step Indicator */}
                      <div className={cn(
                        "absolute left-0 top-0 w-10 h-10 rounded-full flex items-center justify-center border-2 transition-all duration-300 z-20",
-                       isActive ? "border-[#06B6D4] bg-[#06B6D4]/20 text-[#06B6D4] shadow-[0_0_15px_rgba(6,182,212,0.5)] scale-110" :
-                       isDone ? "border-[#06B6D4] bg-[#06B6D4] text-black scale-100" :
+                       isActive ? "border-lnl-cyan bg-lnl-cyan/20 text-lnl-cyan shadow-[0_0_15px_rgba(6,182,212,0.5)] scale-110" :
+                       isDone ? "border-lnl-cyan bg-lnl-cyan text-black scale-100" :
                        "border-muted bg-background text-muted-foreground"
                      )}>
                        {isDone ? <Check className="w-5 h-5" /> : <step.icon className="w-5 h-5" />}
@@ -176,7 +177,7 @@ export default function BlueprintDemo() {
                        "transition-all duration-300",
                        isActive ? "opacity-100 translate-x-2" : isDone ? "opacity-80" : "opacity-40"
                      )}>
-                       <h4 className={cn("font-bold text-sm", isActive && "text-[#06B6D4]")}>{step.label}</h4>
+                       <h4 className={cn("font-bold text-sm", isActive && "text-lnl-cyan")}>{step.label}</h4>
                        <p className="text-xs text-muted-foreground">{step.description}</p>
                      </div>
                    </div>
@@ -188,7 +189,7 @@ export default function BlueprintDemo() {
                 {!isSimulating && !completed && (
                   <Button 
                     onClick={() => setIsSimulating(true)} 
-                    className="w-full bg-[#06B6D4] hover:bg-[#06B6D4]/80 text-black font-bold"
+                    className="w-full bg-lnl-cyan hover:bg-lnl-cyan/80 text-black font-bold"
                   >
                     <Cpu className="w-4 h-4 mr-2" /> Simulate AI Workflow
                   </Button>
@@ -205,7 +206,7 @@ export default function BlueprintDemo() {
                     <Button 
                       onClick={resetDemo} 
                       variant="outline" 
-                      className="w-full border-[#06B6D4]/30 hover:bg-[#06B6D4]/10 text-[#06B6D4]"
+                      className="w-full border-lnl-cyan/30 hover:bg-lnl-cyan/10 text-lnl-cyan"
                     >
                       Run New Simulation
                     </Button>
@@ -226,12 +227,12 @@ export default function BlueprintDemo() {
                      exit={{ opacity: 0, x: -20 }}
                      transition={{ duration: 0.3 }}
                    >
-                     <div className="text-[#06B6D4] mb-2 font-bold">// Executing Block {activeStep}: {steps[activeStep-1].label}</div>
+                     <div className="text-lnl-cyan mb-2 font-bold">// Executing Block {activeStep}: {steps[activeStep-1].label}</div>
                      <pre className="text-gray-300 whitespace-pre-wrap leading-relaxed">
                        {steps[activeStep-1].codeSnippet}
                      </pre>
                      <div className="mt-4 flex gap-2">
-                       <span className="animate-pulse w-2 h-4 bg-[#06B6D4] inline-block"></span>
+                       <span className="animate-pulse w-2 h-4 bg-lnl-cyan inline-block"></span>
                      </div>
                    </motion.div>
                  ) : completed ? (
@@ -266,7 +267,4 @@ export default function BlueprintDemo() {
       </div>
     </div>
   );
-}
-
-// Importing Map icon manually as it wasn't exported from lucide-react in earlier versions or might be named differently
-import { Map } from "lucide-react"; 
+} 
