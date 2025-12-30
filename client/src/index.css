@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-sans: 'Geist Sans', 'Inter', sans-serif;
-  --font-display: 'Instrument Serif', serif;
+  --font-sans: 'Roboto', sans-serif;
+  --font-display: 'Montserrat', sans-serif;
+  --font-serif: 'Instrument Serif', serif;
 
   /* LNL Brand Tokens */
   --color-lnl-dark: #0A0A0B;
@@ -58,7 +59,24 @@
   .glass-panel {
     @apply bg-lnl-dark/70 backdrop-blur-md border border-white/10 shadow-lg;
   }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  .glass-card-gradient {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid;
+    border-image: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05)) 1;
+  }
   .tech-gradient-text {
     @apply bg-gradient-to-r from-lnl-gold to-lnl-violet bg-clip-text text-transparent;
+  }
+  .font-serif-display {
+    font-family: 'Instrument Serif', serif;
   }
 }
