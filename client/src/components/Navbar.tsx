@@ -59,7 +59,7 @@ export default function Navbar() {
     }`}>
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold font-display tracking-tight flex items-center gap-3 group">
-          <span className="w-10 h-10 rounded-xl bg-gradient-to-br from-lnl-gold to-amber-600 flex items-center justify-center text-black font-bold shadow-lg shadow-lnl-gold/20 group-hover:shadow-lnl-gold/40 transition-shadow">
+          <span className="w-10 h-10 rounded-xl bg-lnl-gold flex items-center justify-center text-black font-bold shadow-lg shadow-lnl-gold/20 group-hover:shadow-lnl-gold/40 transition-shadow">
             L
           </span>
           <span className="text-white">LNL</span> <span className="text-lnl-gold">GROUP</span>
