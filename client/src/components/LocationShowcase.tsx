@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, Store, Camera, TrendingUp, ChevronRight, ArrowRight } from "lucide-react";
+import { MapPin, Store, Camera, TrendingUp, ChevronRight, ArrowRight, Check, Smartphone, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import locationsData from "@/data/locations.json";
 import { useActiveLocation } from "@/context/LocationContext";
@@ -108,6 +108,7 @@ interface LocationShowcaseProps {
 
 export default function LocationShowcase({ initialLocationId = "raleigh" }: LocationShowcaseProps) {
   const { activeLocation, setActiveLocation } = useActiveLocation();
+  const [showPricing, setShowPricing] = useState(false);
   
   const handleLocationChange = (locationId: "raleigh" | "columbus" | "moscow") => {
     setActiveLocation(locationId);
@@ -268,11 +269,88 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                    <Button 
                      variant="outline" 
                      className="border-[#008080]/30 hover:bg-[#008080]/10 text-[#008080] w-fit"
-                     onClick={() => document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' })}
+                     onClick={() => setShowPricing(!showPricing)}
                      data-testid="button-view-strategy"
                    >
-                     View Full Strategy Details <ArrowRight className="w-4 h-4 ml-2" />
+                     {showPricing ? 'Hide' : 'View Full'} Strategy Details 
+                     <ChevronDown className={`w-4 h-4 ml-2 transition-transform duration-300 ${showPricing ? 'rotate-180' : ''}`} />
                    </Button>
+                   
+                   <AnimatePresence>
+                     {showPricing && (
+                       <motion.div
+                         initial={{ opacity: 0, height: 0 }}
+                         animate={{ opacity: 1, height: 'auto' }}
+                         exit={{ opacity: 0, height: 0 }}
+                         transition={{ duration: 0.3 }}
+                         className="overflow-hidden"
+                       >
+                         <div className="pt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                           <div className="rounded-2xl border border-border bg-card/50 p-6 hover:border-[#008080]/50 transition-all duration-300 relative overflow-hidden">
+                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#008080] to-[#008080]/50"></div>
+                             
+                             <h3 className="text-xl font-bold mb-2">Custom Content Pack</h3>
+                             <div className="text-3xl font-bold mb-3">{currentLocation.pricing.custom}<span className="text-sm text-muted-foreground font-medium">/mo</span></div>
+                             <p className="text-sm text-muted-foreground mb-6">Establish your Digital Footprint with Authentic visual Storytelling.</p>
+                             
+                             <div className="space-y-3 mb-6">
+                               <div className="font-semibold text-[#008080] flex items-center gap-2 text-sm">
+                                 <Smartphone className="w-4 h-4" /> Digital Localization
+                               </div>
+                               <ul className="space-y-2">
+                                 <li className="flex items-start gap-2 text-sm">
+                                   <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                                   <span>{currentLocation.value_add_custom}</span>
+                                 </li>
+                                 <li className="flex items-start gap-2 text-sm">
+                                   <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                                   <span>Content Calendar & Scheduling</span>
+                                 </li>
+                                 <li className="flex items-start gap-2 text-sm">
+                                   <Check className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
+                                   <span>Monthly Analytics Report</span>
+                                 </li>
+                               </ul>
+                             </div>
+                             
+                             <Button className="w-full rounded-full" variant="outline" data-testid="button-get-started-custom">Get Started</Button>
+                           </div>
+
+                           <div className="rounded-2xl border-2 border-[#008080] bg-card/50 p-6 relative overflow-hidden">
+                             <div className="absolute top-3 right-3 bg-[#008080] text-white text-xs font-bold px-2 py-1 rounded-full">
+                               RECOMMENDED
+                             </div>
+                             
+                             <h3 className="text-xl font-bold mb-2">Brand Growth Tier</h3>
+                             <div className="text-3xl font-bold mb-3">{currentLocation.pricing.growth}<span className="text-sm text-muted-foreground font-medium">/mo</span></div>
+                             <p className="text-sm text-muted-foreground mb-6">Complete market authority with physical presence and targeting.</p>
+                             
+                             <div className="space-y-3 mb-6">
+                               <div className="font-semibold text-[#008080] flex items-center gap-2 text-sm">
+                                 <Camera className="w-4 h-4" /> Physical Presence
+                               </div>
+                               <ul className="space-y-2">
+                                 <li className="flex items-start gap-2 text-sm">
+                                   <Check className="w-4 h-4 text-[#008080] shrink-0 mt-0.5" />
+                                   <span>{currentLocation.value_add_growth}</span>
+                                 </li>
+                                 <li className="flex items-start gap-2 text-sm">
+                                   <Check className="w-4 h-4 text-[#008080] shrink-0 mt-0.5" />
+                                   <span><strong>Geo-Targeted Ad Infrastructure</strong></span>
+                                 </li>
+                                 <li className="flex items-start gap-2 text-sm">
+                                   <Check className="w-4 h-4 text-[#008080] shrink-0 mt-0.5" />
+                                   <span>Comprehensive Performance Analytics</span>
+                                 </li>
+                               </ul>
+                             </div>
+                             
+                             <Button className="w-full rounded-full bg-[#008080] hover:bg-[#008080]/90 text-white" data-testid="button-expand-footprint">Expand Your Footprint</Button>
+                           </div>
+                         </div>
+                       </motion.div>
+                     )}
+                   </AnimatePresence>
                 </div>
               </div>
             </motion.div>
