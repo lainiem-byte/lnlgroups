@@ -52,14 +52,14 @@ export default function MoscowToolbox() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="relative overflow-hidden rounded-3xl border border-lnl-violet/20 bg-gradient-to-br from-[#1a1625] via-background to-[#1a1a2e]">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-lnl-violet/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+      <div className="relative overflow-hidden rounded-3xl border border-[#008080]/20 bg-gradient-to-br from-[#1a1625] via-background to-[#1a1a2e]">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#008080]/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-900/10 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
         
         <div className="relative z-10 p-8 md:p-10">
           <div className="flex items-center gap-3 mb-2">
-            <Mountain className="w-6 h-6 text-lnl-violet" />
-            <span className="text-xs font-mono uppercase tracking-widest text-lnl-violet/80">Palouse Hills Aesthetic</span>
+            <Mountain className="w-6 h-6 text-[#008080]" />
+            <span className="text-xs font-mono uppercase tracking-widest text-[#008080]/80">Palouse Hills Aesthetic</span>
           </div>
           
           <h3 className="text-2xl md:text-3xl font-display font-medium text-white mb-2">
@@ -76,11 +76,11 @@ export default function MoscowToolbox() {
                 onClick={() => setSelectedIndex(index)}
                 className={`relative p-4 rounded-2xl text-left transition-all duration-300 border ${
                   selectedIndex === index
-                    ? "bg-lnl-violet/20 border-lnl-violet/50 shadow-lg shadow-lnl-violet/10"
+                    ? "bg-[#008080]/20 border-[#008080]/50 shadow-lg shadow-[#008080]/10"
                     : "bg-secondary/20 border-white/5 hover:bg-secondary/40 hover:border-white/10"
                 }`}
               >
-                <div className={`mb-2 ${selectedIndex === index ? "text-lnl-violet" : "text-muted-foreground"}`}>
+                <div className={`mb-2 ${selectedIndex === index ? "text-[#008080]" : "text-muted-foreground"}`}>
                   {targetIcons[script.target]}
                 </div>
                 <div className={`font-semibold text-sm ${selectedIndex === index ? "text-white" : "text-muted-foreground"}`}>
@@ -99,7 +99,7 @@ export default function MoscowToolbox() {
                 value={businessName}
                 onChange={(e) => setBusinessName(e.target.value)}
                 placeholder="e.g., BookPeople"
-                className="w-full px-4 py-3 rounded-xl bg-secondary/30 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:border-lnl-violet/50 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-secondary/30 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:border-[#008080]/50 focus:outline-none transition-colors"
               />
             </div>
             <div>
@@ -109,7 +109,7 @@ export default function MoscowToolbox() {
                 value={contactName}
                 onChange={(e) => setContactName(e.target.value)}
                 placeholder="e.g., Sarah"
-                className="w-full px-4 py-3 rounded-xl bg-secondary/30 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:border-lnl-violet/50 focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-secondary/30 border border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:border-[#008080]/50 focus:outline-none transition-colors"
               />
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function MoscowToolbox() {
               <div className="bg-card/60 backdrop-blur-sm rounded-2xl border border-white/10 p-6 mb-4">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <span className="text-xs font-mono uppercase tracking-widest text-lnl-violet">{currentScript.type}</span>
+                    <span className="text-xs font-mono uppercase tracking-widest text-[#008080]">{currentScript.type}</span>
                     <h4 className="text-lg font-semibold text-white mt-1">{targetLabels[currentScript.target]}</h4>
                   </div>
                   <Button
@@ -133,7 +133,7 @@ export default function MoscowToolbox() {
                     className={`rounded-xl transition-all ${
                       copiedIndex === selectedIndex
                         ? "bg-green-600 hover:bg-green-600"
-                        : "bg-lnl-violet hover:bg-lnl-violet/80"
+                        : "bg-[#008080] hover:bg-[#008080]/80"
                     }`}
                   >
                     {copiedIndex === selectedIndex ? (
@@ -155,9 +155,9 @@ export default function MoscowToolbox() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-lnl-violet/10 to-purple-900/10 rounded-2xl border border-lnl-violet/20 p-5">
+              <div className="bg-gradient-to-r from-[#008080]/10 to-purple-900/10 rounded-2xl border border-[#008080]/20 p-5">
                 <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-lnl-violet/20 text-lnl-violet shrink-0">
+                  <div className="p-2 rounded-lg bg-[#008080]/20 text-[#008080] shrink-0">
                     <Lightbulb className="w-5 h-5" />
                   </div>
                   <div>

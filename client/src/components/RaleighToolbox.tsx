@@ -52,14 +52,14 @@ export default function RaleighToolbox() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="relative overflow-hidden rounded-3xl border-2 border-lnl-gold/40 bg-[#0a0a0a]">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-lnl-gold/3 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-lnl-gold/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
+      <div className="relative overflow-hidden rounded-3xl border-2 border-[#008080]/40 bg-[#0a0a0a]">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#008080]/3 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#008080]/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
         
         <div className="relative z-10 p-8 md:p-10">
           <div className="flex items-center gap-3 mb-2">
-            <Rocket className="w-6 h-6 text-lnl-gold" />
-            <span className="text-xs font-mono uppercase tracking-widest text-lnl-gold">High-Growth Dashboard</span>
+            <Rocket className="w-6 h-6 text-[#008080]" />
+            <span className="text-xs font-mono uppercase tracking-widest text-[#008080]">High-Growth Dashboard</span>
           </div>
           
           <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">
@@ -76,11 +76,11 @@ export default function RaleighToolbox() {
                 onClick={() => setSelectedIndex(index)}
                 className={`relative p-4 rounded-2xl text-left transition-all duration-300 border-2 ${
                   selectedIndex === index
-                    ? "bg-lnl-gold/10 border-lnl-gold shadow-lg shadow-lnl-gold/20"
-                    : "bg-[#111] border-white/10 hover:bg-[#1a1a1a] hover:border-lnl-gold/30"
+                    ? "bg-[#008080]/10 border-[#008080] shadow-lg shadow-[#008080]/20"
+                    : "bg-[#111] border-white/10 hover:bg-[#1a1a1a] hover:border-[#008080]/30"
                 }`}
               >
-                <div className={`mb-2 ${selectedIndex === index ? "text-lnl-gold" : "text-muted-foreground"}`}>
+                <div className={`mb-2 ${selectedIndex === index ? "text-[#008080]" : "text-muted-foreground"}`}>
                   {targetIcons[script.target]}
                 </div>
                 <div className={`font-bold text-sm ${selectedIndex === index ? "text-white" : "text-muted-foreground"}`}>
@@ -93,23 +93,23 @@ export default function RaleighToolbox() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div>
-              <label className="text-xs font-bold text-lnl-gold/80 mb-2 block uppercase tracking-wide">Business Name</label>
+              <label className="text-xs font-bold text-[#008080]/80 mb-2 block uppercase tracking-wide">Business Name</label>
               <input
                 type="text"
                 value={businessName}
                 onChange={(e) => setBusinessName(e.target.value)}
                 placeholder="e.g., Transfer Food Hall"
-                className="w-full px-4 py-3 rounded-xl bg-[#111] border-2 border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:border-lnl-gold focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#111] border-2 border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:border-[#008080] focus:outline-none transition-colors"
               />
             </div>
             <div>
-              <label className="text-xs font-bold text-lnl-gold/80 mb-2 block uppercase tracking-wide">Contact Name</label>
+              <label className="text-xs font-bold text-[#008080]/80 mb-2 block uppercase tracking-wide">Contact Name</label>
               <input
                 type="text"
                 value={contactName}
                 onChange={(e) => setContactName(e.target.value)}
                 placeholder="e.g., Jordan"
-                className="w-full px-4 py-3 rounded-xl bg-[#111] border-2 border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:border-lnl-gold focus:outline-none transition-colors"
+                className="w-full px-4 py-3 rounded-xl bg-[#111] border-2 border-white/10 text-foreground placeholder:text-muted-foreground/50 focus:border-[#008080] focus:outline-none transition-colors"
               />
             </div>
           </div>
@@ -122,10 +122,10 @@ export default function RaleighToolbox() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="bg-[#0d0d0d] rounded-2xl border-2 border-lnl-gold/30 p-6 mb-4">
+              <div className="bg-[#0d0d0d] rounded-2xl border-2 border-[#008080]/30 p-6 mb-4">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <span className="text-xs font-bold uppercase tracking-widest text-lnl-gold">{currentScript.type}</span>
+                    <span className="text-xs font-bold uppercase tracking-widest text-[#008080]">{currentScript.type}</span>
                     <h4 className="text-lg font-bold text-white mt-1">{targetLabels[currentScript.target]}</h4>
                   </div>
                   <Button
@@ -133,7 +133,7 @@ export default function RaleighToolbox() {
                     className={`rounded-xl font-bold transition-all ${
                       copiedIndex === selectedIndex
                         ? "bg-green-600 hover:bg-green-600"
-                        : "bg-lnl-gold hover:bg-lnl-gold/80 text-black"
+                        : "bg-[#008080] hover:bg-[#008080]/80 text-black"
                     }`}
                   >
                     {copiedIndex === selectedIndex ? (
@@ -148,20 +148,20 @@ export default function RaleighToolbox() {
                   </Button>
                 </div>
                 
-                <div className="bg-[#080808] rounded-xl p-5 border border-lnl-gold/10">
+                <div className="bg-[#080808] rounded-xl p-5 border border-[#008080]/10">
                   <p className="text-foreground leading-relaxed whitespace-pre-wrap">
                     {getPersonalizedScript(currentScript.script)}
                   </p>
                 </div>
               </div>
 
-              <div className="bg-[#0d0d0d] rounded-2xl border-2 border-lnl-gold/20 p-5">
+              <div className="bg-[#0d0d0d] rounded-2xl border-2 border-[#008080]/20 p-5">
                 <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-lg bg-lnl-gold/15 text-lnl-gold shrink-0">
+                  <div className="p-2 rounded-lg bg-[#008080]/15 text-[#008080] shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <h5 className="font-bold text-lnl-gold mb-1 flex items-center gap-2 uppercase tracking-wide text-sm">
+                    <h5 className="font-bold text-[#008080] mb-1 flex items-center gap-2 uppercase tracking-wide text-sm">
                       Growth Note
                     </h5>
                     <p className="text-sm text-muted-foreground leading-relaxed">
