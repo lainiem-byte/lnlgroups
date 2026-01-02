@@ -183,7 +183,7 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
         */}
         
         {/* Pricing Table */}
-        <section className="py-24 bg-secondary/10">
+        <section id="pricing-section" className="py-24 bg-secondary/10">
           <div className="container mx-auto px-6">
              {/* ... Pricing content ... */}
              <div className="text-center mb-10">

@@ -240,24 +240,37 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                    </div>
                    
                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                     <div className="bg-secondary/30 p-5 rounded-xl border border-white/5">
-                       <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2 flex items-center gap-2">
+                     <button 
+                       onClick={() => document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' })}
+                       className="bg-secondary/30 p-5 rounded-xl border border-white/5 hover:border-[#008080]/50 hover:bg-secondary/50 transition-all duration-300 text-left cursor-pointer group"
+                       data-testid="button-custom-pack"
+                     >
+                       <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2 flex items-center gap-2 group-hover:text-[#008080] transition-colors">
                          <MapPin className="w-3 h-3 text-[#008080]" /> Custom Content Pack (The Map)
                        </div>
                        <p className="text-sm text-foreground leading-relaxed">{currentLocation.value_add_custom}</p>
                        <div className="mt-3 text-xs font-semibold text-[#008080]">{currentLocation.pricing.custom}</div>
-                     </div>
+                     </button>
                      
-                     <div className="bg-[#008080]/10 p-5 rounded-xl border border-[#008080]/20">
+                     <button 
+                       onClick={() => document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' })}
+                       className="bg-[#008080]/10 p-5 rounded-xl border border-[#008080]/20 hover:border-[#008080]/50 hover:bg-[#008080]/20 transition-all duration-300 text-left cursor-pointer group"
+                       data-testid="button-growth-tier"
+                     >
                        <div className="text-xs font-bold uppercase tracking-widest text-[#008080] mb-2 flex items-center gap-2">
                          <TrendingUp className="w-3 h-3" /> Brand Growth Tier (The Guide)
                        </div>
                        <p className="text-sm text-foreground leading-relaxed">{currentLocation.value_add_growth}</p>
                        <div className="mt-3 text-xs font-semibold text-[#008080]">{currentLocation.pricing.growth}</div>
-                     </div>
+                     </button>
                    </div>
                    
-                   <Button variant="outline" className="border-[#008080]/30 hover:bg-[#008080]/10 text-[#008080] w-fit">
+                   <Button 
+                     variant="outline" 
+                     className="border-[#008080]/30 hover:bg-[#008080]/10 text-[#008080] w-fit"
+                     onClick={() => document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' })}
+                     data-testid="button-view-strategy"
+                   >
                      View Full Strategy Details <ArrowRight className="w-4 h-4 ml-2" />
                    </Button>
                 </div>
