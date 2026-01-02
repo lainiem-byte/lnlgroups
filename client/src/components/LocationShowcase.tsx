@@ -208,7 +208,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
               className="group bg-card/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-#008080/30 transition-colors"
             >
               <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6 flex items-center gap-2">
-                <Store className="w-4 h-4 text-#008080" /> 2025 Landmarks & Geotags
+                <Store className="w-4 h-4 text-#008080" /> 2026 Landmarks & Geotags
               </h4>
               <div className="flex flex-wrap gap-3">
                 {currentLocation.landmarks.map((l, i) => (
@@ -235,7 +235,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                        Local Authority Strategy
                      </h4>
                      <p className="text-muted-foreground mb-6">
-                       "Custom is the Map; Brand Growth is the Guide." Our packages include specific targeting for {currentLocation.city}'s 2025 demographics.
+                       "Custom is the Map; Brand Growth is the Guide." Our packages include specific targeting for {currentLocation.city}'s 2026 demographics.
                      </p>
                    </div>
                    
