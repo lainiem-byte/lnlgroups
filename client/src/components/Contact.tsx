@@ -21,7 +21,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Headquarters</h4>
-                  <p className="text-muted-foreground">101 Tech Boulevard<br/>San Francisco, CA 94107</p>
+                  <p className="text-muted-foreground">3911 Cleveland Ave<br/>San Diego, CA 92103</p>
                 </div>
               </div>
             </div>

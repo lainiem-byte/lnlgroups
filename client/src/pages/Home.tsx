@@ -25,8 +25,11 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div>
                 <h4 className="text-lg font-bold text-white mb-4">The LNL Group</h4>
-                <p className="text-gray-400 text-sm leading-relaxed font-light">
+                <p className="text-gray-400 text-sm leading-relaxed font-light mb-4">
                   Identity & Intelligence for the Modern Enterprise. Bridging visual authority with automated logic.
+                </p>
+                <p className="text-gray-500 text-xs">
+                  3911 Cleveland Ave<br/>San Diego, CA 92103
                 </p>
               </div>
               
