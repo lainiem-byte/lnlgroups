@@ -162,7 +162,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[#008080]/5 blur-[100px] rounded-full pointer-events-none" />
             
             <h2 className="text-4xl md:text-6xl font-display font-medium mb-6 tracking-tight relative z-10">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-#008080 to-lnl-cyan">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#008080] to-[#008080]">
                 {currentLocation.theme}
               </span>
             </h2>
@@ -224,9 +224,9 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="md:col-span-2 relative overflow-hidden bg-gradient-to-br from-#008080/10 via-background to-background p-1 rounded-3xl"
+              className="md:col-span-2 relative overflow-hidden bg-gradient-to-br from-[#008080]/10 via-background to-background p-1 rounded-3xl"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-#008080/20 to-transparent opacity-50 blur-xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#008080]/20 to-transparent opacity-50 blur-xl" />
               <div className="relative bg-card/80 backdrop-blur-md p-8 rounded-[22px] border border-white/5 h-full">
                 <div className="flex flex-col gap-6">
                    <div>
