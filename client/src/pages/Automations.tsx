@@ -225,7 +225,101 @@ export default function Automations() {
           </div>
         </section>
 
-        <section className="py-24" style={{ backgroundColor: '#121213' }}>
+        {/* Portfolio / Demo Showcase */}
+        <section id="automation-demos" className="py-24" style={{ backgroundColor: '#121213' }}>
+          <div className="container mx-auto px-6">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Live Automation Demos</h2>
+              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                See our AI agents and workflows in action. Each demo represents real solutions deployed for clients.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {/* Demo Card 1: Lead Concierge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-[#2E5BFF]/50 transition-all duration-300"
+                data-testid="demo-card-lead-concierge"
+              >
+                <div className="aspect-video bg-gradient-to-br from-[#2E5BFF]/20 to-purple-500/20 flex items-center justify-center">
+                  <Bot className="w-16 h-16 text-[#2E5BFF] opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#2E5BFF] bg-[#2E5BFF]/10 px-2 py-1 rounded">AI Agent</span>
+                    <span className="text-xs text-gray-500">Real Estate</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Lead Concierge Bot</h3>
+                  <p className="text-sm text-gray-400 mb-4">24/7 lead qualification with intelligent calendar booking for a Triangle real estate team.</p>
+                  <div className="flex items-center gap-4 text-xs text-gray-500">
+                    <span>+340% Response Rate</span>
+                    <span>•</span>
+                    <span>2.3s Avg Reply</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Demo Card 2: Content Pipeline */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+                className="group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-[#2E5BFF]/50 transition-all duration-300"
+                data-testid="demo-card-content-pipeline"
+              >
+                <div className="aspect-video bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center">
+                  <Workflow className="w-16 h-16 text-emerald-400 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">Workflow</span>
+                    <span className="text-xs text-gray-500">Hospitality</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Content Pipeline</h3>
+                  <p className="text-sm text-gray-400 mb-4">Automated social content generation using Flux.1 for a boutique hotel group.</p>
+                  <div className="flex items-center gap-4 text-xs text-gray-500">
+                    <span>40 Posts/Week</span>
+                    <span>•</span>
+                    <span>Zero Manual Effort</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Demo Card 3: CRM Sync */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+                className="group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-[#2E5BFF]/50 transition-all duration-300"
+                data-testid="demo-card-crm-sync"
+              >
+                <div className="aspect-video bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center">
+                  <Brain className="w-16 h-16 text-orange-400 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-xs font-bold uppercase tracking-wider text-orange-400 bg-orange-400/10 px-2 py-1 rounded">Integration</span>
+                    <span className="text-xs text-gray-500">Professional Services</span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Smart CRM Sync</h3>
+                  <p className="text-sm text-gray-400 mb-4">Multi-platform data unification connecting HubSpot, Calendly, and Slack.</p>
+                  <div className="flex items-center gap-4 text-xs text-gray-500">
+                    <span>5 Apps Connected</span>
+                    <span>•</span>
+                    <span>Real-time Sync</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-24" style={{ backgroundColor: '#1A1A1B' }}>
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center">
               <Sparkles className="w-12 h-12 text-[#2E5BFF] mx-auto mb-6" style={{ filter: 'drop-shadow(0 0 20px rgba(46, 91, 255, 0.5))' }} />
