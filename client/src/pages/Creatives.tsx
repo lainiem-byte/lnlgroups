@@ -1,14 +1,7 @@
-import { Check, MapPin, Camera, TrendingUp, Smartphone, Filter, ChevronDown, Store } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MapPin, Camera } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 import { useState, useEffect } from "react";
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuTrigger 
-} from "@/components/ui/dropdown-menu";
 import locationsData from "@/data/locations.json";
 import LocationShowcase from "@/components/LocationShowcase";
 import MoscowToolbox from "@/components/MoscowToolbox";
@@ -17,7 +10,6 @@ import RaleighToolbox from "@/components/RaleighToolbox";
 import ProtectedToolbox from "@/components/ProtectedToolbox";
 import { useActiveLocation } from "@/context/LocationContext";
 
-// Import images
 import glenwoodImage from "@assets/generated_images/glenwood_south_raleigh_modern_nightlife_street_scene.png";
 import raleighRealtyImage from "@assets/generated_images/raleigh_glenwood_south_boutique_shops_and_outdoor_dining.png";
 import columbusImage from "@assets/generated_images/columbus_oh_short_north_arts_district_vibrant_street_scene.png";
@@ -164,103 +156,6 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
             </div>
           </section>
         )}
-
-        {/* Local Authority Portfolio - Keeping this separate for now, but maybe it should be integrated later. 
-            The user didn't ask to change the portfolio section. 
-            However, since the LocationShowcase has its own state, this portfolio won't update when clicking buttons in LocationShowcase.
-            This is a UX disconnect.
-            
-            To fix this efficiently without over-engineering:
-            I will hide the portfolio section for now as the LocationShowcase covers the "Case Study" and "Local Authority" aspects which were the main content.
-            The LocationShowcase I built includes: Theme, Copy, Hashtags, Neighborhoods, Landmarks, AND Case Study.
-            It pretty much covers everything except the "Portfolio Grid" and "Pricing".
-            
-            I will leave the Pricing and Portfolio sections, but perhaps I should just wire up the state.
-            It's trivial to wire up the state.
-            I'll modify LocationShowcase to accept `selectedId` and `onSelect`.
-            Wait, I already wrote LocationShowcase to have internal state.
-            I will modify LocationShowcase to accept props to override internal state.
-        */}
-        
-        {/* Pricing Table */}
-        <section id="pricing-section" className="py-24 bg-secondary/10">
-          <div className="container mx-auto px-6">
-             {/* ... Pricing content ... */}
-             <div className="text-center mb-10">
-                <h2 className="text-3xl font-bold">Pricing Packages</h2>
-                <p className="text-muted-foreground">Don't just be a business in town; be a pillar of the community.</p>
-             </div>
-             
-             {/* ... existing pricing cards ... */}
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              
-              {/* Custom Content Pack */}
-              <div className="rounded-3xl border border-border bg-card p-8 hover:border-[#008080]/50 transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#008080] to-[#008080]/50"></div>
-                
-                <h3 className="text-2xl font-bold mb-2">Custom Content Pack</h3>
-                <div className="text-4xl font-bold mb-4">{currentLocation.pricing.custom}<span className="text-lg text-muted-foreground font-medium">/mo</span></div>
-                <p className="text-muted-foreground mb-8">Establish your Digital Footprint with Authentic visual Storytelling tailored to your Neighborhood.</p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="font-semibold text-[#008080] flex items-center gap-2">
-                    <Smartphone className="w-5 h-5" /> Digital Localization
-                  </div>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-green-500 shrink-0" />
-                      <span>{currentLocation.value_add_custom}</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-green-500 shrink-0" />
-                      <span>Content Calendar & Scheduling</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-green-500 shrink-0" />
-                      <span>Monthly Analytics Report</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <Button className="w-full rounded-full" variant="outline">Get Started</Button>
-              </div>
-
-              {/* Brand Growth Tier */}
-              <div className="rounded-3xl border-2 border-[#008080] bg-card p-8 shadow-2xl relative overflow-hidden transform md:-translate-y-4">
-                <div className="absolute top-4 right-4 bg-[#008080] text-white text-xs font-bold px-3 py-1 rounded-full">
-                  RECOMMENDED ARCHITECTURE
-                </div>
-                
-                <h3 className="text-2xl font-bold mb-2">Brand Growth Tier</h3>
-                <div className="text-4xl font-bold mb-4">{currentLocation.pricing.growth}<span className="text-lg text-muted-foreground font-medium">/mo</span></div>
-                <p className="text-muted-foreground mb-8">Complete market authority with physical presence and targeted infrastructure.</p>
-                
-                <div className="space-y-4 mb-8">
-                  <div className="font-semibold text-[#008080] flex items-center gap-2">
-                    <Camera className="w-5 h-5" /> Physical Presence
-                  </div>
-                  <ul className="space-y-3">
-                    <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-[#008080] shrink-0" />
-                      <span>{currentLocation.value_add_growth}</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-[#008080] shrink-0" />
-                      <span><strong>Geo-Targeted Ad Infrastructure</strong> (Meta/Google)</span>
-                    </li>
-                    <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-[#008080] shrink-0" />
-                      <span>Comprehensive Performance Analytics</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <Button className="w-full rounded-full bg-[#008080] hover:bg-[#008080]/90 text-white">Expand Your Footprint</Button>
-              </div>
-
-            </div>
-          </div>
-        </section>
 
         {/* Testimonials - Strategic Feedback */}
         <section className="py-24" style={{ backgroundColor: '#1A1A1B' }}>
