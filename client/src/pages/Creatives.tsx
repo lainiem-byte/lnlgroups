@@ -14,6 +14,7 @@ import LocationShowcase from "@/components/LocationShowcase";
 import MoscowToolbox from "@/components/MoscowToolbox";
 import ColumbusToolbox from "@/components/ColumbusToolbox";
 import RaleighToolbox from "@/components/RaleighToolbox";
+import ProtectedToolbox from "@/components/ProtectedToolbox";
 import { useActiveLocation } from "@/context/LocationContext";
 
 // Import images
@@ -135,25 +136,31 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
           </div>
         </section>
 
-        {/* Community Outreach Toolboxes - Show based on active location */}
+        {/* Community Outreach Toolboxes - Protected for internal team only */}
         {activeLocation === "moscow" && (
           <section className="py-24 bg-background border-b border-border/50">
             <div className="container mx-auto px-6">
-              <MoscowToolbox />
+              <ProtectedToolbox locationName="Moscow">
+                <MoscowToolbox />
+              </ProtectedToolbox>
             </div>
           </section>
         )}
         {activeLocation === "columbus" && (
           <section className="py-24 bg-background border-b border-border/50">
             <div className="container mx-auto px-6">
-              <ColumbusToolbox />
+              <ProtectedToolbox locationName="Columbus">
+                <ColumbusToolbox />
+              </ProtectedToolbox>
             </div>
           </section>
         )}
         {activeLocation === "raleigh" && (
           <section className="py-24 bg-background border-b border-border/50">
             <div className="container mx-auto px-6">
-              <RaleighToolbox />
+              <ProtectedToolbox locationName="Raleigh">
+                <RaleighToolbox />
+              </ProtectedToolbox>
             </div>
           </section>
         )}
