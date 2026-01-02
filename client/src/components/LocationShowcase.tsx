@@ -313,7 +313,14 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                                </ul>
                              </div>
                              
-                             <Button className="w-full rounded-full" variant="outline" data-testid="button-get-started-custom">Get Started</Button>
+                             <Button 
+                               className="w-full rounded-full" 
+                               variant="outline" 
+                               data-testid="button-get-started-custom"
+                               onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+                             >
+                               Get Started
+                             </Button>
                            </div>
 
                            <div className="rounded-2xl border-2 border-[#008080] bg-card/50 p-6 relative overflow-hidden">
@@ -345,7 +352,13 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                                </ul>
                              </div>
                              
-                             <Button className="w-full rounded-full bg-[#008080] hover:bg-[#008080]/90 text-white" data-testid="button-expand-footprint">Expand Your Footprint</Button>
+                             <Button 
+                               className="w-full rounded-full bg-[#008080] hover:bg-[#008080]/90 text-white" 
+                               data-testid="button-expand-footprint"
+                               onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+                             >
+                               Expand Your Footprint
+                             </Button>
                            </div>
                          </div>
                        </motion.div>

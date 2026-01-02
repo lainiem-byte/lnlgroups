@@ -2,7 +2,7 @@ import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
   return (
-    <section className="py-24 bg-secondary/20">
+    <section id="contact-section" className="py-24 bg-secondary/20">
       <div className="container mx-auto px-6">
         <div className="glass-panel p-10 md:p-14 rounded-3xl max-w-5xl mx-auto overflow-hidden relative">
           <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
