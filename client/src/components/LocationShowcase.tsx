@@ -139,7 +139,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
             {activeLocation === loc.id && (
               <motion.div
                 layoutId="activeTab"
-                className="absolute inset-0 bg-lnl-violet"
+                className="absolute inset-0 bg-#008080"
                 transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
               />
             )}
@@ -159,10 +159,10 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
         >
           {/* Hero Content */}
           <div className="text-center mb-16 relative">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-lnl-violet/5 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-#008080/5 blur-[100px] rounded-full pointer-events-none" />
             
             <h2 className="text-4xl md:text-6xl font-display font-medium mb-6 tracking-tight relative z-10">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-lnl-violet to-lnl-cyan">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-#008080 to-lnl-cyan">
                 {currentLocation.theme}
               </span>
             </h2>
@@ -172,7 +172,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
             
             <div className="flex flex-wrap justify-center gap-3 mt-8 relative z-10">
               {currentLocation.hashtags.map((tag, i) => (
-                <span key={i} className="text-sm font-mono text-lnl-violet bg-lnl-violet/10 px-4 py-1.5 rounded-full border border-lnl-violet/20">
+                <span key={i} className="text-sm font-mono text-#008080 bg-#008080/10 px-4 py-1.5 rounded-full border border-#008080/20">
                   {tag}
                 </span>
               ))}
@@ -186,14 +186,14 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="group bg-card/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-lnl-violet/30 transition-colors"
+              className="group bg-card/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-#008080/30 transition-colors"
             >
               <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6 flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-lnl-violet" /> Priority Neighborhoods
+                <MapPin className="w-4 h-4 text-#008080" /> Priority Neighborhoods
               </h4>
               <div className="flex flex-wrap gap-3">
                 {currentLocation.neighborhoods.map((n, i) => (
-                  <span key={i} className="bg-secondary/50 hover:bg-lnl-violet/20 hover:text-lnl-violet px-4 py-2 rounded-xl text-sm font-medium transition-colors cursor-default border border-transparent hover:border-lnl-violet/30">
+                  <span key={i} className="bg-secondary/50 hover:bg-#008080/20 hover:text-#008080 px-4 py-2 rounded-xl text-sm font-medium transition-colors cursor-default border border-transparent hover:border-#008080/30">
                     {n}
                   </span>
                 ))}
@@ -205,14 +205,14 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
-              className="group bg-card/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-lnl-violet/30 transition-colors"
+              className="group bg-card/50 backdrop-blur-sm p-8 rounded-3xl border border-white/5 hover:border-#008080/30 transition-colors"
             >
               <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6 flex items-center gap-2">
-                <Store className="w-4 h-4 text-lnl-violet" /> 2025 Landmarks & Geotags
+                <Store className="w-4 h-4 text-#008080" /> 2025 Landmarks & Geotags
               </h4>
               <div className="flex flex-wrap gap-3">
                 {currentLocation.landmarks.map((l, i) => (
-                  <span key={i} className="bg-secondary/50 hover:bg-lnl-violet/20 hover:text-lnl-violet px-4 py-2 rounded-xl text-sm font-medium transition-colors cursor-default border border-transparent hover:border-lnl-violet/30">
+                  <span key={i} className="bg-secondary/50 hover:bg-#008080/20 hover:text-#008080 px-4 py-2 rounded-xl text-sm font-medium transition-colors cursor-default border border-transparent hover:border-#008080/30">
                     {l}
                   </span>
                 ))}
@@ -224,14 +224,14 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="md:col-span-2 relative overflow-hidden bg-gradient-to-br from-lnl-violet/10 via-background to-background p-1 rounded-3xl"
+              className="md:col-span-2 relative overflow-hidden bg-gradient-to-br from-#008080/10 via-background to-background p-1 rounded-3xl"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-lnl-violet/20 to-transparent opacity-50 blur-xl" />
+              <div className="absolute inset-0 bg-gradient-to-r from-#008080/20 to-transparent opacity-50 blur-xl" />
               <div className="relative bg-card/80 backdrop-blur-md p-8 rounded-[22px] border border-white/5 h-full">
                 <div className="flex flex-col gap-6">
                    <div>
                      <h4 className="text-lg font-display text-white mb-3 flex items-center gap-2">
-                       <TrendingUp className="w-5 h-5 text-lnl-violet" />
+                       <TrendingUp className="w-5 h-5 text-#008080" />
                        Local Authority Strategy
                      </h4>
                      <p className="text-muted-foreground mb-6">
@@ -242,22 +242,22 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                      <div className="bg-secondary/30 p-5 rounded-xl border border-white/5">
                        <div className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-2 flex items-center gap-2">
-                         <MapPin className="w-3 h-3 text-lnl-violet" /> Custom Content Pack (The Map)
+                         <MapPin className="w-3 h-3 text-#008080" /> Custom Content Pack (The Map)
                        </div>
                        <p className="text-sm text-foreground leading-relaxed">{currentLocation.value_add_custom}</p>
-                       <div className="mt-3 text-xs font-semibold text-lnl-violet">{currentLocation.pricing.custom}</div>
+                       <div className="mt-3 text-xs font-semibold text-#008080">{currentLocation.pricing.custom}</div>
                      </div>
                      
-                     <div className="bg-lnl-violet/10 p-5 rounded-xl border border-lnl-violet/20">
-                       <div className="text-xs font-bold uppercase tracking-widest text-lnl-violet mb-2 flex items-center gap-2">
+                     <div className="bg-#008080/10 p-5 rounded-xl border border-#008080/20">
+                       <div className="text-xs font-bold uppercase tracking-widest text-#008080 mb-2 flex items-center gap-2">
                          <TrendingUp className="w-3 h-3" /> Brand Growth Tier (The Guide)
                        </div>
                        <p className="text-sm text-foreground leading-relaxed">{currentLocation.value_add_growth}</p>
-                       <div className="mt-3 text-xs font-semibold text-lnl-violet">{currentLocation.pricing.growth}</div>
+                       <div className="mt-3 text-xs font-semibold text-#008080">{currentLocation.pricing.growth}</div>
                      </div>
                    </div>
                    
-                   <Button variant="outline" className="border-lnl-violet/30 hover:bg-lnl-violet/10 text-lnl-violet w-fit">
+                   <Button variant="outline" className="border-#008080/30 hover:bg-#008080/10 text-#008080 w-fit">
                      View Full Strategy Details <ArrowRight className="w-4 h-4 ml-2" />
                    </Button>
                 </div>
@@ -277,7 +277,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-black/20 lg:to-black/80"></div>
                 
                 <div className="absolute bottom-8 left-8 right-8 text-white z-10">
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider mb-3 text-white bg-lnl-violet/90 backdrop-blur-md w-fit px-4 py-1.5 rounded-full border border-lnl-violet/50 shadow-lg">
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider mb-3 text-white bg-#008080/90 backdrop-blur-md w-fit px-4 py-1.5 rounded-full border border-#008080/50 shadow-lg">
                     <MapPin className="w-3 h-3" />
                     {activeLocation === 'raleigh' && 'Glenwood South Geotag'}
                     {activeLocation === 'columbus' && 'German Village Geotag'}
@@ -297,8 +297,8 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                     <p className="text-muted-foreground leading-relaxed">{currentLocation.case_study.challenge}</p>
                   </div>
                   
-                  <div className="pl-6 border-l-2 border-lnl-violet">
-                    <h4 className="text-xs font-bold text-lnl-violet uppercase tracking-wide mb-2">The Solution</h4>
+                  <div className="pl-6 border-l-2 border-#008080">
+                    <h4 className="text-xs font-bold text-#008080 uppercase tracking-wide mb-2">The Solution</h4>
                     <p className="text-foreground font-medium leading-relaxed">{currentLocation.case_study.solution}</p>
                   </div>
                 </div>
@@ -310,7 +310,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                     className="mt-10 pt-8 border-t border-white/5"
                   >
                     <div className="flex items-center gap-3 text-white font-medium mb-3">
-                      <div className="p-2 rounded-full bg-lnl-violet/20 text-lnl-violet">
+                      <div className="p-2 rounded-full bg-#008080/20 text-#008080">
                         <Camera className="w-5 h-5" />
                       </div>
                       <span>Monthly On-Site Shoots</span>
@@ -318,7 +318,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                     <p className="text-sm text-muted-foreground mb-6 pl-12">
                       Our Raleigh Brand Growth package includes dedicated photography sessions in Glenwood South and North Hills every month.
                     </p>
-                    <Button className="w-full sm:w-auto group bg-lnl-violet hover:bg-lnl-violet/90 text-white border-0">
+                    <Button className="w-full sm:w-auto group bg-#008080 hover:bg-#008080/90 text-white border-0">
                       Explore Raleigh Packages 
                       <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>

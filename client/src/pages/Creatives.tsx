@@ -120,12 +120,12 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
         <section className="py-24 bg-secondary/10 border-b border-border/50 transition-colors duration-500">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16 max-w-4xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 border border-primary/20">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#008080]/10 text-[#008080] text-sm font-semibold mb-6 border border-[#008080]/20">
                 <Camera className="w-4 h-4" />
                 LNL CREATIVE
               </div>
               <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight">
-                Visual Authority for the <span className="tech-gradient-text">Category-of-One</span>
+                Visual Authority for the <span className="text-[#008080]">Category-of-One</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 If your brand doesn't look like the price you want to charge, you are leaving money on the table.
@@ -188,15 +188,15 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               
               {/* Custom Content Pack */}
-              <div className="rounded-3xl border border-border bg-card p-8 hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500"></div>
+              <div className="rounded-3xl border border-border bg-card p-8 hover:border-[#008080]/50 transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#008080] to-[#008080]/50"></div>
                 
                 <h3 className="text-2xl font-bold mb-2">Custom Content Pack</h3>
                 <div className="text-4xl font-bold mb-4">{currentLocation.pricing.custom}<span className="text-lg text-muted-foreground font-medium">/mo</span></div>
                 <p className="text-muted-foreground mb-8">Establish your Digital Footprint with Authentic visual Storytelling tailored to your Neighborhood.</p>
                 
                 <div className="space-y-4 mb-8">
-                  <div className="font-semibold text-primary flex items-center gap-2">
+                  <div className="font-semibold text-[#008080] flex items-center gap-2">
                     <Smartphone className="w-5 h-5" /> Digital Localization
                   </div>
                   <ul className="space-y-3">
@@ -219,8 +219,8 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
               </div>
 
               {/* Brand Growth Tier */}
-              <div className="rounded-3xl border-2 border-primary bg-card p-8 shadow-2xl relative overflow-hidden transform md:-translate-y-4">
-                <div className="absolute top-4 right-4 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
+              <div className="rounded-3xl border-2 border-[#008080] bg-card p-8 shadow-2xl relative overflow-hidden transform md:-translate-y-4">
+                <div className="absolute top-4 right-4 bg-[#008080] text-white text-xs font-bold px-3 py-1 rounded-full">
                   RECOMMENDED ARCHITECTURE
                 </div>
                 
@@ -229,26 +229,26 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                 <p className="text-muted-foreground mb-8">Complete market authority with physical presence and targeted infrastructure.</p>
                 
                 <div className="space-y-4 mb-8">
-                  <div className="font-semibold text-primary flex items-center gap-2">
+                  <div className="font-semibold text-[#008080] flex items-center gap-2">
                     <Camera className="w-5 h-5" /> Physical Presence
                   </div>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
+                      <Check className="w-5 h-5 text-[#008080] shrink-0" />
                       <span>{currentLocation.value_add_growth}</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
+                      <Check className="w-5 h-5 text-[#008080] shrink-0" />
                       <span><strong>Geo-Targeted Ad Infrastructure</strong> (Meta/Google)</span>
                     </li>
                     <li className="flex items-start gap-3 text-sm">
-                      <Check className="w-5 h-5 text-primary shrink-0" />
+                      <Check className="w-5 h-5 text-[#008080] shrink-0" />
                       <span>Comprehensive Performance Analytics</span>
                     </li>
                   </ul>
                 </div>
                 
-                <Button className="w-full rounded-full bg-primary hover:bg-primary/90">Expand Your Footprint</Button>
+                <Button className="w-full rounded-full bg-[#008080] hover:bg-[#008080]/90 text-white">Expand Your Footprint</Button>
               </div>
 
             </div>
@@ -365,13 +365,13 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold border border-white/10 flex items-center gap-1.5 shadow-lg">
-                      <MapPin className="w-3 h-3 text-primary" />
+                      <MapPin className="w-3 h-3 text-[#008080]" />
                       {item.location}
                     </div>
                   </div>
                   <div className="flex justify-between items-start">
                     <div>
-                      <h3 className="text-xl font-bold group-hover:text-primary transition-colors">{item.title}</h3>
+                      <h3 className="text-xl font-bold group-hover:text-[#008080] transition-colors">{item.title}</h3>
                       <p className="text-sm text-muted-foreground">{item.category}</p>
                     </div>
                   </div>
