@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Palette, Cpu, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function HubHero() {
   return (
@@ -46,7 +47,7 @@ export default function HubHero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <a href="/creatives" className="block">
+            <Link href="/creatives" className="block" onClick={() => window.scrollTo(0, 0)}>
               <div className="glass-card rounded-3xl p-10 h-full cursor-pointer group transition-all duration-500 hover:border-[#008080]/50 relative overflow-hidden" style={{ borderColor: 'rgba(0, 128, 128, 0.2)' }} data-testid="card-creative-authority">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#008080] to-[#008080]/50" />
                 
@@ -68,7 +69,7 @@ export default function HubHero() {
                   Explore Brand Services <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -76,7 +77,7 @@ export default function HubHero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <a href="/automations" className="block">
+            <Link href="/automations" className="block" onClick={() => window.scrollTo(0, 0)}>
               <div className="glass-card rounded-3xl p-10 h-full cursor-pointer group transition-all duration-500 hover:border-[#2E5BFF]/50 relative overflow-hidden" style={{ borderColor: 'rgba(46, 91, 255, 0.2)' }} data-testid="card-workflow-intelligence">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2E5BFF] to-[#2E5BFF]/50" />
                 
@@ -98,7 +99,7 @@ export default function HubHero() {
                   Explore Automation Services <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>
