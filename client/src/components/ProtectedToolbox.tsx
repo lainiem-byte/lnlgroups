@@ -41,7 +41,7 @@ export default function ProtectedToolbox({ children, locationName }: ProtectedTo
             data-testid="button-login-toolbox"
           >
             <LogIn className="w-4 h-4 mr-2" />
-            Sign In with Replit
+            Team Sign In
           </Button>
         </div>
       </div>
