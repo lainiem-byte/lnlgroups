@@ -166,7 +166,10 @@ export default function Navbar() {
             <span className="sr-only">Toggle theme</span>
           </Button>
 
-          <Button className="rounded-full px-6 bg-lnl-gold hover:bg-lnl-gold/90 text-black font-semibold shadow-lg shadow-lnl-gold/20 hover:shadow-lnl-gold/30 transition-all">
+          <Button 
+            className="rounded-full px-6 bg-lnl-gold hover:bg-lnl-gold/90 text-black font-semibold shadow-lg shadow-lnl-gold/20 hover:shadow-lnl-gold/30 transition-all"
+            onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Get Started
           </Button>
         </div>
@@ -240,7 +243,10 @@ export default function Navbar() {
                   </Link>
                 </div>
 
-                <Button className="w-full rounded-full mt-4 bg-lnl-gold hover:bg-lnl-gold/90 text-black font-semibold">
+                <Button 
+                  className="w-full rounded-full mt-4 bg-lnl-gold hover:bg-lnl-gold/90 text-black font-semibold"
+                  onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+                >
                   Get Started
                 </Button>
               </div>
