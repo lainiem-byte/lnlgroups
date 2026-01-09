@@ -5,7 +5,7 @@ import { Link } from "wouter";
 
 export default function HubHero() {
   return (
-    <section className="relative w-full min-h-screen pt-20 overflow-hidden" style={{ backgroundColor: '#0A0A0B' }}>
+    <section className="relative w-full min-h-screen pt-20 overflow-hidden" style={{ backgroundColor: '#1A1A1D' }}>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-[#008080]/10 rounded-full blur-[150px]" />
         <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-[#2E5BFF]/10 rounded-full blur-[150px]" />

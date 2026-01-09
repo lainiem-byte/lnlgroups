@@ -54,7 +54,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-lnl-gold/10 shadow-lg shadow-black/20' 
+        ? 'bg-[#1A1A1D]/95 backdrop-blur-xl border-b border-lnl-gold/10 shadow-lg shadow-black/20' 
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
@@ -85,7 +85,7 @@ export default function Navbar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="center" 
-              className="w-56 bg-[#0d0d0d] border-lnl-gold/20 p-2"
+              className="w-56 bg-[#242428] border-lnl-gold/20 p-2"
             >
               {localHubs.map((hub) => (
                 <DropdownMenuItem
@@ -120,7 +120,7 @@ export default function Navbar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent 
               align="center" 
-              className="w-56 bg-[#0d0d0d] border-lnl-gold/20 p-2"
+              className="w-56 bg-[#242428] border-lnl-gold/20 p-2"
             >
               <DropdownMenuItem
                 onClick={() => setLocation('/portfolio/creatives')}
@@ -190,7 +190,7 @@ export default function Navbar() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="bg-[#0a0a0a] border-lnl-gold/20">
+            <SheetContent className="bg-[#1A1A1D] border-lnl-gold/20">
               <div className="flex flex-col gap-6 mt-10">
                 <Link href="/" className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors">
                   Home

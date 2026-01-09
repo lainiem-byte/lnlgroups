@@ -23,7 +23,7 @@ const capabilities = [
 
 export default function TheBrain() {
   return (
-    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#0A0A0B' }}>
+    <section className="py-24 relative overflow-hidden" style={{ backgroundColor: '#1A1A1D' }}>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-[#2E5BFF]/8 rounded-full blur-[150px]" />
       </div>

@@ -20,7 +20,7 @@ export default function Home() {
           <Contact />
         </main>
         
-        <footer className="py-16 border-t border-white/10" style={{ backgroundColor: '#0A0A0B' }}>
+        <footer className="py-16 border-t border-white/10" style={{ backgroundColor: '#1A1A1D' }}>
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <div>

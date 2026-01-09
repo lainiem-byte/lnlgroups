@@ -161,7 +161,7 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
         )}
 
         {/* Testimonials - Strategic Feedback */}
-        <section className="py-24" style={{ backgroundColor: '#1A1A1B' }}>
+        <section className="py-24" style={{ backgroundColor: '#1A1A1D' }}>
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 text-white">Strategic Feedback</h2>

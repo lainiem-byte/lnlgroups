@@ -163,7 +163,7 @@ export default function BlueprintDemo({ targetMarketId = "raleigh" }: BlueprintD
         </div>
       </div>
 
-      <div className="bg-[#0A0A0B] border border-lnl-cyan/20 rounded-2xl overflow-hidden shadow-2xl relative">
+      <div className="bg-[#1A1A1D] border border-lnl-cyan/20 rounded-2xl overflow-hidden shadow-2xl relative">
         {/* Glow effect */}
         <div className="absolute -top-20 -right-20 w-64 h-64 bg-lnl-cyan/10 rounded-full blur-[80px]"></div>
         <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-primary/10 rounded-full blur-[80px]"></div>

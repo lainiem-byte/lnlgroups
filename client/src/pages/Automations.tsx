@@ -125,7 +125,7 @@ export default function Automations() {
   const [selectedDemo, setSelectedDemo] = useState<typeof demos[0] | null>(null);
   
   return (
-    <div className="min-h-screen text-white" style={{ backgroundColor: '#1A1A1B' }}>
+    <div className="min-h-screen text-white" style={{ backgroundColor: '#1A1A1D' }}>
       <Navbar />
       
       <main className="pt-20">
@@ -215,7 +215,7 @@ export default function Automations() {
           </div>
         </section>
 
-        <section className="py-24 relative" style={{ backgroundColor: '#1A1A1B' }}>
+        <section className="py-24 relative" style={{ backgroundColor: '#1A1A1D' }}>
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#2E5BFF]/10 rounded-full blur-[200px]" />
           </div>
@@ -373,7 +373,7 @@ export default function Automations() {
           </DialogContent>
         </Dialog>
 
-        <section className="py-24" style={{ backgroundColor: '#1A1A1B' }}>
+        <section className="py-24" style={{ backgroundColor: '#1A1A1D' }}>
           <div className="container mx-auto px-6">
             <div className="max-w-3xl mx-auto text-center">
               <Sparkles className="w-12 h-12 text-[#2E5BFF] mx-auto mb-6" style={{ filter: 'drop-shadow(0 0 20px rgba(46, 91, 255, 0.5))' }} />
@@ -397,7 +397,7 @@ export default function Automations() {
         <Contact />
       </main>
       
-      <footer className="py-16 border-t border-white/10" style={{ backgroundColor: '#1A1A1B' }}>
+      <footer className="py-16 border-t border-white/10" style={{ backgroundColor: '#1A1A1D' }}>
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 mb-6">
             <p className="font-medium">Serving: Raleigh, NC | Columbus, OH | Moscow, ID</p>

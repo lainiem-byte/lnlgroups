@@ -52,7 +52,7 @@ export default function RaleighToolbox() {
 
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <div className="relative overflow-hidden rounded-3xl border-2 border-[#008080]/40 bg-[#0a0a0a]">
+      <div className="relative overflow-hidden rounded-3xl border-2 border-[#008080]/40 bg-[#1A1A1D]">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#008080]/3 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#008080]/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
         
@@ -122,7 +122,7 @@ export default function RaleighToolbox() {
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="bg-[#0d0d0d] rounded-2xl border-2 border-[#008080]/30 p-6 mb-4">
+              <div className="bg-[#242428] rounded-2xl border-2 border-[#008080]/30 p-6 mb-4">
                 <div className="flex items-center justify-between mb-4">
                   <div>
                     <span className="text-xs font-bold uppercase tracking-widest text-[#008080]">{currentScript.type}</span>
@@ -155,7 +155,7 @@ export default function RaleighToolbox() {
                 </div>
               </div>
 
-              <div className="bg-[#0d0d0d] rounded-2xl border-2 border-[#008080]/20 p-5">
+              <div className="bg-[#242428] rounded-2xl border-2 border-[#008080]/20 p-5">
                 <div className="flex items-start gap-4">
                   <div className="p-2 rounded-lg bg-[#008080]/15 text-[#008080] shrink-0">
                     <MapPin className="w-5 h-5" />

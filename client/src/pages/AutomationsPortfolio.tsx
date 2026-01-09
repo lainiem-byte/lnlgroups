@@ -52,7 +52,7 @@ export default function AutomationsPortfolio() {
   const [selectedItem, setSelectedItem] = useState<typeof portfolioItems[0] | null>(null);
 
   return (
-    <div className="min-h-screen text-white" style={{ backgroundColor: '#1A1A1B' }}>
+    <div className="min-h-screen text-white" style={{ backgroundColor: '#1A1A1D' }}>
       <Navbar />
       
       <main className="pt-20">
@@ -167,7 +167,7 @@ export default function AutomationsPortfolio() {
         </DialogContent>
       </Dialog>
 
-      <footer className="py-16 border-t border-white/10" style={{ backgroundColor: '#1A1A1B' }}>
+      <footer className="py-16 border-t border-white/10" style={{ backgroundColor: '#1A1A1D' }}>
         <div className="container mx-auto px-6 text-center text-sm text-gray-500">
           <p>© 2026 The LNL Group. All rights reserved.</p>
         </div>

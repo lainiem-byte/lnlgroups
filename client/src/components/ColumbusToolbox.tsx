@@ -148,7 +148,7 @@ export default function ColumbusToolbox() {
                   </Button>
                 </div>
                 
-                <div className="bg-[#0a0a0a] rounded-xl p-5 border border-[#008080]/10">
+                <div className="bg-[#1A1A1D] rounded-xl p-5 border border-[#008080]/10">
                   <p className="text-foreground leading-relaxed whitespace-pre-wrap">
                     {getPersonalizedScript(currentScript.script)}
                   </p>

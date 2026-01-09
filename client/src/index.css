@@ -10,7 +10,7 @@
   --font-serif: 'Instrument Serif', serif;
 
   /* LNL Brand Tokens */
-  --color-lnl-dark: #0A0A0B;
+  --color-lnl-dark: #1A1A1D;
   --color-lnl-gold: #C9A86C;
   --color-lnl-violet: #8B5CF6;
   --color-lnl-cyan: #06B6D4;
@@ -23,16 +23,16 @@
   --color-primary: var(--color-lnl-gold);
   --color-primary-foreground: var(--color-lnl-dark);
 
-  --color-secondary: #1E1E22;
+  --color-secondary: #242428;
   --color-secondary-foreground: var(--color-lnl-pearl);
 
-  --color-muted: #27272a;
+  --color-muted: #2D2D32;
   --color-muted-foreground: #a1a1aa;
 
   --color-accent: var(--color-lnl-violet);
   --color-accent-foreground: #ffffff;
 
-  --color-card: #121214;
+  --color-card: #1E1E22;
   --color-card-foreground: var(--color-lnl-pearl);
 
   --color-border: #27272a;
