@@ -258,7 +258,7 @@ export default function Automations() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Lead Concierge Bot</h3>
                   <p className="text-sm text-gray-400 mb-4">24/7 lead qualification with intelligent calendar booking for a Triangle real estate team.</p>
-                  <div className="flex items-center gap-4 text-xs text-gray-500">
+                  <div className="flex items-center gap-4 text-xs text-gray-300">
                     <span>+340% Response Rate</span>
                     <span>•</span>
                     <span>2.3s Avg Reply</span>
@@ -285,7 +285,7 @@ export default function Automations() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Content Pipeline</h3>
                   <p className="text-sm text-gray-400 mb-4">Automated social content generation using Flux.1 for a boutique hotel group.</p>
-                  <div className="flex items-center gap-4 text-xs text-gray-500">
+                  <div className="flex items-center gap-4 text-xs text-gray-300">
                     <span>40 Posts/Week</span>
                     <span>•</span>
                     <span>Zero Manual Effort</span>
@@ -312,7 +312,7 @@ export default function Automations() {
                   </div>
                   <h3 className="text-xl font-bold mb-2">Smart CRM Sync</h3>
                   <p className="text-sm text-gray-400 mb-4">Multi-platform data unification connecting HubSpot, Calendly, and Slack.</p>
-                  <div className="flex items-center gap-4 text-xs text-gray-500">
+                  <div className="flex items-center gap-4 text-xs text-gray-300">
                     <span>5 Apps Connected</span>
                     <span>•</span>
                     <span>Real-time Sync</span>
