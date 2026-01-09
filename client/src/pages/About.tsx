@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Brain, Sparkles, MapPin, Building2, Code2, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portraitImage from "@assets/generated_images/portrait_of_a_creative_director_in_a_digital_architecture_setting.png";
+import portraitImage from "@assets/My_Headshot_AI_background_1767937187821.jpg";
 
 export default function About() {
   return (
