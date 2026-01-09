@@ -118,7 +118,10 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                 LNL CREATIVE
               </div>
               <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight">
-                Visual Authority for the <span className="text-[#008080]">Category-of-One</span>
+                Visual Authority for the <span 
+                  className="bg-gradient-to-r from-[#006666] via-[#20B2AA] via-[#008080] to-[#006666] bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]"
+                  style={{ WebkitBackgroundClip: 'text' }}
+                >Category-of-One</span>
               </h1>
               <p className="text-xl text-muted-foreground leading-relaxed">
                 If your brand doesn't look like the price you want to charge, you are leaving money on the table.
