@@ -115,6 +115,7 @@ export default function Automations() {
                 className="rounded-full px-10 h-14 text-lg font-semibold bg-[#2E5BFF] hover:bg-[#2E5BFF]/90 text-white border-0"
                 style={{ boxShadow: '0 0 40px rgba(46, 91, 255, 0.5), 0 4px 20px rgba(46, 91, 255, 0.3)' }}
                 data-testid="button-workflow-audit-hero"
+                onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Request Your Workflow Audit <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
@@ -335,6 +336,7 @@ export default function Automations() {
                 className="rounded-full px-12 h-16 text-xl font-semibold bg-[#2E5BFF] hover:bg-[#2E5BFF]/90 text-white"
                 style={{ boxShadow: '0 0 50px rgba(46, 91, 255, 0.5), 0 4px 30px rgba(46, 91, 255, 0.3)' }}
                 data-testid="button-workflow-audit-cta"
+                onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Request Your Workflow Audit <ArrowRight className="ml-3 w-6 h-6" />
               </Button>
