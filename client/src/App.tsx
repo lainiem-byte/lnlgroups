@@ -6,6 +6,8 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Creatives from "@/pages/Creatives";
 import Automations from "@/pages/Automations";
+import CreativesPortfolio from "@/pages/CreativesPortfolio";
+import AutomationsPortfolio from "@/pages/AutomationsPortfolio";
 import NotFound from "@/pages/not-found";
 import { ThemeProvider } from "next-themes";
 import { LocationProvider } from "@/context/LocationContext";
@@ -16,10 +18,11 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/services" component={Home} />
-      <Route path="/portfolio" component={Home} />
       <Route path="/contact" component={Home} />
       <Route path="/creatives">{() => <Creatives />}</Route>
       <Route path="/automations" component={Automations} />
+      <Route path="/portfolio/creatives" component={CreativesPortfolio} />
+      <Route path="/portfolio/automations" component={AutomationsPortfolio} />
       <Route path="/raleigh">{() => <Creatives initialLocation="raleigh" />}</Route>
       <Route path="/columbus">{() => <Creatives initialLocation="columbus" />}</Route>
       <Route path="/moscow">{() => <Creatives initialLocation="moscow" />}</Route>

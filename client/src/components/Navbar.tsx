@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Moon, Sun, Menu, MapPin, ChevronDown } from "lucide-react";
+import { Moon, Sun, Menu, MapPin, ChevronDown, Camera, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
@@ -106,7 +106,53 @@ export default function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <NavLink href="/portfolio">Portfolio</NavLink>
+          {/* Portfolio Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className={`flex items-center gap-2 text-sm font-medium transition-all px-4 py-2 rounded-full border ${
+                location.startsWith('/portfolio') 
+                  ? 'text-lnl-gold border-lnl-gold/50 bg-lnl-gold/10' 
+                  : 'text-foreground/80 border-transparent hover:text-lnl-gold hover:border-lnl-gold/30'
+              }`}>
+                <span>Portfolio</span>
+                <ChevronDown className="w-3 h-3 opacity-60" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent 
+              align="center" 
+              className="w-56 bg-[#0d0d0d] border-lnl-gold/20 p-2"
+            >
+              <DropdownMenuItem
+                onClick={() => setLocation('/portfolio/creatives')}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all ${
+                  location === '/portfolio/creatives' 
+                    ? 'bg-[#008080]/15 text-white' 
+                    : 'hover:bg-[#008080]/10 text-foreground/80 hover:text-white'
+                }`}
+              >
+                <Camera className="w-4 h-4 text-[#008080]" />
+                <div>
+                  <span className="font-semibold">Creative Work</span>
+                  <p className="text-xs text-muted-foreground">Brand & Content</p>
+                </div>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => setLocation('/portfolio/automations')}
+                className={`flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all ${
+                  location === '/portfolio/automations' 
+                    ? 'bg-[#2E5BFF]/15 text-white' 
+                    : 'hover:bg-[#2E5BFF]/10 text-foreground/80 hover:text-white'
+                }`}
+              >
+                <Zap className="w-4 h-4 text-[#2E5BFF]" />
+                <div>
+                  <span className="font-semibold">Automation Work</span>
+                  <p className="text-xs text-muted-foreground">AI & Workflows</p>
+                </div>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <NavLink href="/contact">Contact</NavLink>
           
           <Button 
@@ -180,8 +226,14 @@ export default function Navbar() {
                 </div>
 
                 <div className="border-t border-lnl-gold/20 pt-6">
-                  <Link href="/portfolio" className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors block mb-6">
-                    Portfolio
+                  <div className="text-sm font-bold uppercase tracking-wide text-muted-foreground mb-4">Portfolio</div>
+                  <Link href="/portfolio/creatives" className="flex items-center gap-3 text-lg font-medium text-foreground/80 hover:text-[#008080] transition-colors mb-4">
+                    <Camera className="w-5 h-5 text-[#008080]" />
+                    Creative Work
+                  </Link>
+                  <Link href="/portfolio/automations" className="flex items-center gap-3 text-lg font-medium text-foreground/80 hover:text-[#2E5BFF] transition-colors mb-6">
+                    <Zap className="w-5 h-5 text-[#2E5BFF]" />
+                    Automation Work
                   </Link>
                   <Link href="/contact" className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors block">
                     Contact
