@@ -167,7 +167,7 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
                 {currentLocation.theme}
               </span>
             </h2>
-            <p className="text-xl text-muted-foreground/80 max-w-3xl mx-auto leading-relaxed relative z-10 font-light">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed relative z-10 font-light">
               {currentLocation.copy}
             </p>
             
