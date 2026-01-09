@@ -1,8 +1,54 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Bot, Workflow, Brain, Zap, ArrowRight, Check, Sparkles } from "lucide-react";
+import { Bot, Workflow, Brain, Zap, ArrowRight, Check, Sparkles, X, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
+
+const demos = [
+  {
+    id: "lead-concierge",
+    title: "Lead Concierge Bot",
+    industry: "Real Estate",
+    description: "24/7 lead qualification with intelligent calendar booking for a Triangle real estate team.",
+    stats: ["+340% Response Rate", "2.3s Avg Reply"],
+    type: "AI Agent",
+    typeColor: "#2E5BFF",
+    icon: Bot,
+    gradient: "from-[#2E5BFF]/20 to-purple-500/20",
+    videoUrl: "" // Placeholder for video URL
+  },
+  {
+    id: "content-pipeline",
+    title: "Content Pipeline",
+    industry: "Hospitality",
+    description: "Automated social content generation using Flux.1 for a boutique hotel group.",
+    stats: ["40 Posts/Week", "Zero Manual Effort"],
+    type: "Workflow",
+    typeColor: "#34D399",
+    icon: Workflow,
+    gradient: "from-emerald-500/20 to-teal-500/20",
+    videoUrl: "" // Placeholder for video URL
+  },
+  {
+    id: "crm-sync",
+    title: "Smart CRM Sync",
+    industry: "Professional Services",
+    description: "Multi-platform data unification connecting HubSpot, Calendly, and Slack.",
+    stats: ["5 Apps Connected", "Real-time Sync"],
+    type: "Integration",
+    typeColor: "#FB923C",
+    icon: Brain,
+    gradient: "from-orange-500/20 to-red-500/20",
+    videoUrl: "" // Placeholder for video URL
+  }
+];
 
 const services = [
   {
@@ -76,6 +122,8 @@ const pricingTiers = [
 ];
 
 export default function Automations() {
+  const [selectedDemo, setSelectedDemo] = useState<typeof demos[0] | null>(null);
+  
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: '#1A1A1B' }}>
       <Navbar />
@@ -240,88 +288,90 @@ export default function Automations() {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {/* Demo Card 1: Lead Concierge */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-[#2E5BFF]/50 transition-all duration-300"
-                data-testid="demo-card-lead-concierge"
-              >
-                <div className="aspect-video bg-gradient-to-br from-[#2E5BFF]/20 to-purple-500/20 flex items-center justify-center">
-                  <Bot className="w-16 h-16 text-[#2E5BFF] opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#2E5BFF] bg-[#2E5BFF]/10 px-2 py-1 rounded">AI Agent</span>
-                    <span className="text-xs text-gray-300">Real Estate</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Lead Concierge Bot</h3>
-                  <p className="text-sm text-gray-400 mb-4">24/7 lead qualification with intelligent calendar booking for a Triangle real estate team.</p>
-                  <div className="flex items-center gap-4 text-xs text-gray-300">
-                    <span>+340% Response Rate</span>
-                    <span>•</span>
-                    <span>2.3s Avg Reply</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Demo Card 2: Content Pipeline */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-                className="group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-[#2E5BFF]/50 transition-all duration-300"
-                data-testid="demo-card-content-pipeline"
-              >
-                <div className="aspect-video bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center">
-                  <Workflow className="w-16 h-16 text-emerald-400 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">Workflow</span>
-                    <span className="text-xs text-gray-300">Hospitality</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Content Pipeline</h3>
-                  <p className="text-sm text-gray-400 mb-4">Automated social content generation using Flux.1 for a boutique hotel group.</p>
-                  <div className="flex items-center gap-4 text-xs text-gray-300">
-                    <span>40 Posts/Week</span>
-                    <span>•</span>
-                    <span>Zero Manual Effort</span>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Demo Card 3: CRM Sync */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                className="group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-[#2E5BFF]/50 transition-all duration-300"
-                data-testid="demo-card-crm-sync"
-              >
-                <div className="aspect-video bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center">
-                  <Brain className="w-16 h-16 text-orange-400 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-xs font-bold uppercase tracking-wider text-orange-400 bg-orange-400/10 px-2 py-1 rounded">Integration</span>
-                    <span className="text-xs text-gray-300">Professional Services</span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-2">Smart CRM Sync</h3>
-                  <p className="text-sm text-gray-400 mb-4">Multi-platform data unification connecting HubSpot, Calendly, and Slack.</p>
-                  <div className="flex items-center gap-4 text-xs text-gray-300">
-                    <span>5 Apps Connected</span>
-                    <span>•</span>
-                    <span>Real-time Sync</span>
-                  </div>
-                </div>
-              </motion.div>
+              {demos.map((demo, i) => {
+                const IconComponent = demo.icon;
+                return (
+                  <motion.div
+                    key={demo.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="group relative rounded-2xl border border-white/10 bg-white/5 overflow-hidden hover:border-[#2E5BFF]/50 transition-all duration-300 cursor-pointer"
+                    data-testid={`demo-card-${demo.id}`}
+                    onClick={() => setSelectedDemo(demo)}
+                  >
+                    <div className={`aspect-video bg-gradient-to-br ${demo.gradient} flex items-center justify-center relative`}>
+                      <IconComponent className="w-16 h-16 opacity-50 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" style={{ color: demo.typeColor }} />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                          <Play className="w-8 h-8 text-white ml-1" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded" style={{ color: demo.typeColor, backgroundColor: `${demo.typeColor}15` }}>{demo.type}</span>
+                        <span className="text-xs text-gray-300">{demo.industry}</span>
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">{demo.title}</h3>
+                      <p className="text-sm text-gray-400 mb-4">{demo.description}</p>
+                      <div className="flex items-center gap-4 text-xs text-gray-300">
+                        <span>{demo.stats[0]}</span>
+                        <span>•</span>
+                        <span>{demo.stats[1]}</span>
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
+
+        {/* Demo Video Modal */}
+        <Dialog open={!!selectedDemo} onOpenChange={() => setSelectedDemo(null)}>
+          <DialogContent className="max-w-4xl bg-[#1A1A1B] border-white/10 text-white">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold flex items-center gap-3">
+                {selectedDemo && (
+                  <>
+                    <span style={{ color: selectedDemo.typeColor }}>{selectedDemo.type}:</span>
+                    {selectedDemo.title}
+                  </>
+                )}
+              </DialogTitle>
+            </DialogHeader>
+            <div className="mt-4">
+              {selectedDemo?.videoUrl ? (
+                <div className="aspect-video">
+                  <iframe
+                    src={selectedDemo.videoUrl}
+                    className="w-full h-full rounded-lg"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              ) : (
+                <div className="aspect-video bg-gradient-to-br from-white/5 to-white/10 rounded-lg flex flex-col items-center justify-center">
+                  <Play className="w-20 h-20 text-white/30 mb-4" />
+                  <p className="text-gray-400 text-lg">Demo video coming soon</p>
+                  <p className="text-gray-500 text-sm mt-2">Contact us to see a live walkthrough of this automation</p>
+                </div>
+              )}
+              {selectedDemo && (
+                <div className="mt-6 p-4 bg-white/5 rounded-lg">
+                  <p className="text-gray-300 mb-4">{selectedDemo.description}</p>
+                  <div className="flex items-center gap-6 text-sm">
+                    <span className="text-gray-400">Results:</span>
+                    <span className="text-white font-semibold">{selectedDemo.stats[0]}</span>
+                    <span className="text-white font-semibold">{selectedDemo.stats[1]}</span>
+                  </div>
+                </div>
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
 
         <section className="py-24" style={{ backgroundColor: '#1A1A1B' }}>
           <div className="container mx-auto px-6">
