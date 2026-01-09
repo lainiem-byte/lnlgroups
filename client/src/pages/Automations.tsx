@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
 
@@ -402,8 +403,8 @@ export default function Automations() {
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 mb-6">
             <p className="font-medium">Serving: Raleigh, NC | Columbus, OH | Moscow, ID</p>
             <div className="flex gap-8 mt-4 md:mt-0">
-              <a href="#" className="hover:text-[#2E5BFF] transition-colors">Privacy</a>
-              <a href="#" className="hover:text-[#2E5BFF] transition-colors">Terms</a>
+              <Link href="/privacy" className="hover:text-[#2E5BFF] transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-[#2E5BFF] transition-colors">Terms</Link>
             </div>
           </div>
           <div className="text-center text-xs text-gray-600 pt-6 border-t border-white/5">

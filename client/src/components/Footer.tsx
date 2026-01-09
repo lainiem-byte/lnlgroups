@@ -1,6 +1,7 @@
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Footer() {
   return (
@@ -12,9 +13,6 @@ export default function Footer() {
             <p className="text-xl mb-8 max-w-md">Ready to disrupt your industry? Send us a signal. We respond within 24 hours.</p>
             
             <div className="flex gap-4 text-2xl font-bold">
-              <a href="#" className="hover:text-secondary underline decoration-2 underline-offset-4">INSTAGRAM</a>
-              <a href="#" className="hover:text-secondary underline decoration-2 underline-offset-4">TWITTER</a>
-              <a href="#" className="hover:text-secondary underline decoration-2 underline-offset-4">LINKEDIN</a>
             </div>
           </div>
           
@@ -43,8 +41,8 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center mb-4">
             <p className="font-medium">Serving: Raleigh, NC | Columbus, OH | Moscow, ID</p>
             <div className="flex gap-6 mt-2 md:mt-0">
-              <a href="#" className="hover:text-primary transition-colors">Privacy</a>
-              <a href="#" className="hover:text-primary transition-colors">Terms</a>
+              <Link href="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-primary transition-colors">Terms</Link>
             </div>
           </div>
           <p className="text-center text-xs opacity-80">© 2026 The LNL Group. All AI solutions built by LNL Group adhere to strict Data Sovereignty protocols.</p>

@@ -55,10 +55,8 @@ export default function Home() {
             <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 pt-8 border-t border-white/10">
               <p className="font-medium">Serving: Raleigh, NC | Columbus, OH | Moscow, ID</p>
               <div className="flex gap-8 mt-4 md:mt-0">
-                <a href="#" className="hover:text-white transition-colors">Privacy</a>
-                <a href="#" className="hover:text-white transition-colors">Terms</a>
-                <a href="#" className="hover:text-white transition-colors">Twitter</a>
-                <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+                <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+                <Link href="/terms" className="hover:text-white transition-colors">Terms</Link>
               </div>
             </div>
             <div className="text-center text-xs text-gray-600 pt-6">
