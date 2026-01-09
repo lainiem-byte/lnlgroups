@@ -40,14 +40,45 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="relative"
+              className="relative group"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-lnl-violet/20 to-lnl-cyan/20 rounded-3xl blur-2xl" />
-              <img
-                src={portraitImage}
-                alt="Lainie Mayfield - LNL Automations Custom AI Architecture Raleigh and LNL Creative Luxury Brand Identity Design Columbus"
-                className="relative rounded-3xl shadow-2xl w-full"
-              />
+              <div className="absolute inset-0 bg-gradient-to-br from-lnl-violet/30 to-lnl-cyan/30 rounded-3xl blur-3xl animate-pulse" />
+              
+              <div className="relative rounded-3xl overflow-hidden border-2 border-lnl-violet/30 shadow-2xl shadow-lnl-violet/20">
+                <img
+                  src={portraitImage}
+                  alt="Lainie Mayfield - LNL Automations Custom AI Architecture Raleigh and LNL Creative Luxury Brand Identity Design Columbus"
+                  className="w-full"
+                />
+                
+                <div 
+                  className="absolute inset-0 pointer-events-none opacity-20"
+                  style={{
+                    backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(139, 92, 246, 0.1) 2px, rgba(139, 92, 246, 0.1) 4px)',
+                  }}
+                />
+                
+                <div 
+                  className="absolute inset-0 pointer-events-none opacity-10"
+                  style={{
+                    backgroundImage: 'linear-gradient(90deg, transparent 50%, rgba(6, 182, 212, 0.3) 50%)',
+                    backgroundSize: '4px 100%',
+                  }}
+                />
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-lnl-violet/40 via-transparent to-lnl-cyan/20 pointer-events-none" />
+                
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-lnl-violet via-lnl-cyan to-lnl-gold" />
+                
+                <div className="absolute top-4 left-4 flex items-center gap-2 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-lnl-violet/30">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                  <span className="text-xs font-mono text-lnl-violet">FOUNDER // ARCHITECT</span>
+                </div>
+                
+                <div className="absolute bottom-4 right-4 bg-black/60 backdrop-blur-sm px-3 py-1.5 rounded-full border border-lnl-cyan/30">
+                  <span className="text-xs font-mono text-lnl-cyan">SAN DIEGO, CA</span>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
