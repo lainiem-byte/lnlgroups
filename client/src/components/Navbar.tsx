@@ -153,7 +153,12 @@ export default function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <NavLink href="/contact">Contact</NavLink>
+          <button 
+            onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-sm font-medium transition-colors hover:text-lnl-gold text-foreground/80"
+          >
+            Contact
+          </button>
           
           <Button 
             variant="ghost" 
@@ -238,9 +243,12 @@ export default function Navbar() {
                     <Zap className="w-5 h-5 text-[#2E5BFF]" />
                     Automation Work
                   </Link>
-                  <Link href="/contact" className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors block">
+                  <button 
+                    onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="text-lg font-medium text-foreground/80 hover:text-lnl-gold transition-colors block text-left"
+                  >
                     Contact
-                  </Link>
+                  </button>
                 </div>
 
                 <Button 
