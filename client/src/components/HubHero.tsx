@@ -23,9 +23,17 @@ export default function HubHero() {
             THE LNL GROUP
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight text-[#C9A86C]">
-            Identity & Intelligence for the<br />
-            Modern Enterprise
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
+            <span className="text-white">Identity & Intelligence for the</span><br />
+            <span 
+              className="bg-gradient-to-r from-[#B8860B] via-[#FFD700] via-[#C9A86C] to-[#B8860B] bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]"
+              style={{ 
+                WebkitBackgroundClip: 'text',
+                textShadow: '0 0 40px rgba(201, 168, 108, 0.3)'
+              }}
+            >
+              Modern Enterprise
+            </span>
           </h1>
           
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light mb-12">
