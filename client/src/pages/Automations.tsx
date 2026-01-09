@@ -254,7 +254,7 @@ export default function Automations() {
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-bold uppercase tracking-wider text-[#2E5BFF] bg-[#2E5BFF]/10 px-2 py-1 rounded">AI Agent</span>
-                    <span className="text-xs text-gray-500">Real Estate</span>
+                    <span className="text-xs text-gray-300">Real Estate</span>
                   </div>
                   <h3 className="text-xl font-bold mb-2">Lead Concierge Bot</h3>
                   <p className="text-sm text-gray-400 mb-4">24/7 lead qualification with intelligent calendar booking for a Triangle real estate team.</p>
@@ -281,7 +281,7 @@ export default function Automations() {
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-400/10 px-2 py-1 rounded">Workflow</span>
-                    <span className="text-xs text-gray-500">Hospitality</span>
+                    <span className="text-xs text-gray-300">Hospitality</span>
                   </div>
                   <h3 className="text-xl font-bold mb-2">Content Pipeline</h3>
                   <p className="text-sm text-gray-400 mb-4">Automated social content generation using Flux.1 for a boutique hotel group.</p>
@@ -308,7 +308,7 @@ export default function Automations() {
                 <div className="p-6">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-xs font-bold uppercase tracking-wider text-orange-400 bg-orange-400/10 px-2 py-1 rounded">Integration</span>
-                    <span className="text-xs text-gray-500">Professional Services</span>
+                    <span className="text-xs text-gray-300">Professional Services</span>
                   </div>
                   <h3 className="text-xl font-bold mb-2">Smart CRM Sync</h3>
                   <p className="text-sm text-gray-400 mb-4">Multi-platform data unification connecting HubSpot, Calendly, and Slack.</p>
