@@ -25,7 +25,7 @@ export default function HubHero() {
           
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight text-white">
             Identity & Intelligence for the<br />
-            <span className="bg-gradient-to-r from-[#008080] via-lnl-gold to-[#2E5BFF] bg-clip-text text-transparent">Modern Enterprise</span>
+            <span className="text-[#C9A86C]">Modern Enterprise</span>
           </h1>
           
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light mb-12">
