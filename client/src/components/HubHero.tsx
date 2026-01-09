@@ -23,9 +23,9 @@ export default function HubHero() {
             THE LNL GROUP
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight text-white">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight text-[#C9A86C]">
             Identity & Intelligence for the<br />
-            <span className="text-[#C9A86C]">Modern Enterprise</span>
+            Modern Enterprise
           </h1>
           
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light mb-12">
