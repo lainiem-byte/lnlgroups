@@ -274,7 +274,8 @@ export default function ContactForm() {
 
         <Button 
           type="submit" 
-          className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 rounded-xl transition-all shadow-lg hover:shadow-primary/20"
+          className="w-full bg-primary hover:bg-primary/90 text-black font-bold py-6 rounded-xl transition-all"
+          style={{ textRendering: 'geometricPrecision' }}
           disabled={isSubmitting}
         >
           {isSubmitting ? (
