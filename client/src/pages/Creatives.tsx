@@ -110,20 +110,35 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
       
       <main className="pt-20">
         {/* LNL Creative Hero */}
-        <section className="py-24 bg-secondary/10 border-b border-border/50 transition-colors duration-500">
-          <div className="container mx-auto px-6">
+        <section className="relative py-24 border-b border-border/50 transition-colors duration-500 overflow-hidden min-h-[80vh] flex items-center">
+          {/* Video Background */}
+          <div className="absolute inset-0 z-0">
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="w-full h-full object-cover"
+              style={{ filter: 'brightness(0.25) saturate(1.2)' }}
+            >
+              <source src="https://videos.pexels.com/video-files/7233561/7233561-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/60 via-[#008080]/10 to-[#1A1A1D]" />
+          </div>
+          
+          <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-16 max-w-4xl mx-auto">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#008080]/10 text-[#008080] text-sm font-semibold mb-6 border border-[#008080]/20">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#008080]/20 text-[#008080] text-sm font-semibold mb-6 border border-[#008080]/30 backdrop-blur-sm">
                 <Camera className="w-4 h-4" />
                 LNL CREATIVE
               </div>
-              <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight">
+              <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight text-white">
                 The Digital Facelift: <span 
                   className="bg-gradient-to-r from-[#006666] via-[#20B2AA] via-[#008080] to-[#006666] bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]"
                   style={{ WebkitBackgroundClip: 'text' }}
                 >Architecting Unrivaled Market Prestige</span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
                 Your brand must justify your pricing before you ever speak to a lead. We use proprietary Brand-Mining to extract your hidden authority and build a visual presence that commands respect in luxury markets.
               </p>
               <div className="mt-8">

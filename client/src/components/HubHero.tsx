@@ -6,7 +6,22 @@ import { Link } from "wouter";
 export default function HubHero() {
   return (
     <section className="relative w-full min-h-screen pt-20 overflow-hidden" style={{ backgroundColor: '#1A1A1D' }}>
-      <div className="absolute inset-0 pointer-events-none">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="w-full h-full object-cover"
+          style={{ filter: 'brightness(0.3)' }}
+        >
+          <source src="https://videos.pexels.com/video-files/3648257/3648257-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/60 via-transparent to-[#1A1A1D]" />
+      </div>
+      
+      <div className="absolute inset-0 pointer-events-none z-[1]">
         <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-[#008080]/10 rounded-full blur-[150px]" />
         <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-[#2E5BFF]/10 rounded-full blur-[150px]" />
       </div>

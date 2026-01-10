@@ -130,8 +130,23 @@ export default function Automations() {
       <Navbar />
       
       <main className="pt-20">
-        <section className="py-32 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none">
+        <section className="py-32 relative overflow-hidden min-h-screen flex items-center">
+          {/* Video Background */}
+          <div className="absolute inset-0 z-0">
+            <video 
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="w-full h-full object-cover"
+              style={{ filter: 'brightness(0.25)' }}
+            >
+              <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/70 via-transparent to-[#1A1A1D]" />
+          </div>
+          
+          <div className="absolute inset-0 pointer-events-none z-[1]">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2E5BFF]/20 rounded-full blur-[150px]" />
             <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#2E5BFF]/10 rounded-full blur-[120px]" />
           </div>
