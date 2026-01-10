@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Bot, Workflow, Brain, Zap, ArrowRight, Check, Sparkles, X, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,7 @@ import {
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
+import techBg from "@assets/stock_images/digital_technology_a_805d8588.webp";
 
 const demos = [
   {
@@ -124,6 +125,14 @@ const pricingTiers = [
 
 export default function Automations() {
   const [selectedDemo, setSelectedDemo] = useState<typeof demos[0] | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   return (
     <div className="min-h-screen text-white" style={{ backgroundColor: '#1A1A1D' }}>
@@ -131,18 +140,27 @@ export default function Automations() {
       
       <main className="pt-20">
         <section className="py-32 relative overflow-hidden min-h-screen flex items-center">
-          {/* Video Background */}
+          {/* Video/Image Background - Mobile gets static image for performance */}
           <div className="absolute inset-0 z-0">
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-              className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.25)' }}
-            >
-              <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-            </video>
+            {isMobile ? (
+              <img 
+                src={techBg}
+                alt=""
+                className="w-full h-full object-cover"
+                style={{ filter: 'brightness(0.25)' }}
+              />
+            ) : (
+              <video 
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+                className="w-full h-full object-cover"
+                style={{ filter: 'brightness(0.25)' }}
+              >
+                <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+              </video>
+            )}
             <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/70 via-transparent to-[#1A1A1D]" />
           </div>
           

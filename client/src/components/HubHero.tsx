@@ -2,22 +2,42 @@ import { motion } from "framer-motion";
 import { ArrowRight, Palette, Cpu, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useState, useEffect } from "react";
+import architectureBg from "@assets/stock_images/modern_architecture__69f67dc4.webp";
 
 export default function HubHero() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
     <section className="relative w-full min-h-screen pt-20 overflow-hidden" style={{ backgroundColor: '#1A1A1D' }}>
-      {/* Video Background */}
+      {/* Video/Image Background - Mobile gets static image for performance */}
       <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover"
-          style={{ filter: 'brightness(0.3)' }}
-        >
-          <source src="https://videos.pexels.com/video-files/3648257/3648257-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-        </video>
+        {isMobile ? (
+          <img 
+            src={architectureBg}
+            alt=""
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.3)' }}
+          />
+        ) : (
+          <video 
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.3)' }}
+          >
+            <source src="https://videos.pexels.com/video-files/3648257/3648257-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+          </video>
+        )}
         <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/60 via-transparent to-[#1A1A1D]" />
       </div>
       

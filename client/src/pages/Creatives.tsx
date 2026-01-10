@@ -15,6 +15,7 @@ import raleighRealtyImage from "@assets/generated_images/raleigh_glenwood_south_
 import columbusImage from "@assets/generated_images/columbus_oh_short_north_arts_district_vibrant_street_scene.png";
 import germanVillageImage from "@assets/generated_images/german_village_columbus_ohio_historic_brick_lined_streets.png";
 import moscowImage from "@assets/generated_images/moscow_idaho_downtown_main_street_with_palouse_hills_background.png";
+import luxuryFabricBg from "@assets/stock_images/luxury_silk_fabric_c_a8f12de9.webp";
 
 const imageMap: Record<string, string> = {
   glenwood: glenwoodImage,
@@ -31,6 +32,14 @@ interface CreativesProps {
 export default function Creatives({ initialLocation = "raleigh" }: CreativesProps) {
   const [filter, setFilter] = useState("All");
   const { activeLocation, setActiveLocation } = useActiveLocation();
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   useEffect(() => {
     if (initialLocation && ["raleigh", "columbus", "moscow"].includes(initialLocation)) {
@@ -111,18 +120,27 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
       <main className="pt-20">
         {/* LNL Creative Hero */}
         <section className="relative py-24 border-b border-border/50 transition-colors duration-500 overflow-hidden min-h-[80vh] flex items-center">
-          {/* Video Background */}
+          {/* Video/Image Background - Mobile gets static image for performance */}
           <div className="absolute inset-0 z-0">
-            <video 
-              autoPlay 
-              muted 
-              loop 
-              playsInline
-              className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.25) saturate(1.2)' }}
-            >
-              <source src="https://videos.pexels.com/video-files/7233561/7233561-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-            </video>
+            {isMobile ? (
+              <img 
+                src={luxuryFabricBg}
+                alt=""
+                className="w-full h-full object-cover"
+                style={{ filter: 'brightness(0.25) saturate(1.2)' }}
+              />
+            ) : (
+              <video 
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+                className="w-full h-full object-cover"
+                style={{ filter: 'brightness(0.25) saturate(1.2)' }}
+              >
+                <source src="https://videos.pexels.com/video-files/7233561/7233561-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+              </video>
+            )}
             <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/60 via-[#008080]/10 to-[#1A1A1D]" />
           </div>
           
