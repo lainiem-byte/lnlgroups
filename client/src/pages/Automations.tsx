@@ -11,6 +11,7 @@ import {
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Contact from "@/components/Contact";
+import LNLPulse from "@/components/LNLPulse";
 import techBg from "@assets/stock_images/digital_technology_a_805d8588.webp";
 
 const demos = [
@@ -247,6 +248,13 @@ export default function Automations() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* The LNL Pulse - Interactive Workflow Demo */}
+        <section className="py-24 relative" style={{ backgroundColor: '#0A0A0B' }}>
+          <div className="container mx-auto px-6">
+            <LNLPulse />
           </div>
         </section>
 
