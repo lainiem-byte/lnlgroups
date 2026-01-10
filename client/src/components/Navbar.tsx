@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Moon, Sun, Menu, MapPin, ChevronDown, Camera, Zap } from "lucide-react";
+import { Moon, Sun, Menu, MapPin, ChevronDown, Camera, Zap, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useActiveLocation } from "@/context/LocationContext";
+import VaultAccessModal from "./VaultAccessModal";
 
 const localHubs = [
   { id: "raleigh" as const, name: "Raleigh-Durham", tagline: "Innovation Hub" },
@@ -23,6 +24,7 @@ export default function Navbar() {
   const [location, setLocation] = useLocation();
   const { theme, setTheme } = useTheme();
   const { activeLocation, setActiveLocation } = useActiveLocation();
+  const [isVaultOpen, setIsVaultOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -172,6 +174,16 @@ export default function Navbar() {
           </Button>
 
           <Button 
+            variant="outline"
+            onClick={() => setIsVaultOpen(true)}
+            className="rounded-full px-5 border border-white/20 bg-transparent text-white hover:bg-lnl-gold hover:text-black hover:border-lnl-gold font-medium transition-all duration-300"
+            data-testid="button-vault-access"
+          >
+            <ShieldCheck className="w-4 h-4 mr-2" />
+            Vault Access
+          </Button>
+
+          <Button 
             className="rounded-full px-6 bg-lnl-gold hover:bg-lnl-gold/90 text-black font-semibold shadow-lg shadow-lnl-gold/20 hover:shadow-lnl-gold/30 transition-all"
             onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
           >
@@ -252,6 +264,16 @@ export default function Navbar() {
                 </div>
 
                 <Button 
+                  variant="outline"
+                  onClick={() => setIsVaultOpen(true)}
+                  className="w-full rounded-full border border-white/20 bg-transparent text-white hover:bg-lnl-gold hover:text-black hover:border-lnl-gold font-medium transition-all duration-300"
+                  data-testid="button-vault-access-mobile"
+                >
+                  <ShieldCheck className="w-4 h-4 mr-2" />
+                  Vault Access
+                </Button>
+
+                <Button 
                   className="w-full rounded-full mt-4 bg-lnl-gold hover:bg-lnl-gold/90 text-black font-semibold"
                   onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
                 >
@@ -262,6 +284,8 @@ export default function Navbar() {
           </Sheet>
         </div>
       </div>
+
+      <VaultAccessModal isOpen={isVaultOpen} onClose={() => setIsVaultOpen(false)} />
     </nav>
   );
 }

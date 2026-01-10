@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertLeadSchema } from "@shared/schema";
+import { validateVaultAccess } from "./vaultClients";
 
 async function forwardToWebhook(leadData: any): Promise<boolean> {
   const webhookUrl = process.env.N8N_WEBHOOK_URL;
@@ -65,6 +66,33 @@ export async function registerRoutes(
       res.json(leads);
     } catch (error) {
       res.status(500).json({ error: "Failed to retrieve leads" });
+    }
+  });
+
+  app.post("/api/vault/authenticate", async (req, res) => {
+    try {
+      const { clientId, accessKey } = req.body;
+      
+      if (!clientId || !accessKey) {
+        return res.status(400).json({ success: false, error: "Missing credentials" });
+      }
+
+      const client = validateVaultAccess(clientId, accessKey);
+      
+      if (client) {
+        res.json({ 
+          success: true, 
+          clientName: client.name,
+          redirectUrl: client.redirectUrl 
+        });
+      } else {
+        res.status(401).json({ 
+          success: false, 
+          error: "Invalid credentials. Please verify your Client ID and Access Key." 
+        });
+      }
+    } catch (error) {
+      res.status(500).json({ success: false, error: "Authentication failed" });
     }
   });
 
