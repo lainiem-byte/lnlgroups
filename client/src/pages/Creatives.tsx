@@ -118,14 +118,23 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                 LNL CREATIVE
               </div>
               <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tight">
-                Visual Authority for the <span 
+                The Digital Facelift: <span 
                   className="bg-gradient-to-r from-[#006666] via-[#20B2AA] via-[#008080] to-[#006666] bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]"
                   style={{ WebkitBackgroundClip: 'text' }}
-                >Category-of-One</span>
+                >Architecting Unrivaled Market Prestige</span>
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
-                If your brand doesn't look like the price you want to charge, you are leaving money on the table.
+              <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                Your brand must justify your pricing before you ever speak to a lead. We use proprietary Brand-Mining to extract your hidden authority and build a visual presence that commands respect in luxury markets.
               </p>
+              <div className="mt-8">
+                <button 
+                  onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#008080] hover:bg-[#008080]/90 text-white font-semibold text-lg transition-all"
+                  style={{ boxShadow: '0 0 40px rgba(0, 128, 128, 0.4)' }}
+                >
+                  Start Your Aesthetic Audit <span className="ml-1">→</span>
+                </button>
+              </div>
             </div>
             <LocationShowcase initialLocationId={initialLocation} />
           </div>

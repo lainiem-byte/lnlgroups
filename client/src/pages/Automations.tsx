@@ -149,24 +149,24 @@ export default function Automations() {
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight tracking-tight">
-                Scale Without the <span 
+                The Mechanical Heart: <span 
                   className="bg-gradient-to-r from-[#1E3A8A] via-[#60A5FA] via-[#2E5BFF] to-[#1E3A8A] bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]"
                   style={{ WebkitBackgroundClip: 'text' }}
-                >Headcount</span>
+                >Systems Architected for Scale</span>
               </h1>
               
               <p className="text-xl md:text-2xl text-gray-400 mb-12 leading-relaxed max-w-3xl mx-auto">
-                Custom AI Agents & Workflows designed for the modern small business owner.
+                Scaling shouldn't mean working more hours—it should mean better logic. We install custom AI ecosystems and Lead-to-Client Logic that eliminate labor leakage and reclaim your "Zone of Genius."
               </p>
               
               <Button 
                 size="lg" 
                 className="rounded-full px-10 h-14 text-lg font-semibold bg-[#2E5BFF] hover:bg-[#2E5BFF]/90 text-white border-0"
                 style={{ boxShadow: '0 0 40px rgba(46, 91, 255, 0.5), 0 4px 20px rgba(46, 91, 255, 0.3)' }}
-                data-testid="button-workflow-audit-hero"
+                data-testid="button-map-system-logic"
                 onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Request Your Workflow Audit <ArrowRight className="ml-2 w-5 h-5" />
+                Map Your System Logic <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </motion.div>
           </div>

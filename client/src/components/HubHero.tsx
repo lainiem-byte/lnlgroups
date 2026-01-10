@@ -24,7 +24,7 @@ export default function HubHero() {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight tracking-tight">
-            <span className="text-white">Identity & Intelligence for the</span><br />
+            <span className="text-white">Growth Architecture:</span><br />
             <span 
               className="bg-gradient-to-r from-[#B8860B] via-[#FFD700] via-[#C9A86C] to-[#B8860B] bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]"
               style={{ 
@@ -32,20 +32,21 @@ export default function HubHero() {
                 textShadow: '0 0 40px rgba(201, 168, 108, 0.3)'
               }}
             >
-              Modern Enterprise
+              Where Logic Meets Luxury
             </span>
           </h1>
           
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light mb-12">
-            Bridging the gap between how your business looks and how it actually runs. Founded by Lainie Mayfield, The LNL Group provides the visual authority and automated logic required to scale without burnout.
+            We align your brand's prestige with your business's precision. From Raleigh to Moscow, we engineer the digital infrastructure that justifies your premium price point and automates your scale.
           </p>
           
           <Button 
             size="lg" 
             className="rounded-full px-10 h-14 text-lg font-semibold bg-lnl-gold hover:bg-lnl-gold/90 text-black"
-            data-testid="button-workflow-audit"
+            data-testid="button-growth-audit"
+            onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
           >
-            Book Your 15-Minute Workflow Audit <ArrowRight className="ml-2 w-5 h-5" />
+            Apply for a Growth Audit <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </motion.div>
 
