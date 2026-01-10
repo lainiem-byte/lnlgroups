@@ -18,13 +18,12 @@ export default function HubHero() {
   return (
     <section className="relative w-full min-h-screen pt-20 overflow-hidden" style={{ backgroundColor: '#1A1A1D' }}>
       {/* Video/Image Background - Mobile gets static image for performance */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0" style={{ backgroundColor: '#0D0D0F' }}>
         {isMobile ? (
           <img 
             src={architectureBg}
             alt=""
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.3)' }}
           />
         ) : (
           <video 
@@ -33,11 +32,13 @@ export default function HubHero() {
             loop 
             playsInline
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.3)' }}
+            poster={architectureBg}
           >
             <source src="https://videos.pexels.com/video-files/3648257/3648257-uhd_2560_1440_30fps.mp4" type="video/mp4" />
           </video>
         )}
+        {/* Semi-transparent dark overlay (45% opacity) for text legibility */}
+        <div className="absolute inset-0 bg-black/45" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/60 via-transparent to-[#1A1A1D]" />
       </div>
       

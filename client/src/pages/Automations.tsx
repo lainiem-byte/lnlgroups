@@ -141,13 +141,12 @@ export default function Automations() {
       <main className="pt-20">
         <section className="py-32 relative overflow-hidden min-h-screen flex items-center">
           {/* Video/Image Background - Mobile gets static image for performance */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0" style={{ backgroundColor: '#0D0D0F' }}>
             {isMobile ? (
               <img 
                 src={techBg}
                 alt=""
                 className="w-full h-full object-cover"
-                style={{ filter: 'brightness(0.25)' }}
               />
             ) : (
               <video 
@@ -156,11 +155,13 @@ export default function Automations() {
                 loop 
                 playsInline
                 className="w-full h-full object-cover"
-                style={{ filter: 'brightness(0.25)' }}
+                poster={techBg}
               >
                 <source src="https://videos.pexels.com/video-files/3129957/3129957-uhd_2560_1440_25fps.mp4" type="video/mp4" />
               </video>
             )}
+            {/* Semi-transparent dark overlay (45% opacity) for text legibility */}
+            <div className="absolute inset-0 bg-black/45" />
             <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/70 via-transparent to-[#1A1A1D]" />
           </div>
           

@@ -121,13 +121,13 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
         {/* LNL Creative Hero */}
         <section className="relative py-24 border-b border-border/50 transition-colors duration-500 overflow-hidden min-h-[80vh] flex items-center">
           {/* Video/Image Background - Mobile gets static image for performance */}
-          <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 z-0" style={{ backgroundColor: '#0D0D0F' }}>
             {isMobile ? (
               <img 
                 src={luxuryFabricBg}
                 alt=""
                 className="w-full h-full object-cover"
-                style={{ filter: 'brightness(0.25) saturate(1.2)' }}
+                style={{ filter: 'saturate(1.2)' }}
               />
             ) : (
               <video 
@@ -136,11 +136,14 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                 loop 
                 playsInline
                 className="w-full h-full object-cover"
-                style={{ filter: 'brightness(0.25) saturate(1.2)' }}
+                style={{ filter: 'saturate(1.2)' }}
+                poster={luxuryFabricBg}
               >
                 <source src="https://videos.pexels.com/video-files/7233561/7233561-uhd_2560_1440_30fps.mp4" type="video/mp4" />
               </video>
             )}
+            {/* Semi-transparent dark overlay (45% opacity) for text legibility */}
+            <div className="absolute inset-0 bg-black/45" />
             <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/60 via-[#008080]/10 to-[#1A1A1D]" />
           </div>
           
