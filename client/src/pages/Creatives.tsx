@@ -127,7 +127,6 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                 src={luxuryFabricBg}
                 alt=""
                 className="w-full h-full object-cover"
-                style={{ filter: 'saturate(1.2)' }}
               />
             ) : (
               <video 
@@ -136,10 +135,9 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                 loop 
                 playsInline
                 className="w-full h-full object-cover"
-                style={{ filter: 'saturate(1.2)' }}
                 poster={luxuryFabricBg}
               >
-                <source src="https://videos.pexels.com/video-files/7233561/7233561-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+                <source src="https://videos.pexels.com/video-files/5106444/5106444-uhd_2560_1440_25fps.mp4" type="video/mp4" />
               </video>
             )}
             {/* Semi-transparent dark overlay (45% opacity) for text legibility */}
