@@ -15,7 +15,7 @@ import raleighRealtyImage from "@assets/generated_images/raleigh_glenwood_south_
 import columbusImage from "@assets/generated_images/columbus_oh_short_north_arts_district_vibrant_street_scene.png";
 import germanVillageImage from "@assets/generated_images/german_village_columbus_ohio_historic_brick_lined_streets.png";
 import moscowImage from "@assets/generated_images/moscow_idaho_downtown_main_street_with_palouse_hills_background.png";
-import luxuryFabricBg from "@assets/stock_images/luxury_silk_fabric_c_a8f12de9.webp";
+import diamondBg from "@assets/stock_images/diamond_crystal_gem__20eff5b2.jpg";
 
 const imageMap: Record<string, string> = {
   glenwood: glenwoodImage,
@@ -124,7 +124,7 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
           <div className="absolute inset-0 z-0" style={{ backgroundColor: '#0D0D0F' }}>
             {isMobile ? (
               <img 
-                src={luxuryFabricBg}
+                src={diamondBg}
                 alt=""
                 className="w-full h-full object-cover"
               />
@@ -135,7 +135,7 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                 loop 
                 playsInline
                 className="w-full h-full object-cover"
-                poster={luxuryFabricBg}
+                poster={diamondBg}
               >
                 <source src="https://cdn.pixabay.com/video/2016/05/12/3122-166335826_large.mp4" type="video/mp4" />
               </video>
