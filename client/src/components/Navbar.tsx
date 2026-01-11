@@ -1,5 +1,5 @@
 import { Link, useLocation } from "wouter";
-import { Moon, Sun, Menu, MapPin, ChevronDown, Camera, Zap, ShieldCheck } from "lucide-react";
+import { Moon, Sun, Menu, MapPin, ChevronDown, Camera, Zap, ShieldCheck, Building2, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
@@ -72,6 +72,58 @@ export default function Navbar() {
           <NavLink href="/">Home</NavLink>
           <NavLink href="/about">About</NavLink>
           
+          {/* Divisions Dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <button className="flex items-center gap-2 text-sm font-medium transition-all px-4 py-2 rounded-full border text-foreground/80 border-transparent hover:text-lnl-gold hover:border-lnl-gold/30">
+                <Layers className="w-4 h-4" />
+                <span>Divisions</span>
+                <ChevronDown className="w-3 h-3 opacity-60" />
+              </button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent 
+              align="center" 
+              className="w-64 bg-[#242428] border-lnl-gold/20 p-2"
+            >
+              <DropdownMenuItem
+                onClick={() => window.location.href = '/'}
+                className="flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all hover:bg-lnl-gold/10 text-foreground/80 hover:text-white"
+              >
+                <div className="w-8 h-8 rounded-lg bg-lnl-gold/20 flex items-center justify-center">
+                  <Building2 className="w-4 h-4 text-lnl-gold" />
+                </div>
+                <div>
+                  <span className="font-semibold">LNL Group</span>
+                  <p className="text-xs text-muted-foreground">Corporate • lnlgroup.com</p>
+                </div>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => window.location.href = '/creatives'}
+                className="flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all hover:bg-[#008080]/10 text-foreground/80 hover:text-white"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#008080]/20 flex items-center justify-center">
+                  <Camera className="w-4 h-4 text-[#008080]" />
+                </div>
+                <div>
+                  <span className="font-semibold">LNL Creatives</span>
+                  <p className="text-xs text-muted-foreground">Content Marketing • lnlcreatives.com</p>
+                </div>
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                onClick={() => window.location.href = '/automations'}
+                className="flex items-center gap-3 px-4 py-3 rounded-lg cursor-pointer transition-all hover:bg-[#2E5BFF]/10 text-foreground/80 hover:text-white"
+              >
+                <div className="w-8 h-8 rounded-lg bg-[#2E5BFF]/20 flex items-center justify-center">
+                  <Zap className="w-4 h-4 text-[#2E5BFF]" />
+                </div>
+                <div>
+                  <span className="font-semibold">LNL Automations</span>
+                  <p className="text-xs text-muted-foreground">AI Automation • lnlautomations.com</p>
+                </div>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           {/* Our Hubs Dropdown */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -219,6 +271,52 @@ export default function Navbar() {
                   About
                 </Link>
                 
+                {/* Mobile Divisions Section */}
+                <div className="border-t border-lnl-gold/20 pt-6">
+                  <div className="flex items-center gap-2 text-lnl-gold mb-4">
+                    <Layers className="w-5 h-5" />
+                    <span className="text-sm font-bold uppercase tracking-wide">Divisions</span>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <a
+                      href="/"
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-lnl-gold/10"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-lnl-gold/20 flex items-center justify-center">
+                        <Building2 className="w-4 h-4 text-lnl-gold" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-white">LNL Group</div>
+                        <div className="text-xs text-muted-foreground">Corporate</div>
+                      </div>
+                    </a>
+                    <a
+                      href="/creatives"
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-[#008080]/10"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#008080]/20 flex items-center justify-center">
+                        <Camera className="w-4 h-4 text-[#008080]" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-white">LNL Creatives</div>
+                        <div className="text-xs text-muted-foreground">Content Marketing</div>
+                      </div>
+                    </a>
+                    <a
+                      href="/automations"
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-[#2E5BFF]/10"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#2E5BFF]/20 flex items-center justify-center">
+                        <Zap className="w-4 h-4 text-[#2E5BFF]" />
+                      </div>
+                      <div>
+                        <div className="font-semibold text-white">LNL Automations</div>
+                        <div className="text-xs text-muted-foreground">AI Automation</div>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
                 {/* Mobile Our Hubs Section */}
                 <div className="border-t border-lnl-gold/20 pt-6">
                   <div className="flex items-center gap-2 text-lnl-gold mb-4">
