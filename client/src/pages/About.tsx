@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Brain, Sparkles, MapPin, Building2, Code2, Lightbulb } from "lucide-react";
+import { Brain, Building2, Lightbulb } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import portraitImage from "@assets/My_Headshot_AI_background_1767937187821.jpg";
 
@@ -18,15 +18,12 @@ export default function About() {
             className="text-center max-w-4xl mx-auto relative z-10"
           >
             <h1 className="text-5xl md:text-7xl font-display font-medium mb-6 leading-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-lnl-violet to-lnl-cyan">
-                Architecting Presence.
-              </span>
+              <span className="text-white">Most businesses are built on hustle.</span>
               <br />
-              <span className="text-white">Automating Growth.</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-lnl-violet via-lnl-cyan to-lnl-gold">
+                We prefer Architecture.
+              </span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              The bridge between high-end creative storytelling and autonomous AI systems.
-            </p>
           </motion.div>
         </div>
       </section>
@@ -87,34 +84,30 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <h2 className="text-4xl font-display font-medium mb-6">
-                Meet <span className="text-lnl-violet">Lainie</span>
-              </h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-5 text-muted-foreground leading-relaxed">
                 <p>
-                  I'm not your typical creative director. I don't just design brands—I <span className="text-white font-medium">architect digital ecosystems</span> where creativity and automation converge.
+                  In my time building across markets like <span className="text-lnl-gold">Raleigh</span>, <span className="text-lnl-gold">Columbus</span>, and <span className="text-lnl-gold">Moscow</span>, I've noticed a recurring friction point for elite service providers.
                 </p>
                 <p>
-                  From the vibrant streets of <span className="text-lnl-gold">Raleigh's Glenwood South</span> to the historic brick-lined pathways of <span className="text-lnl-gold">Columbus's German Village</span>, and the intimate community fabric of <span className="text-lnl-gold">Moscow, Idaho</span>—I've built a methodology that transforms local authenticity into scalable digital presence.
+                  Many businesses have what I call a <span className="text-lnl-violet font-medium">"Prestige Gap."</span> They provide world-class results, but their Digital Face looks like a commodity. Others have a <span className="text-lnl-cyan font-medium">"Logic Leak"</span>—they have a beautiful brand, but their Mechanical Heart is broken, losing leads and wasting hours on manual labor that should be automated.
                 </p>
                 <p>
-                  What makes LNL different? We don't stop at beautiful content. We build <span className="text-lnl-cyan font-medium">autonomous pipelines</span> that generate, optimize, and deploy hyper-localized assets while you focus on what matters: running your business.
+                  <span className="text-white font-medium">I founded LNL Group to solve for both.</span>
+                </p>
+                <p>
+                  We don't just "do marketing" or "set up software." We bridge the gap between how you are perceived and how you function. Whether we are executing a Digital Facelift for a Med Spa or architecting a Lead-to-Client Logic flow for a Real Estate firm, our goal is the same:
+                </p>
+                <p className="text-xl text-white font-medium">
+                  To give you back your time and justify your premium price point.
+                </p>
+                <p>
+                  You've done the hard work of becoming an expert in your field. Now, let us build the infrastructure that proves it to the world.
                 </p>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                <div className="flex items-center gap-2 bg-lnl-violet/10 px-4 py-2 rounded-full border border-lnl-violet/20">
-                  <Sparkles className="w-4 h-4 text-lnl-violet" />
-                  <span className="text-sm font-medium">Creative Strategy</span>
-                </div>
-                <div className="flex items-center gap-2 bg-lnl-cyan/10 px-4 py-2 rounded-full border border-lnl-cyan/20">
-                  <Code2 className="w-4 h-4 text-lnl-cyan" />
-                  <span className="text-sm font-medium">AI Automation</span>
-                </div>
-                <div className="flex items-center gap-2 bg-lnl-gold/10 px-4 py-2 rounded-full border border-lnl-gold/20">
-                  <MapPin className="w-4 h-4 text-lnl-gold" />
-                  <span className="text-sm font-medium">Local Authority</span>
-                </div>
+              <div className="mt-10 pt-8 border-t border-white/10">
+                <p className="text-lg text-white font-display">Lainie Mayfield</p>
+                <p className="text-sm text-lnl-gold">Chief Growth Architect, LNL Group</p>
               </div>
             </motion.div>
           </div>
