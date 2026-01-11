@@ -137,7 +137,7 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                 className="w-full h-full object-cover"
                 poster={luxuryFabricBg}
               >
-                <source src="https://videos.pexels.com/video-files/3194277/3194277-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+                <source src="https://videos.pexels.com/video-files/4125025/4125025-uhd_2560_1440_24fps.mp4" type="video/mp4" />
               </video>
             )}
             {/* Semi-transparent dark overlay (45% opacity) for text legibility */}
