@@ -137,7 +137,7 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                 className="w-full h-full object-cover"
                 poster={luxuryFabricBg}
               >
-                <source src="https://assets.mixkit.co/videos/34213/34213-720.mp4" type="video/mp4" />
+                <source src="https://cdn.pixabay.com/video/2016/05/12/3122-166335826_large.mp4" type="video/mp4" />
               </video>
             )}
             {/* Semi-transparent dark overlay (45% opacity) for text legibility */}
