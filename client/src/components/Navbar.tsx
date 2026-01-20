@@ -1,5 +1,8 @@
 import { Link, useLocation } from "wouter";
 import { Moon, Sun, Menu, MapPin, ChevronDown, Camera, Zap, ShieldCheck, Building2, Layers } from "lucide-react";
+import logoGroup from "@/assets/logo-group.png";
+import logoCreatives from "@/assets/logo-creatives.png";
+import logoAutomations from "@/assets/logo-automations.png";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
@@ -60,12 +63,19 @@ export default function Navbar() {
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold font-display tracking-tight flex items-center gap-3 group">
-          <span className="w-10 h-10 rounded-xl bg-lnl-gold flex items-center justify-center text-black font-bold shadow-lg shadow-lnl-gold/20 group-hover:shadow-lnl-gold/40 transition-shadow">
-            L
-          </span>
-          <span className="text-white">LNL</span> <span className="text-lnl-gold">GROUP</span>
-        </Link>
+        {location === '/creatives' ? (
+          <Link href="/creatives" className="flex items-center gap-3 group">
+            <img src={logoCreatives} alt="LNL Creatives" className="h-12 w-auto" />
+          </Link>
+        ) : location === '/automations' ? (
+          <Link href="/automations" className="flex items-center gap-3 group">
+            <img src={logoAutomations} alt="LNL Automations" className="h-12 w-auto" />
+          </Link>
+        ) : (
+          <Link href="/" className="flex items-center gap-3 group">
+            <img src={logoGroup} alt="LNL Group" className="h-12 w-auto" />
+          </Link>
+        )}
         
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
@@ -94,7 +104,7 @@ export default function Navbar() {
                 </div>
                 <div>
                   <span className="font-semibold">LNL Group</span>
-                  <p className="text-xs text-muted-foreground">Corporate • lnlgroup.com</p>
+                  <p className="text-xs text-muted-foreground">Corporate • lnlgroups.com</p>
                 </div>
               </DropdownMenuItem>
               <DropdownMenuItem
