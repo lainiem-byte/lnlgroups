@@ -17,7 +17,7 @@ export default function Contact() {
               <div className="space-y-6">
                 <div>
                   <h4 className="font-semibold mb-1">Direct Line</h4>
-                  <p className="text-muted-foreground">hello@lnlgroup.com</p>
+                  <p className="text-muted-foreground">hello@lnlgroups.com</p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-1">Headquarters</h4>
