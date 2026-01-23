@@ -140,9 +140,9 @@ export default function Creatives({ initialLocation = "raleigh" }: CreativesProp
                 <source src="https://cdn.pixabay.com/video/2016/05/12/3122-166335826_large.mp4" type="video/mp4" />
               </video>
             )}
-            {/* Semi-transparent dark overlay (45% opacity) for text legibility */}
-            <div className="absolute inset-0 bg-black/45" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/60 via-[#008080]/10 to-[#1A1A1D]" />
+            {/* Semi-transparent dark overlay (60% opacity) for text legibility */}
+            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/70 via-[#008080]/10 to-[#1A1A1D]" />
           </div>
           
           <div className="container mx-auto px-6 relative z-10">
