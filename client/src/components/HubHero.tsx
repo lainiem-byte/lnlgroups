@@ -86,14 +86,15 @@ export default function HubHero() {
           </Button>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pb-24 items-stretch">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
+            className="h-full"
           >
-            <Link href="/creatives" className="block" onClick={() => window.scrollTo(0, 0)}>
-              <div className="glass-card rounded-3xl p-10 h-full cursor-pointer group transition-all duration-500 hover:border-[#008080]/50 relative overflow-hidden" style={{ borderColor: 'rgba(0, 128, 128, 0.2)' }} data-testid="card-creative-authority">
+            <Link href="/creatives" className="block h-full" onClick={() => window.scrollTo(0, 0)}>
+              <div className="glass-card rounded-3xl p-10 h-full cursor-pointer group transition-all duration-500 hover:border-[#008080]/50 relative overflow-hidden flex flex-col" style={{ borderColor: 'rgba(0, 128, 128, 0.2)' }} data-testid="card-creative-authority">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#008080] to-[#008080]/50" />
                 
                 <div className="flex items-center gap-4 mb-6">
@@ -106,11 +107,11 @@ export default function HubHero() {
                   </div>
                 </div>
                 
-                <p className="text-gray-400 text-lg leading-relaxed mb-8 font-light">
+                <p className="text-gray-400 text-lg leading-relaxed mb-8 font-light flex-grow">
                   Visual Authority for the Category-of-One. If your brand doesn't look like the price you want to charge, you are leaving money on the table.
                 </p>
                 
-                <div className="flex items-center gap-2 text-[#008080] font-semibold group-hover:gap-4 transition-all">
+                <div className="flex items-center gap-2 text-[#008080] font-semibold group-hover:gap-4 transition-all mt-auto">
                   Explore Brand Services <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
@@ -121,9 +122,10 @@ export default function HubHero() {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
+            className="h-full"
           >
-            <Link href="/automations" className="block" onClick={() => window.scrollTo(0, 0)}>
-              <div className="glass-card rounded-3xl p-10 h-full cursor-pointer group transition-all duration-500 hover:border-[#2E5BFF]/50 relative overflow-hidden" style={{ borderColor: 'rgba(46, 91, 255, 0.2)' }} data-testid="card-workflow-intelligence">
+            <Link href="/automations" className="block h-full" onClick={() => window.scrollTo(0, 0)}>
+              <div className="glass-card rounded-3xl p-10 h-full cursor-pointer group transition-all duration-500 hover:border-[#2E5BFF]/50 relative overflow-hidden flex flex-col" style={{ borderColor: 'rgba(46, 91, 255, 0.2)' }} data-testid="card-workflow-intelligence">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#2E5BFF] to-[#2E5BFF]/50" />
                 
                 <div className="flex items-center gap-4 mb-6">
@@ -136,11 +138,11 @@ export default function HubHero() {
                   </div>
                 </div>
                 
-                <p className="text-gray-400 text-lg leading-relaxed mb-8 font-light">
+                <p className="text-gray-400 text-lg leading-relaxed mb-8 font-light flex-grow">
                   Scale Without the Headcount. Custom AI Agents & Workflows designed for the modern small business owner.
                 </p>
                 
-                <div className="flex items-center gap-2 text-[#2E5BFF] font-semibold group-hover:gap-4 transition-all">
+                <div className="flex items-center gap-2 text-[#2E5BFF] font-semibold group-hover:gap-4 transition-all mt-auto">
                   Explore Automation Services <ArrowRight className="w-5 h-5" />
                 </div>
               </div>
