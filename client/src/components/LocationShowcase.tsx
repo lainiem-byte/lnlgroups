@@ -126,12 +126,12 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
   return (
     <div className="w-full">
       {/* Location Selector Buttons */}
-      <div className="flex flex-wrap justify-center gap-4 mb-16">
+      <div className="flex flex-wrap justify-center gap-3 mb-12">
         {locationsData.locations.map((loc) => (
           <button
             key={loc.id}
             onClick={() => handleLocationChange(loc.id as "raleigh" | "columbus" | "moscow")}
-            className={`relative group px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 overflow-hidden ${
+            className={`relative group px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 overflow-hidden ${
               activeLocation === loc.id 
                 ? "text-white" 
                 : "text-muted-foreground hover:text-foreground bg-secondary/30 hover:bg-secondary/50 border border-white/5"
@@ -159,21 +159,21 @@ export default function LocationShowcase({ initialLocationId = "raleigh" }: Loca
           className="w-full"
         >
           {/* Hero Content */}
-          <div className="text-center mb-16 relative">
+          <div className="text-center mb-12 relative">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200%] h-[200%] bg-[#008080]/5 blur-[100px] rounded-full pointer-events-none" />
             
-            <h2 className="text-4xl md:text-6xl font-display font-medium mb-6 tracking-tight relative z-10">
+            <h2 className="text-2xl md:text-4xl font-display font-medium mb-4 tracking-tight relative z-10">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-[#008080] to-[#008080]">
                 {currentLocation.theme}
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed relative z-10 font-light">
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed relative z-10 font-light">
               {currentLocation.copy}
             </p>
             
-            <div className="flex flex-wrap justify-center gap-3 mt-8 relative z-10">
+            <div className="flex flex-wrap justify-center gap-2 mt-6 relative z-10">
               {currentLocation.hashtags.map((tag, i) => (
-                <span key={i} className="text-sm font-mono text-[#008080] bg-[#008080]/10 px-4 py-1.5 rounded-full border border-[#008080]/20">
+                <span key={i} className="text-xs font-mono text-[#008080] bg-[#008080]/10 px-3 py-1 rounded-full border border-[#008080]/20">
                   {tag}
                 </span>
               ))}
