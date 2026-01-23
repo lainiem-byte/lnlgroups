@@ -245,13 +245,7 @@ export default function Navbar() {
             Vault Access
           </Button>
 
-          <Button 
-            className="rounded-full px-6 bg-lnl-gold hover:bg-lnl-gold/90 text-black font-semibold shadow-lg shadow-lnl-gold/20 hover:shadow-lnl-gold/30 transition-all"
-            onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Get Started
-          </Button>
-        </div>
+                  </div>
 
         {/* Mobile Nav */}
         <div className="md:hidden flex items-center gap-4">
@@ -381,13 +375,7 @@ export default function Navbar() {
                   Vault Access
                 </Button>
 
-                <Button 
-                  className="w-full rounded-full mt-4 bg-lnl-gold hover:bg-lnl-gold/90 text-black font-semibold"
-                  onClick={() => document.getElementById('contact-section')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Get Started
-                </Button>
-              </div>
+                              </div>
             </SheetContent>
           </Sheet>
         </div>
