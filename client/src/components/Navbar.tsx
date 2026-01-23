@@ -63,17 +63,17 @@ export default function Navbar() {
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-6 h-20 flex items-center justify-between">
-        {location === '/creatives' ? (
+        {location === '/creatives' || location.startsWith('/creatives') ? (
           <Link href="/creatives" className="flex items-center gap-3 group">
-            <img src={logoCreatives} alt="LNL Creatives" className="h-12 w-auto" />
+            <img src={logoCreatives} alt="LNL Creatives" className="h-16 md:h-20 w-auto" />
           </Link>
-        ) : location === '/automations' ? (
+        ) : location === '/automations' || location.startsWith('/automations') ? (
           <Link href="/automations" className="flex items-center gap-3 group">
-            <img src={logoAutomations} alt="LNL Automations" className="h-12 w-auto" />
+            <img src={logoAutomations} alt="LNL Automations" className="h-16 md:h-20 w-auto" />
           </Link>
         ) : (
           <Link href="/" className="flex items-center gap-3 group">
-            <img src={logoGroup} alt="LNL Group" className="h-12 w-auto" />
+            <img src={logoGroup} alt="LNL Group" className="h-16 md:h-20 w-auto" />
           </Link>
         )}
         
