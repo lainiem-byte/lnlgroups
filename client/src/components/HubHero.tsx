@@ -37,9 +37,9 @@ export default function HubHero() {
             <source src="https://videos.pexels.com/video-files/3648257/3648257-uhd_2560_1440_30fps.mp4" type="video/mp4" />
           </video>
         )}
-        {/* Semi-transparent dark overlay (60% opacity) for text legibility */}
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/70 via-transparent to-[#1A1A1D]" />
+        {/* Semi-transparent dark overlay (70% opacity) for text legibility */}
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1A1A1D]/80 via-black/20 to-[#1A1A1D]" />
       </div>
       
       <div className="absolute inset-0 pointer-events-none z-[1]">

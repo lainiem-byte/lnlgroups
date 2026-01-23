@@ -65,15 +65,15 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6 h-20 flex items-center justify-between">
         {location === '/creatives' || location === '/raleigh' || location === '/columbus' || location === '/moscow' ? (
           <Link href="/creatives" className="flex items-center group -ml-4">
-            <img src={logoCreatives} alt="LNL Creatives" className="h-12 md:h-14 w-auto" />
+            <img src={logoCreatives} alt="LNL Creatives" className="h-14 md:h-[72px] w-auto" />
           </Link>
         ) : location === '/automations' || location.startsWith('/automations') ? (
           <Link href="/automations" className="flex items-center group -ml-1">
-            <img src={logoAutomations} alt="LNL Automations" className="h-12 md:h-14 w-auto" />
+            <img src={logoAutomations} alt="LNL Automations" className="h-14 md:h-[72px] w-auto" />
           </Link>
         ) : (
           <Link href="/" className="flex items-center group -ml-1">
-            <img src={logoGroup} alt="LNL Group" className="h-12 md:h-14 w-auto" />
+            <img src={logoGroup} alt="LNL Group" className="h-14 md:h-[72px] w-auto" />
           </Link>
         )}
         
