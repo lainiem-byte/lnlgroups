@@ -35,6 +35,9 @@
   --color-card: #1E1E22;
   --color-card-foreground: var(--color-lnl-pearl);
 
+  --color-popover: rgba(30, 30, 34, 0.95);
+  --color-popover-foreground: var(--color-lnl-pearl);
+
   --color-border: #27272a;
   --color-input: #27272a;
   
