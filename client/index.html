@@ -24,28 +24,6 @@
     <script type="module" src="/src/main.tsx"></script>
     
     <!-- Typebot LNL Client Concierge Chat Widget -->
-    <script type="module">
-      import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js';
-      Typebot.initBubble({
-        typebot: 'nwpff4gm8gzn4cs7k8xjnugp',
-        previewMessage: {
-          message: 'Hi! How can I help you today?',
-          autoShowDelay: 5000
-        },
-        theme: {
-          button: { 
-            backgroundColor: '#C9A86C', 
-            iconColor: '#FFFFFF' 
-          },
-          previewMessage: { 
-            backgroundColor: '#1A1A1B', 
-            textColor: '#FFFFFF' 
-          },
-          chatWindow: { 
-            backgroundColor: '#1A1A1B' 
-          }
-        }
-      });
-    </script>
+    <script defer src="/typebot-init.js"></script>
   </body>
 </html>
