@@ -19,9 +19,13 @@ async function forwardToWebhook(leadData: any): Promise<boolean> {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        ...leadData,
+        customer_name: leadData.name,
+        customer_email: leadData.email,
+        business_name: leadData.businessName,
+        source_path: leadData.interest || "website-contact",
+        market: leadData.primaryMarket,
+        tech_stack: Array.isArray(leadData.techStack) ? leadData.techStack.join(", ") : leadData.techStack,
         source: "LNL Group Website",
-        routeTo: "Lainie's Google Tasks",
         timestamp: new Date().toISOString(),
       }),
     });
@@ -53,7 +57,7 @@ export async function registerRoutes(
       res.json({
         ...lead,
         webhookSent,
-        message: "Lead is being routed to Lainie's Google Tasks"
+        message: "Lead submitted successfully"
       });
     } catch (error) {
       res.status(400).json({ error: "Invalid lead data" });

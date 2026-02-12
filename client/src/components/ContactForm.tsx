@@ -35,11 +35,26 @@ import {
   CommandList,
 } from "@/components/ui/command";
 const techStackOptions = [
-  { label: "CRM (Clio, MyCase, Jobber, Housecall Pro, GoHighLevel)", value: "crm" },
-  { label: "Marketing (Mailchimp, Constant Contact, Podium)", value: "marketing" },
-  { label: "Scheduling (Calendly, Acuity, Google Calendar)", value: "scheduling" },
-  { label: "Automation (Make.com, Zapier, Airtable)", value: "automation" },
-  { label: "Other / None", value: "other" },
+  // CRM
+  { label: "Clio", value: "clio", group: "CRM" },
+  { label: "MyCase", value: "mycase", group: "CRM" },
+  { label: "Jobber", value: "jobber", group: "CRM" },
+  { label: "Housecall Pro", value: "housecall-pro", group: "CRM" },
+  { label: "GoHighLevel", value: "gohighlevel", group: "CRM" },
+  // Marketing / Communication
+  { label: "Mailchimp", value: "mailchimp", group: "Marketing" },
+  { label: "Constant Contact", value: "constant-contact", group: "Marketing" },
+  { label: "Podium", value: "podium", group: "Marketing" },
+  // Scheduling
+  { label: "Calendly", value: "calendly", group: "Scheduling" },
+  { label: "Acuity", value: "acuity", group: "Scheduling" },
+  { label: "Google Calendar", value: "google-calendar", group: "Scheduling" },
+  // Automation
+  { label: "Make.com", value: "make", group: "Automation" },
+  { label: "Zapier", value: "zapier", group: "Automation" },
+  { label: "Airtable", value: "airtable", group: "Automation" },
+  // Other
+  { label: "Other / None", value: "other", group: "Other" },
 ];
 
 const formSchema = z.object({
@@ -259,49 +274,58 @@ export default function ContactForm() {
                         variant="outline"
                         role="combobox"
                         className={cn(
-                          "justify-between bg-background/50 border-primary/10 hover:bg-background/80 hover:text-primary-foreground",
+                          "h-auto min-h-10 justify-between bg-background/50 border-primary/10 hover:bg-background/80 hover:text-primary-foreground",
                           !field.value || field.value.length === 0 ? "text-muted-foreground" : "text-foreground"
                         )}
                       >
-                        {field.value?.length > 0
-                          ? `${field.value.length} selected`
-                          : "Select tools"}
+                        <span className="truncate text-left">
+                          {field.value?.length > 0
+                            ? techStackOptions
+                                .filter((opt) => field.value.includes(opt.value))
+                                .map((opt) => opt.label)
+                                .join(", ")
+                            : "Select tools"}
+                        </span>
                         <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                       </Button>
                     </FormControl>
                   </PopoverTrigger>
-                  <PopoverContent className="w-[200px] p-0">
+                  <PopoverContent className="w-[260px] p-0" align="start">
                     <Command>
                       <CommandInput placeholder="Search tools..." />
                       <CommandList>
-                        <CommandEmpty>No framework found.</CommandEmpty>
-                        <CommandGroup>
-                          {techStackOptions.map((framework) => (
-                            <CommandItem
-                              value={framework.label}
-                              key={framework.value}
-                              onSelect={() => {
-                                const current = field.value || [];
-                                const isSelected = current.includes(framework.value);
-                                if (isSelected) {
-                                  field.onChange(current.filter((value) => value !== framework.value));
-                                } else {
-                                  field.onChange([...current, framework.value]);
-                                }
-                              }}
-                            >
-                              <Check
-                                className={cn(
-                                  "mr-2 h-4 w-4",
-                                  field.value?.includes(framework.value)
-                                    ? "opacity-100"
-                                    : "opacity-0"
-                                )}
-                              />
-                              {framework.label}
-                            </CommandItem>
-                          ))}
-                        </CommandGroup>
+                        <CommandEmpty>No tool found.</CommandEmpty>
+                        {["CRM", "Marketing", "Scheduling", "Automation", "Other"].map((group) => (
+                          <CommandGroup key={group} heading={group}>
+                            {techStackOptions
+                              .filter((opt) => opt.group === group)
+                              .map((tool) => (
+                                <CommandItem
+                                  value={tool.label}
+                                  key={tool.value}
+                                  onSelect={() => {
+                                    const current = field.value || [];
+                                    const isSelected = current.includes(tool.value);
+                                    if (isSelected) {
+                                      field.onChange(current.filter((v) => v !== tool.value));
+                                    } else {
+                                      field.onChange([...current, tool.value]);
+                                    }
+                                  }}
+                                >
+                                  <Check
+                                    className={cn(
+                                      "mr-2 h-4 w-4",
+                                      field.value?.includes(tool.value)
+                                        ? "opacity-100"
+                                        : "opacity-0"
+                                    )}
+                                  />
+                                  {tool.label}
+                                </CommandItem>
+                              ))}
+                          </CommandGroup>
+                        ))}
                       </CommandList>
                     </Command>
                   </PopoverContent>
