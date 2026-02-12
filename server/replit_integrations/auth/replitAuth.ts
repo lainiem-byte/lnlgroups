@@ -61,6 +61,11 @@ async function upsertUser(claims: any) {
 }
 
 export async function setupAuth(app: Express) {
+  if (!process.env.REPL_ID) {
+    console.log("[Auth] Not running on Replit — auth disabled.");
+    return;
+  }
+
   app.set("trust proxy", 1);
   app.use(getSession());
   app.use(passport.initialize());
