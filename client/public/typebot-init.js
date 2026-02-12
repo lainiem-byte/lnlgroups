@@ -2,7 +2,7 @@
   const mod = await import('https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js');
   const Typebot = mod.default || mod;
   Typebot.initBubble({
-    typebot: 'nwpff4gm8gzn4cs7k8xjnugp',
+    typebot: 'faq-8xjnugp',
     previewMessage: {
       message: 'Hi! How can I help you today?',
       autoShowDelay: 5000
