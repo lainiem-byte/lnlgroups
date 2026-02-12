@@ -34,17 +34,12 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
-import { useToast } from "@/hooks/use-toast";
-
 const techStackOptions = [
-  { label: "n8n", value: "n8n" },
-  { label: "Make.com", value: "make" },
-  { label: "Replicate", value: "replicate" },
-  { label: "OpenAI API", value: "openai" },
-  { label: "Zapier", value: "zapier" },
-  { label: "Supabase", value: "supabase" },
-  { label: "Airtable", value: "airtable" },
-  { label: "Other", value: "other" },
+  { label: "CRM (Clio, MyCase, Jobber, Housecall Pro, GoHighLevel)", value: "crm" },
+  { label: "Marketing (Mailchimp, Constant Contact, Podium)", value: "marketing" },
+  { label: "Scheduling (Calendly, Acuity, Google Calendar)", value: "scheduling" },
+  { label: "Automation (Make.com, Zapier, Airtable)", value: "automation" },
+  { label: "Other / None", value: "other" },
 ];
 
 const formSchema = z.object({
@@ -61,8 +56,8 @@ const formSchema = z.object({
 });
 
 export default function ContactForm() {
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -95,24 +90,48 @@ export default function ContactForm() {
       const lead = await response.json();
       console.log("Lead created:", lead);
 
-      toast({
-        title: "Strategic inquiry received",
-        description: "Your lead is being routed to Lainie's Google Tasks. We'll be in touch soon!",
-      });
-
+      setShowSuccess(true);
       form.reset();
     } catch (error) {
-      toast({
-        title: "Submission failed",
-        description: "Please try again or contact us directly.",
-        variant: "destructive",
-      });
+      alert("Submission failed. Please try again or contact us directly.");
     } finally {
       setIsSubmitting(false);
     }
   }
 
   return (
+    <>
+    {showSuccess && (
+      <div className="fixed inset-0 bg-black/95 flex justify-center items-center z-[9999]">
+        <div className="bg-[#0a0a0a] border border-[#333] p-10 max-w-[500px] relative">
+          <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]" />
+          <h2 className="text-[#D4AF37] text-xl tracking-[2px] font-bold mb-4">ARCHITECTING YOUR GROWTH...</h2>
+          <p className="text-gray-300 mb-8">
+            The <strong className="text-white">LNL Automation Engine</strong> has prioritized your inquiry. Your data is being analyzed against our industry benchmarks.
+          </p>
+          <div className="space-y-5">
+            <div className="flex gap-4 text-left">
+              <span className="w-2 h-2 bg-[#D4AF37] rounded-full mt-1.5 shrink-0" />
+              <p className="text-gray-300"><strong className="text-white">Step 1: Intake Analysis</strong><br/>Reviewing your tech stack for immediate "leakage."</p>
+            </div>
+            <div className="flex gap-4 text-left">
+              <span className="w-2 h-2 bg-[#D4AF37] rounded-full mt-1.5 shrink-0" />
+              <p className="text-gray-300"><strong className="text-white">Step 2: Auditor Assignment</strong><br/>Preparing your custom 30-minute growth roadmap.</p>
+            </div>
+            <div className="flex gap-4 text-left">
+              <span className="w-2 h-2 bg-[#D4AF37] rounded-full mt-1.5 shrink-0" />
+              <p className="text-gray-300"><strong className="text-white">Step 3: Priority Connection</strong><br/>Check your inbox in &lt; 10 mins for your booking link.</p>
+            </div>
+          </div>
+          <button
+            onClick={() => setShowSuccess(false)}
+            className="w-full bg-[#D4AF37] text-black font-bold py-4 mt-8 cursor-pointer hover:bg-[#c9a432] transition-colors"
+          >
+            ACKNOWLEDGED
+          </button>
+        </div>
+      </div>
+    )}
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -172,9 +191,12 @@ export default function ContactForm() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="Custom Content Pack">Custom Content Pack</SelectItem>
-                  <SelectItem value="Brand Growth Tier">Brand Growth Tier</SelectItem>
-                  <SelectItem value="Other">Other</SelectItem>
+                  <SelectItem value="Aesthetic Scaling">LNL Creative: Aesthetic Scaling</SelectItem>
+                  <SelectItem value="Cinematic Listing Stories">LNL Creative: Cinematic Listing Stories</SelectItem>
+                  <SelectItem value="Workflow Architecture">LNL Automations: Workflow Architecture</SelectItem>
+                  <SelectItem value="Lead Capture Systems">LNL Automations: Lead Capture Systems</SelectItem>
+                  <SelectItem value="Full Ecosystem Buildout">Full Ecosystem Buildout</SelectItem>
+                  <SelectItem value="30-Minute Efficiency Audit">30-Minute Efficiency Audit</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
@@ -289,5 +311,6 @@ export default function ContactForm() {
         </Button>
       </form>
     </Form>
+    </>
   );
 }
