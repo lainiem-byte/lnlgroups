@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -58,6 +58,24 @@ const formSchema = z.object({
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [fading, setFading] = useState(false);
+
+  const closeModal = useCallback(() => {
+    setFading(true);
+    setTimeout(() => {
+      setShowSuccess(false);
+      setFading(false);
+    }, 500);
+  }, []);
+
+  useEffect(() => {
+    if (showSuccess) {
+      const timer = setTimeout(() => {
+        closeModal();
+      }, 15000);
+      return () => clearTimeout(timer);
+    }
+  }, [showSuccess, closeModal]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -102,7 +120,7 @@ export default function ContactForm() {
   return (
     <>
     {showSuccess && (
-      <div className="fixed inset-0 bg-black/95 flex justify-center items-center z-[9999]">
+      <div className={`fixed inset-0 bg-black/95 flex justify-center items-center z-[9999] transition-opacity duration-500 ${fading ? 'opacity-0' : 'opacity-100'}`}>
         <div className="bg-[#0a0a0a] border border-[#333] p-10 max-w-[500px] relative">
           <div className="absolute top-0 left-0 w-full h-1 bg-[#D4AF37]" />
           <h2 className="text-[#D4AF37] text-xl tracking-[2px] font-bold mb-4">ARCHITECTING YOUR GROWTH...</h2>
@@ -124,7 +142,7 @@ export default function ContactForm() {
             </div>
           </div>
           <button
-            onClick={() => setShowSuccess(false)}
+            onClick={closeModal}
             className="w-full bg-[#D4AF37] text-black font-bold py-4 mt-8 cursor-pointer hover:bg-[#c9a432] transition-colors"
           >
             ACKNOWLEDGED
